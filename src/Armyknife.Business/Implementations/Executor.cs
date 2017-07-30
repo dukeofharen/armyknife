@@ -1,20 +1,27 @@
 ﻿using System.Linq;
+using System.Text;
+using Armyknife.Exceptions;
 using Armyknife.Models;
+using Armyknife.Resources;
+using Armyknife.Services;
 using Armyknife.Utilities;
 
 namespace Armyknife.Business.Implementations
 {
     internal class Executor : IExecutor
     {
+        private readonly IConsoleService _consoleService;
         private readonly IInputReader _inputReader;
         private readonly IOutputWriter _outputWriter;
         private readonly IToolResolver _toolResolver;
 
         public Executor(
+            IConsoleService consoleService,
             IInputReader inputReader,
             IOutputWriter outputWriter,
             IToolResolver toolResolver)
         {
+            _consoleService = consoleService;
             _inputReader = inputReader;
             _outputWriter = outputWriter;
             _toolResolver = toolResolver;
@@ -24,21 +31,47 @@ namespace Armyknife.Business.Implementations
         {
             var argsDictionary = args.Parse();
             string toolName = args.FirstOrDefault();
-            var tool = _toolResolver.ResolveTool(toolName);
-            if (tool == null)
+            if (toolName == Constants.HelpKey)
             {
-                // TODO throw exception of zo
+                ShowGenericHelp();
+            }
+            else
+            {
+                var tool = _toolResolver.ResolveTool(toolName);
+                if (tool == null)
+                {
+                    throw new ArmyknifeException($"No tool found with name '{toolName}'. Type 'help' to view some information about Armyknife.");
+                }
+
+                if (args.Length >= 2 && args[1] == Constants.HelpKey)
+                {
+                    _consoleService.WriteLine(tool.HelpText);
+                }
+                else
+                {
+                    string input = _inputReader.GetInput(args, argsDictionary);
+                    if (!string.IsNullOrEmpty(input))
+                    {
+                        argsDictionary.Add(Constants.InputKey, input);
+                    }
+
+                    var result = tool.Execute(argsDictionary);
+
+                    _outputWriter.WriteOutput(result, argsDictionary);
+                }
+            }
+        }
+
+        private void ShowGenericHelp()
+        {
+            var builder = new StringBuilder();
+            var toolNames = _toolResolver.GetToolNames();
+            foreach (string toolName in toolNames)
+            {
+                builder.AppendLine($"- {toolName}");
             }
 
-            string input = _inputReader.GetInput(args, argsDictionary);
-            if (!string.IsNullOrEmpty(input))
-            {
-                argsDictionary.Add(Constants.InputKey, input);
-            }
-
-            var result = tool.Execute(argsDictionary);
-
-            _outputWriter.WriteOutput(result, argsDictionary);
+            _consoleService.WriteLine(string.Format(ToolResources.GenericHelp, builder));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Armyknife.Business.Tools;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,13 @@ namespace Armyknife.Business.Implementations
             return _serviceProvider
                 .GetServices<ITool>()
                 .FirstOrDefault(t => t.Name == name);
+        }
+
+        public IEnumerable<string> GetToolNames()
+        {
+            return _serviceProvider
+                .GetServices<ITool>()
+                .Select(t => t.Name);
         }
     }
 }

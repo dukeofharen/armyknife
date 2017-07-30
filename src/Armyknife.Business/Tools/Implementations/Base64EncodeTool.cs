@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Text;
+using Armyknife.Exceptions;
 using Armyknife.Models;
+using Armyknife.Resources;
 
 namespace Armyknife.Business.Tools.Implementations
 {
@@ -8,14 +10,13 @@ namespace Armyknife.Business.Tools.Implementations
     {
         public string Name => "base64encode";
 
-        // TODO
-        public string HelpText => "TODO";
+        public string HelpText => ToolResources.Base64EncodeHelp;
 
         public byte[] Execute(IDictionary<string, string> args)
         {
             if (!args.ContainsKey(Constants.InputKey))
             {
-                // TODO throw exception
+                throw new ArmyknifeException("No input provided.");
             }
 
             return Encoding.UTF8.GetBytes(args[Constants.InputKey]);

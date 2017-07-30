@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Business", "Armyk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Utilities", "Armyknife.Utilities\Armyknife.Utilities.csproj", "{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Exceptions", "Armyknife.Exceptions\Armyknife.Exceptions.csproj", "{0898F07A-B081-4EBC-A147-577DEE9808AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Resources", "Armyknife.Resources\Armyknife.Resources.csproj", "{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0898F07A-B081-4EBC-A147-577DEE9808AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0898F07A-B081-4EBC-A147-577DEE9808AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0898F07A-B081-4EBC-A147-577DEE9808AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0898F07A-B081-4EBC-A147-577DEE9808AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

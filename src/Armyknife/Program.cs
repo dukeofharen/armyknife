@@ -1,4 +1,6 @@
-﻿using Armyknife.Business;
+﻿using System;
+using Armyknife.Business;
+using Armyknife.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Armyknife
@@ -12,7 +14,20 @@ namespace Armyknife
             var provider = serviceCollection.BuildServiceProvider();
 
             var executor = provider.GetService<IExecutor>();
-            executor.Execute(args);
+
+            try
+            {
+                executor.Execute(args);
+            }
+            catch (ArmyknifeException exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            catch (Exception)
+            {
+                // TODO log this exception
+                throw;
+            }
         }
     }
 }
