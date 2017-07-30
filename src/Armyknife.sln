@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Exceptions", "Arm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Resources", "Armyknife.Resources\Armyknife.Resources.csproj", "{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B9E7EE41-ACF3-47E8-A781-25049C8D61C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Business.Tests", "Armyknife.Business.Tests\Armyknife.Business.Tests.csproj", "{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.TestUtilities", "Armyknife.TestUtilities\Armyknife.TestUtilities.csproj", "{4AAB0F27-968D-4203-B35E-1840D909EA63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,8 +57,20 @@ Global
 		{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAB0F27-968D-4203-B35E-1840D909EA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAB0F27-968D-4203-B35E-1840D909EA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAB0F27-968D-4203-B35E-1840D909EA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAB0F27-968D-4203-B35E-1840D909EA63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
+		{4AAB0F27-968D-4203-B35E-1840D909EA63} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
 	EndGlobalSection
 EndGlobal

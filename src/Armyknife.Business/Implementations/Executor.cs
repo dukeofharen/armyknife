@@ -29,6 +29,11 @@ namespace Armyknife.Business.Implementations
 
         public void Execute(string[] args)
         {
+            if (args == null || args.Length == 0)
+            {
+                throw new ArmyknifeException(ExceptionResources.NoArgs);
+            }
+
             var argsDictionary = args.Parse();
             string toolName = args.FirstOrDefault();
             if (toolName == Constants.HelpKey)
@@ -40,7 +45,7 @@ namespace Armyknife.Business.Implementations
                 var tool = _toolResolver.ResolveTool(toolName);
                 if (tool == null)
                 {
-                    throw new ArmyknifeException($"No tool found with name '{toolName}'. Type 'help' to view some information about Armyknife.");
+                    throw new ArmyknifeException(string.Format(ExceptionResources.NoToolFoundMessage, toolName));
                 }
 
                 if (args.Length >= 2 && args[1] == Constants.HelpKey)
