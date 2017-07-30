@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Armyknife.Business.Tools.Implementations;
 using Armyknife.Exceptions;
 using Armyknife.Models;
@@ -34,7 +35,7 @@ namespace Armyknife.Business.Tests.Tools.Implementations
         {
             // arrange
             string input = "some basic input";
-            byte[] expectedOutput = Convert.FromBase64String("c29tZSBiYXNpYyBpbnB1dA==");
+            string expectedOutput = "c29tZSBiYXNpYyBpbnB1dA==";
             var argsDictionary = new Dictionary<string, string>
             {
                 { Constants.InputKey, input }
@@ -45,7 +46,7 @@ namespace Armyknife.Business.Tests.Tools.Implementations
 
             // assert
             Assert.IsNotNull(result);
-            AssertExtra.AreEqual(expectedOutput, result);
+            Assert.AreEqual(expectedOutput, Encoding.UTF8.GetString(result));
         }
     }
 }

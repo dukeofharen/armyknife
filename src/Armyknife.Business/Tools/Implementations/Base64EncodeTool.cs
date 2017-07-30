@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using Armyknife.Exceptions;
 using Armyknife.Models;
@@ -19,7 +20,9 @@ namespace Armyknife.Business.Tools.Implementations
                 throw new ArmyknifeException("No input provided.");
             }
 
-            return Encoding.UTF8.GetBytes(args[Constants.InputKey]);
+            string input = args[Constants.InputKey];
+
+            return Encoding.UTF8.GetBytes(Convert.ToBase64String(Encoding.UTF8.GetBytes(input)));
         }
     }
 }

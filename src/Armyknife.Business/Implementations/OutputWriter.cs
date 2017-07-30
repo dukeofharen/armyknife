@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using Armyknife.Models;
 using Armyknife.Services;
 
@@ -21,7 +22,7 @@ namespace Armyknife.Business.Implementations
 
         public void WriteOutput(byte[] result, IDictionary<string, string> argsDictionary)
         {
-            string resultText = Convert.ToBase64String(result);
+            string resultText = Encoding.UTF8.GetString(result);
             if (argsDictionary.ContainsKey(Constants.FileOutputKey))
             {
                 string path = argsDictionary[Constants.FileOutputKey];

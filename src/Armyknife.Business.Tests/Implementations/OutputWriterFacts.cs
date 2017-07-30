@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Armyknife.Business.Implementations;
 using Armyknife.Models;
 using Armyknife.Services;
@@ -40,7 +41,7 @@ namespace Armyknife.Business.Tests.Implementations
             string workingDirectory = @"C:\tmp";
             string expectedPath = $@"{workingDirectory}\{path}";
             byte[] resultBytes = { 1, 2, 3 };
-            string expectedResult = Convert.ToBase64String(resultBytes);
+            string expectedResult = Encoding.UTF8.GetString(resultBytes);
 
             var argsDictionary = new Dictionary<string, string>
             {
@@ -71,7 +72,7 @@ namespace Armyknife.Business.Tests.Implementations
             // arrange
             string path = @"C:\tmp\output.txt";
             byte[] resultBytes = { 1, 2, 3 };
-            string expectedResult = Convert.ToBase64String(resultBytes);
+            string expectedResult = Encoding.UTF8.GetString(resultBytes);
 
             var argsDictionary = new Dictionary<string, string>
             {
@@ -98,7 +99,7 @@ namespace Armyknife.Business.Tests.Implementations
             // arrange
             string path = "/var/output.txt";
             byte[] resultBytes = { 1, 2, 3 };
-            string expectedResult = Convert.ToBase64String(resultBytes);
+            string expectedResult = Encoding.UTF8.GetString(resultBytes);
 
             var argsDictionary = new Dictionary<string, string>
             {
@@ -124,7 +125,7 @@ namespace Armyknife.Business.Tests.Implementations
         {
             // arrange
             byte[] resultBytes = { 1, 2, 3 };
-            string expectedResult = Convert.ToBase64String(resultBytes);
+            string expectedResult = Encoding.UTF8.GetString(resultBytes);
 
             var argsDictionary = new Dictionary<string, string>();
 
