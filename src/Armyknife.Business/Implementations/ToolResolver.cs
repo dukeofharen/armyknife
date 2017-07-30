@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Armyknife.Business.Implementations
 {
-    public class ToolResolver : IToolResolver
+    internal class ToolResolver : IToolResolver
     {
         private readonly IServiceProvider _serviceProvider;
 

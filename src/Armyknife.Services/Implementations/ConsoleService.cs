@@ -2,7 +2,7 @@
 
 namespace Armyknife.Services.Implementations
 {
-    public class ConsoleService : IConsoleService
+    internal class ConsoleService : IConsoleService
     {
         public void WriteLine(string text)
         {

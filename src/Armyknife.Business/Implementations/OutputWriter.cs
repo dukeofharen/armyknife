@@ -6,7 +6,7 @@ using Armyknife.Services;
 
 namespace Armyknife.Business.Implementations
 {
-    public class OutputWriter : IOutputWriter
+    internal class OutputWriter : IOutputWriter
     {
         private readonly IConsoleService _consoleService;
         private readonly IFileService _fileService;

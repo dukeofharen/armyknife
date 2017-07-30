@@ -4,7 +4,7 @@ using Armyknife.Models;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    public class Base64EncodeTool : ITool
+    internal class Base64EncodeTool : ITool
     {
         public string Name => "base64encode";
 

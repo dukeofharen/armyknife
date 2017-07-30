@@ -1,11 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Armyknife.Models;
 using Armyknife.Utilities;
 
 namespace Armyknife.Business.Implementations
 {
-    public class Executor : IExecutor
+    internal class Executor : IExecutor
     {
         private readonly IInputReader _inputReader;
         private readonly IOutputWriter _outputWriter;

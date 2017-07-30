@@ -5,7 +5,7 @@ using Armyknife.Services;
 
 namespace Armyknife.Business.Implementations
 {
-    public class InputReader : IInputReader
+    internal class InputReader : IInputReader
     {
         private readonly IFileService _fileService;
 
