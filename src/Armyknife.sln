@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife", "Armyknife\Armyknife.csproj", "{4B426F17-46A9-4236-9D93-9179EB878DCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife", "Armyknife\Armyknife.csproj", "{4B426F17-46A9-4236-9D93-9179EB878DCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Models", "Armyknife.Models\Armyknife.Models.csproj", "{BA77E60A-F3EC-40EA-951A-5DC68BFA74B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Services", "Armyknife.Services\Armyknife.Services.csproj", "{1E232CD7-78AF-452E-BC90-808FC285DEB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Business", "Armyknife.Business\Armyknife.Business.csproj", "{6578670E-7B60-4947-A9F7-E6D40DCC33BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Utilities", "Armyknife.Utilities\Armyknife.Utilities.csproj", "{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{4B426F17-46A9-4236-9D93-9179EB878DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B426F17-46A9-4236-9D93-9179EB878DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B426F17-46A9-4236-9D93-9179EB878DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA77E60A-F3EC-40EA-951A-5DC68BFA74B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA77E60A-F3EC-40EA-951A-5DC68BFA74B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA77E60A-F3EC-40EA-951A-5DC68BFA74B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA77E60A-F3EC-40EA-951A-5DC68BFA74B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E232CD7-78AF-452E-BC90-808FC285DEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E232CD7-78AF-452E-BC90-808FC285DEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E232CD7-78AF-452E-BC90-808FC285DEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E232CD7-78AF-452E-BC90-808FC285DEB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6578670E-7B60-4947-A9F7-E6D40DCC33BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6578670E-7B60-4947-A9F7-E6D40DCC33BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6578670E-7B60-4947-A9F7-E6D40DCC33BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6578670E-7B60-4947-A9F7-E6D40DCC33BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

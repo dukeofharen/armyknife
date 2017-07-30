@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Armyknife.Business;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Armyknife
 {
@@ -6,7 +7,12 @@ namespace Armyknife
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var serviceCollection = new ServiceCollection();
+            DependencyRegistration.RegisterDependencies(serviceCollection);
+            var provider = serviceCollection.BuildServiceProvider();
+
+            var executor = provider.GetService<IExecutor>();
+            executor.Execute(args);
         }
     }
 }
