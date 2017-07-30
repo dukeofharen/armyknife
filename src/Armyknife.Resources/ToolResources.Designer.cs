@@ -62,12 +62,26 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Decodes a piece of Base64 encoded text.
+        ///
+        ///Usage:
+        ///- base64decode ZGVjb2RlIHRoaXM=
+        ///- base64decode --input ZGVjb2RlIHRoaXM= --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- base64decode --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;.
+        /// </summary>
+        public static string Base64DecodeHelp {
+            get {
+                return ResourceManager.GetString("Base64DecodeHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encodes a piece of text or a file to a Base64 string.
         ///
         ///Usage:
         ///- base64encode encode this
         ///- base64encode --input encode this --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- base64Encode --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;.
+        ///- base64encode --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;.
         /// </summary>
         public static string Base64EncodeHelp {
             get {

@@ -8,18 +8,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Armyknife.Business.Tests.Tools.Implementations
 {
     [TestClass]
-    public class Base64EncodeToolFacts
+    public class Base64DecodeToolFacts
     {
-        private Base64EncodeTool _tool;
+        private Base64DecodeTool _tool;
 
         [TestInitialize]
         public void Initialize()
         {
-            _tool = new Base64EncodeTool();
+            _tool = new Base64DecodeTool();
         }
 
         [TestMethod]
-        public void Base64EncodeTool_Execute_NoInput_ShouldThrowArmyknifeException()
+        public void Base64DecodeTool_Execute_NoInput_ShouldThrowArmyknifeException()
         {
             // arrange
             var argsDictionary = new Dictionary<string, string>();
@@ -29,11 +29,11 @@ namespace Armyknife.Business.Tests.Tools.Implementations
         }
 
         [TestMethod]
-        public void Base64EncodeTool_Execute_HappyFlow()
+        public void Base64DecodeTool_Execute_HappyFlow()
         {
             // arrange
-            string input = "some basic input";
-            string expectedOutput = "c29tZSBiYXNpYyBpbnB1dA==";
+            string input = "c29tZSBiYXNpYyBpbnB1dA==";
+            string expectedOutput = "some basic input";
             var argsDictionary = new Dictionary<string, string>
             {
                 { Constants.InputKey, input }

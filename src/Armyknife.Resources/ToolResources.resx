@@ -117,13 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Base64DecodeHelp" xml:space="preserve">
+    <value>Decodes a piece of Base64 encoded text.
+
+Usage:
+- base64decode ZGVjb2RlIHRoaXM=
+- base64decode --input ZGVjb2RlIHRoaXM= --outputFile "C:\tmp\output.txt"
+- base64decode --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"</value>
+  </data>
   <data name="Base64EncodeHelp" xml:space="preserve">
     <value>Encodes a piece of text or a file to a Base64 string.
 
 Usage:
 - base64encode encode this
 - base64encode --input encode this --outputFile "C:\tmp\output.txt"
-- base64Encode --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"</value>
+- base64encode --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"</value>
   </data>
   <data name="GenericHelp" xml:space="preserve">
     <value>Use this program like this:
