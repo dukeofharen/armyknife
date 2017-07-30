@@ -28,6 +28,11 @@ namespace Armyknife
                 // TODO log this exception
                 throw;
             }
+
+#if DEBUG
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+#endif
         }
     }
 }
