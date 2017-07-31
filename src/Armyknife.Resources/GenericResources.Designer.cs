@@ -69,6 +69,7 @@ namespace Armyknife.Resources {
         ///- armyknife &lt;toolname&gt; help
         ///
         ///These tools are available:
+        ///
         ///{0}
         ///
         ///(c) 2017 Ducode.org - Armyknife version {1}.
