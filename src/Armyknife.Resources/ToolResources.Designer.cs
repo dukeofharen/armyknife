@@ -102,5 +102,31 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("Base64EncodeHelp", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encodes a piece of text to an MD5 hash..
+        /// </summary>
+        public static string Md5Description {
+            get {
+                return ResourceManager.GetString("Md5Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- md5 hash this
+        ///- md5 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- md5 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- md5 --input hash this --hmac secret-key
+        ///
+        ///Optional properties:
+        ///- hmac: the signature key for the MD5 hash
+        ///- outputType: how the string should be generated (should be &apos;hex&apos; or &apos;base64&apos;).
+        /// </summary>
+        public static string Md5Help {
+            get {
+                return ResourceManager.GetString("Md5Help", resourceCulture);
+            }
+        }
     }
 }

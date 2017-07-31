@@ -62,6 +62,15 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Output type &apos;{0}&apos; is not supported. Supported types: hex, base64..
+        /// </summary>
+        public static string Md5OutputTypeNotSupported {
+            get {
+                return ResourceManager.GetString("Md5OutputTypeNotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No arguments are passed..
         /// </summary>
         public static string NoArgs {
