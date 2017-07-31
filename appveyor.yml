@@ -1,0 +1,25 @@
+branches:
+  only:
+    - master
+    - dev
+
+build_script:
+  - cmd: scripts\build.ps1
+
+test_script:
+  - cmd: echo Tests already ran
+
+artifacts:
+  - path: src\Armyknife\bin\release\netcoreapp1.1\win10-x64\publish
+    name: armyknife-windows
+    type: zip
+
+deploy:
+  release: $(versionString)
+  provider: GitHub
+  auth_token:
+    secure: Zcoti9GsS4Y1t12qVcWhfDXMJLW8QLt4SdeQi8VKUFBtd/gVyWsZlLXDOHLP8i5U
+  artifact: /.*\.zip/
+  draft: true
+  on:
+branch: master
