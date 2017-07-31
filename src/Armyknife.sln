@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Business.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.TestUtilities", "Armyknife.TestUtilities\Armyknife.TestUtilities.csproj", "{4AAB0F27-968D-4203-B35E-1840D909EA63}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D60BC7-53AC-4CB8-B1C6-C0908B7C1C10}"
+	ProjectSection(SolutionItems) = preProject
+		..\scripts\build.ps1 = ..\scripts\build.ps1
+		..\scripts\functions.ps1 = ..\scripts\functions.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
