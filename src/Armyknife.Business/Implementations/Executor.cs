@@ -31,19 +31,14 @@ namespace Armyknife.Business.Implementations
 
         public void Execute(string[] args)
         {
-            if (args == null || args.Length == 0)
-            {
-                throw new ArmyknifeException(ExceptionResources.NoArgs);
-            }
-
-            var argsDictionary = args.Parse();
-            string toolName = args.FirstOrDefault();
-            if (toolName == Constants.HelpKey)
+            if (ShouldShowHelp(args))
             {
                 ShowGenericHelp();
             }
             else
             {
+                var argsDictionary = args.Parse();
+                string toolName = args.FirstOrDefault();
                 var tool = _toolResolver.ResolveTool(toolName);
                 if (tool == null)
                 {
@@ -96,6 +91,11 @@ namespace Armyknife.Business.Implementations
             builder.Append(Environment.NewLine);
             builder.Append(tool.HelpText);
             _consoleService.WriteLine(builder.ToString());
+        }
+
+        private static bool ShouldShowHelp(string[] args)
+        {
+            return args == null || args.Length == 0 || args.Length >= 1 && args[0] == Constants.HelpKey;
         }
     }
 }

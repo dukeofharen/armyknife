@@ -49,12 +49,15 @@ namespace Armyknife.Business.Tests.Implementations
             // arrange
             string[] args = null;
 
+            _consoleServiceMock
+                .Setup(m => m.WriteLine(It.IsAny<string>()));
+
             // act
-            var exception = Assert.ThrowsException<ArmyknifeException>(() => _executor.Execute(args));
+            _executor.Execute(args);
 
             // assert
-            Assert.IsNotNull(exception);
-            Assert.AreEqual(ExceptionResources.NoArgs, exception.Message);
+            _consoleServiceMock
+                .Verify(m => m.WriteLine(It.IsAny<string>()), Times.Once);
         }
 
         [TestMethod]
@@ -63,12 +66,15 @@ namespace Armyknife.Business.Tests.Implementations
             // arrange
             string[] args = new string[0];
 
+            _consoleServiceMock
+                .Setup(m => m.WriteLine(It.IsAny<string>()));
+
             // act
-            var exception = Assert.ThrowsException<ArmyknifeException>(() => _executor.Execute(args));
+            _executor.Execute(args);
 
             // assert
-            Assert.IsNotNull(exception);
-            Assert.AreEqual(ExceptionResources.NoArgs, exception.Message);
+            _consoleServiceMock
+                .Verify(m => m.WriteLine(It.IsAny<string>()), Times.Once);
         }
 
         [TestMethod]
