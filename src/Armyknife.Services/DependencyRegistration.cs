@@ -7,6 +7,7 @@ namespace Armyknife.Services
     {
         public static void RegisterDependencies(IServiceCollection serviceCollection)
         {
+            serviceCollection.AddTransient<IAssemblyService, AssemblyService>();
             serviceCollection.AddTransient<IConsoleService, ConsoleService>();
             serviceCollection.AddTransient<IFileService, FileService>();
         }

@@ -14,6 +14,7 @@ namespace Armyknife.Business.Tests.Implementations
     [TestClass]
     public class ExecutorFacts
     {
+        private Mock<IAssemblyService> _assemblyServiceMock;
         private Mock<IConsoleService> _consoleServiceMock;
         private Mock<IInputReader> _inputReaderMock;
         private Mock<IOutputWriter> _outputWriterMock;
@@ -23,11 +24,13 @@ namespace Armyknife.Business.Tests.Implementations
         [TestInitialize]
         public void Initialize()
         {
+            _assemblyServiceMock = new Mock<IAssemblyService>();
             _consoleServiceMock = new Mock<IConsoleService>();
             _inputReaderMock = new Mock<IInputReader>();
             _outputWriterMock = new Mock<IOutputWriter>();
             _toolResolverMock = new Mock<IToolResolver>();
             _executor = new Executor(
+                _assemblyServiceMock.Object,
                 _consoleServiceMock.Object,
                 _inputReaderMock.Object,
                 _outputWriterMock.Object,
@@ -37,6 +40,7 @@ namespace Armyknife.Business.Tests.Implementations
         [TestCleanup]
         public void Cleanup()
         {
+            _assemblyServiceMock.VerifyAll();
             _consoleServiceMock.VerifyAll();
             _inputReaderMock.VerifyAll();
             _outputWriterMock.VerifyAll();
@@ -44,7 +48,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_ArgsNull_ShouldThrowException()
+        public void Executor_Execute_ArgsNull_ShouldShowHelp()
         {
             // arrange
             string[] args = null;
@@ -52,16 +56,23 @@ namespace Armyknife.Business.Tests.Implementations
             _consoleServiceMock
                 .Setup(m => m.WriteLine(It.IsAny<string>()));
 
+            _assemblyServiceMock
+                .Setup(m => m.GetVersionNumber())
+                .Returns("1.0.0.0");
+
             // act
             _executor.Execute(args);
 
             // assert
             _consoleServiceMock
                 .Verify(m => m.WriteLine(It.IsAny<string>()), Times.Once);
+
+            _assemblyServiceMock
+                .Verify(m => m.GetVersionNumber(), Times.Once);
         }
 
         [TestMethod]
-        public void Executor_Execute_ArgsEmpty_ShouldThrowException()
+        public void Executor_Execute_ArgsEmpty_ShouldShowHelp()
         {
             // arrange
             string[] args = new string[0];
@@ -69,12 +80,19 @@ namespace Armyknife.Business.Tests.Implementations
             _consoleServiceMock
                 .Setup(m => m.WriteLine(It.IsAny<string>()));
 
+            _assemblyServiceMock
+                .Setup(m => m.GetVersionNumber())
+                .Returns("1.0.0.0");
+
             // act
             _executor.Execute(args);
 
             // assert
             _consoleServiceMock
                 .Verify(m => m.WriteLine(It.IsAny<string>()), Times.Once);
+
+            _assemblyServiceMock
+                .Verify(m => m.GetVersionNumber(), Times.Once);
         }
 
         [TestMethod]
@@ -86,12 +104,19 @@ namespace Armyknife.Business.Tests.Implementations
             _consoleServiceMock
                 .Setup(m => m.WriteLine(It.IsAny<string>()));
 
+            _assemblyServiceMock
+                .Setup(m => m.GetVersionNumber())
+                .Returns("1.0.0.0");
+
             // act
             _executor.Execute(args);
 
             // assert
             _consoleServiceMock
                 .Verify(m => m.WriteLine(It.IsAny<string>()), Times.Once);
+
+            _assemblyServiceMock
+                .Verify(m => m.GetVersionNumber(), Times.Once);
         }
 
         [TestMethod]

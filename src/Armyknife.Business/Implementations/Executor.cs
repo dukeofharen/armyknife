@@ -12,17 +12,20 @@ namespace Armyknife.Business.Implementations
 {
     internal class Executor : IExecutor
     {
+        private readonly IAssemblyService _assemblyService;
         private readonly IConsoleService _consoleService;
         private readonly IInputReader _inputReader;
         private readonly IOutputWriter _outputWriter;
         private readonly IToolResolver _toolResolver;
 
         public Executor(
+            IAssemblyService assemblyService,
             IConsoleService consoleService,
             IInputReader inputReader,
             IOutputWriter outputWriter,
             IToolResolver toolResolver)
         {
+            _assemblyService = assemblyService;
             _consoleService = consoleService;
             _inputReader = inputReader;
             _outputWriter = outputWriter;
@@ -80,8 +83,9 @@ namespace Armyknife.Business.Implementations
                 }
             }
 
+            string version = _assemblyService.GetVersionNumber();
 
-            _consoleService.WriteLine(string.Format(ToolResources.GenericHelp, builder));
+            _consoleService.WriteLine(string.Format(GenericResources.GenericHelp, builder, version));
         }
 
         private void ShowToolHelp(ITool tool)

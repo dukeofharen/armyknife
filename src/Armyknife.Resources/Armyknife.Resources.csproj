@@ -25,6 +25,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ExceptionResources.resx</DependentUpon>
     </Compile>
+    <Compile Update="GenericResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenericResources.resx</DependentUpon>
+    </Compile>
     <Compile Update="ToolResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -40,6 +45,10 @@
     <EmbeddedResource Update="ExceptionResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ExceptionResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="GenericResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GenericResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="ToolResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
