@@ -27,6 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D6
 	ProjectSection(SolutionItems) = preProject
 		..\scripts\build.ps1 = ..\scripts\build.ps1
 		..\scripts\functions.ps1 = ..\scripts\functions.ps1
+		..\scripts\patch_versions.ps1 = ..\scripts\patch_versions.ps1
 	EndProjectSection
 EndProject
 Global
