@@ -4,7 +4,7 @@ branches:
     - dev
 
 build_script:
-  - cmd: scripts\build.ps1
+  - ps: scripts\build.ps1
 
 test_script:
   - cmd: echo Tests already ran
