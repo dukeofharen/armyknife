@@ -4,6 +4,6 @@ namespace Armyknife.Business
 {
     public interface IOutputWriter
     {
-        void WriteOutput(byte[] result, IDictionary<string, string> argsDictionary);
+        void WriteOutput(string result, IDictionary<string, string> argsDictionary);
     }
 }

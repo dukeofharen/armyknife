@@ -245,7 +245,7 @@ namespace Armyknife.Business.Tests.Implementations
             string toolName = "testtool";
             string[] args = { toolName };
             string input = string.Empty;
-            byte[] output = { 1, 2, 3 };
+            string output = "123";
 
             var toolMock = new Mock<ITool>();
 

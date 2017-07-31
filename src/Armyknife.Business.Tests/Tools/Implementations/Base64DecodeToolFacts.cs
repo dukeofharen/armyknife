@@ -44,7 +44,7 @@ namespace Armyknife.Business.Tests.Tools.Implementations
 
             // assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(expectedOutput, Encoding.UTF8.GetString(result));
+            Assert.AreEqual(expectedOutput, result);
         }
     }
 }

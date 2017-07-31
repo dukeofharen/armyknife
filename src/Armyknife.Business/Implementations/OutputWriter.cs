@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Armyknife.Models;
 using Armyknife.Services;
 
@@ -20,9 +18,8 @@ namespace Armyknife.Business.Implementations
             _fileService = fileService;
         }
 
-        public void WriteOutput(byte[] result, IDictionary<string, string> argsDictionary)
+        public void WriteOutput(string result, IDictionary<string, string> argsDictionary)
         {
-            string resultText = Encoding.UTF8.GetString(result);
             if (argsDictionary.ContainsKey(Constants.FileOutputKey))
             {
                 string path = argsDictionary[Constants.FileOutputKey];
@@ -32,11 +29,11 @@ namespace Armyknife.Business.Implementations
                     path = Path.Combine(_consoleService.GetConsolePath(), path);
                 }
 
-                _fileService.WriteAllText(path, resultText);
+                _fileService.WriteAllText(path, result);
             }
             else
             {
-                _consoleService.WriteLine(resultText);
+                _consoleService.WriteLine(result);
             }
         }
     }

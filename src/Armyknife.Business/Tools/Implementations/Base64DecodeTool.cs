@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Armyknife.Exceptions;
 using Armyknife.Models;
 using Armyknife.Resources;
@@ -16,7 +17,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string HelpText => ToolResources.Base64DecodeHelp;
 
-        public byte[] Execute(IDictionary<string, string> args)
+        public string Execute(IDictionary<string, string> args)
         {
             if (!args.ContainsKey(Constants.InputKey))
             {
@@ -25,7 +26,7 @@ namespace Armyknife.Business.Tools.Implementations
 
             string input = args[Constants.InputKey];
 
-            return Convert.FromBase64String(input);
+            return Encoding.UTF8.GetString(Convert.FromBase64String(input));
         }
     }
 }

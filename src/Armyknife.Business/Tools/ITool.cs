@@ -12,6 +12,6 @@ namespace Armyknife.Business.Tools
 
         string HelpText { get; }
 
-        byte[] Execute(IDictionary<string, string> args);
+        string Execute(IDictionary<string, string> args);
     }
 }

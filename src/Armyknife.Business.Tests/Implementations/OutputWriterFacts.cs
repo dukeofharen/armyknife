@@ -40,8 +40,7 @@ namespace Armyknife.Business.Tests.Implementations
             string path = "output.txt";
             string workingDirectory = @"C:\tmp";
             string expectedPath = $@"{workingDirectory}\{path}";
-            byte[] resultBytes = { 1, 2, 3 };
-            string expectedResult = Encoding.UTF8.GetString(resultBytes);
+            string expectedResult = "123";
 
             var argsDictionary = new Dictionary<string, string>
             {
@@ -56,7 +55,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Setup(m => m.WriteAllText(expectedPath, expectedResult));
 
             // act
-            _writer.WriteOutput(resultBytes, argsDictionary);
+            _writer.WriteOutput(expectedResult, argsDictionary);
 
             // assert
             _consoleServiceMock
@@ -71,8 +70,7 @@ namespace Armyknife.Business.Tests.Implementations
         {
             // arrange
             string path = @"C:\tmp\output.txt";
-            byte[] resultBytes = { 1, 2, 3 };
-            string expectedResult = Encoding.UTF8.GetString(resultBytes);
+            string expectedResult = "123";
 
             var argsDictionary = new Dictionary<string, string>
             {
@@ -83,7 +81,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Setup(m => m.WriteAllText(path, expectedResult));
 
             // act
-            _writer.WriteOutput(resultBytes, argsDictionary);
+            _writer.WriteOutput(expectedResult, argsDictionary);
 
             // assert
             _consoleServiceMock
@@ -98,8 +96,7 @@ namespace Armyknife.Business.Tests.Implementations
         {
             // arrange
             string path = "/var/output.txt";
-            byte[] resultBytes = { 1, 2, 3 };
-            string expectedResult = Encoding.UTF8.GetString(resultBytes);
+            string expectedResult = "123";
 
             var argsDictionary = new Dictionary<string, string>
             {
@@ -110,7 +107,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Setup(m => m.WriteAllText(path, expectedResult));
 
             // act
-            _writer.WriteOutput(resultBytes, argsDictionary);
+            _writer.WriteOutput(expectedResult, argsDictionary);
 
             // assert
             _consoleServiceMock
@@ -124,13 +121,12 @@ namespace Armyknife.Business.Tests.Implementations
         public void OutputWriter_OutputToConsole()
         {
             // arrange
-            byte[] resultBytes = { 1, 2, 3 };
-            string expectedResult = Encoding.UTF8.GetString(resultBytes);
+            string expectedResult = "123";
 
             var argsDictionary = new Dictionary<string, string>();
 
             // act
-            _writer.WriteOutput(resultBytes, argsDictionary);
+            _writer.WriteOutput(expectedResult, argsDictionary);
 
             // assert
             _consoleServiceMock

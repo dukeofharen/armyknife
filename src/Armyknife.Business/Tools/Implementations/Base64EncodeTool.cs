@@ -17,7 +17,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string HelpText => ToolResources.Base64EncodeHelp;
 
-        public byte[] Execute(IDictionary<string, string> args)
+        public string Execute(IDictionary<string, string> args)
         {
             if (!args.ContainsKey(Constants.InputKey))
             {
@@ -26,7 +26,7 @@ namespace Armyknife.Business.Tools.Implementations
 
             string input = args[Constants.InputKey];
 
-            return Encoding.UTF8.GetBytes(Convert.ToBase64String(Encoding.UTF8.GetBytes(input)));
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(input));
         }
     }
 }
