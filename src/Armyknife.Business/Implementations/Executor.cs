@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Text;
+using Armyknife.Business.Tools;
 using Armyknife.Exceptions;
 using Armyknife.Models;
 using Armyknife.Resources;
@@ -50,7 +52,7 @@ namespace Armyknife.Business.Implementations
 
                 if (args.Length >= 2 && args[1] == Constants.HelpKey)
                 {
-                    _consoleService.WriteLine(tool.HelpText);
+                    ShowToolHelp(tool);
                 }
                 else
                 {
@@ -77,6 +79,15 @@ namespace Armyknife.Business.Implementations
             }
 
             _consoleService.WriteLine(string.Format(ToolResources.GenericHelp, builder));
+        }
+
+        private void ShowToolHelp(ITool tool)
+        {
+            var builder = new StringBuilder();
+            builder.Append(tool.Description);
+            builder.Append(Environment.NewLine);
+            builder.Append(tool.HelpText);
+            _consoleService.WriteLine(builder.ToString());
         }
     }
 }

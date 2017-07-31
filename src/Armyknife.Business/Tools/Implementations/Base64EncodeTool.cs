@@ -11,6 +11,10 @@ namespace Armyknife.Business.Tools.Implementations
     {
         public string Name => "base64encode";
 
+        public string Description => ToolResources.Base64EncodeDescription;
+
+        public string Category => CategoryResources.TextCategory;
+
         public string HelpText => ToolResources.Base64EncodeHelp;
 
         public byte[] Execute(IDictionary<string, string> args)

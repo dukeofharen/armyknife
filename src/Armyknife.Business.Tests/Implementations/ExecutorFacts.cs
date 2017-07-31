@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Armyknife.Business.Implementations;
 using Armyknife.Business.Tools;
 using Armyknife.Exceptions;
@@ -114,6 +115,8 @@ namespace Armyknife.Business.Tests.Implementations
             string toolName = "testtool";
             string[] args = { toolName, Constants.HelpKey };
             string helpText = "this is the tool help text";
+            string descriptionText = "this is the description";
+            string expectedText = $"{descriptionText}{Environment.NewLine}{helpText}";
 
             var toolMock = new Mock<ITool>();
 
@@ -121,19 +124,23 @@ namespace Armyknife.Business.Tests.Implementations
                 .Setup(m => m.HelpText)
                 .Returns(helpText);
 
+            toolMock
+                .Setup(m => m.Description)
+                .Returns(descriptionText);
+
             _toolResolverMock
                 .Setup(m => m.ResolveTool(toolName))
                 .Returns(toolMock.Object);
 
             _consoleServiceMock
-                .Setup(m => m.WriteLine(helpText));
+                .Setup(m => m.WriteLine(expectedText));
 
             // act
             _executor.Execute(args);
 
             // assert
             _consoleServiceMock
-                .Verify(m => m.WriteLine(helpText), Times.Once);
+                .Verify(m => m.WriteLine(expectedText), Times.Once);
         }
 
         [TestMethod]

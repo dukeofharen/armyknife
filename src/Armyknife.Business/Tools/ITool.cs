@@ -6,6 +6,10 @@ namespace Armyknife.Business.Tools
     {
         string Name { get; }
 
+        string Description { get; }
+
+        string Category { get; }
+
         string HelpText { get; }
 
         byte[] Execute(IDictionary<string, string> args);

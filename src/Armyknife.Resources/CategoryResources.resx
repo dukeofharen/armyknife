@@ -117,32 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Base64DecodeDescription" xml:space="preserve">
-    <value>Decodes a piece of Base64 encoded text.</value>
-  </data>
-  <data name="Base64DecodeHelp" xml:space="preserve">
-    <value>Usage:
-- base64decode ZGVjb2RlIHRoaXM=
-- base64decode --input ZGVjb2RlIHRoaXM= --outputFile "C:\tmp\output.txt"
-- base64decode --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"</value>
-  </data>
-  <data name="Base64EncodeDescription" xml:space="preserve">
-    <value>Encodes a piece of text or a file to a Base64 string.</value>
-  </data>
-  <data name="Base64EncodeHelp" xml:space="preserve">
-    <value>Usage:
-- base64encode encode this
-- base64encode --input encode this --outputFile "C:\tmp\output.txt"
-- base64encode --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"</value>
-  </data>
-  <data name="GenericHelp" xml:space="preserve">
-    <value>Use this program like this:
-- armyknife &lt;toolname&gt; &lt;arguments&gt;
-
-Use this command to show the help page of a specific tool:
-- armyknife &lt;toolname&gt; help
-
-These tools are available:
-{0}</value>
+  <data name="TextCategory" xml:space="preserve">
+    <value>Text tools</value>
   </data>
 </root>

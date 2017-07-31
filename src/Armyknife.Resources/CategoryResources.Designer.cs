@@ -23,14 +23,14 @@ namespace Armyknife.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class ToolResources {
+    public class CategoryResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ToolResources() {
+        internal CategoryResources() {
         }
         
         /// <summary>
@@ -40,7 +40,7 @@ namespace Armyknife.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Armyknife.Resources.ToolResources", typeof(ToolResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Armyknife.Resources.CategoryResources", typeof(CategoryResources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -62,60 +62,11 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Decodes a piece of Base64 encoded text..
+        ///   Looks up a localized string similar to Text tools.
         /// </summary>
-        public static string Base64DecodeDescription {
+        public static string TextCategory {
             get {
-                return ResourceManager.GetString("Base64DecodeDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Usage:
-        ///- base64decode ZGVjb2RlIHRoaXM=
-        ///- base64decode --input ZGVjb2RlIHRoaXM= --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- base64decode --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;.
-        /// </summary>
-        public static string Base64DecodeHelp {
-            get {
-                return ResourceManager.GetString("Base64DecodeHelp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Encodes a piece of text or a file to a Base64 string..
-        /// </summary>
-        public static string Base64EncodeDescription {
-            get {
-                return ResourceManager.GetString("Base64EncodeDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Usage:
-        ///- base64encode encode this
-        ///- base64encode --input encode this --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- base64encode --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;.
-        /// </summary>
-        public static string Base64EncodeHelp {
-            get {
-                return ResourceManager.GetString("Base64EncodeHelp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use this program like this:
-        ///- armyknife &lt;toolname&gt; &lt;arguments&gt;
-        ///
-        ///Use this command to show the help page of a specific tool:
-        ///- armyknife &lt;toolname&gt; help
-        ///
-        ///These tools are available:
-        ///{0}.
-        /// </summary>
-        public static string GenericHelp {
-            get {
-                return ResourceManager.GetString("GenericHelp", resourceCulture);
+                return ResourceManager.GetString("TextCategory", resourceCulture);
             }
         }
     }
