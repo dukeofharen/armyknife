@@ -1,8 +1,8 @@
-. ".\functions.ps1"
-
 $rootFolder = Join-Path -Path $PSScriptRoot ".."
 $srcFolder = Join-Path -Path $rootFolder "src"
 $mainProjectFile = Join-Path $srcFolder "Armyknife\Armyknife.csproj"
+
+. "$PSScriptRoot\functions.ps1"
 
 # Remove all bin and obj folders
 Write-Host "Cleaning the solution"
