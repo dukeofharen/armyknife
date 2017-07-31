@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Armyknife.Business.Tools;
+using Armyknife.Models;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Armyknife.Business.Implementations
@@ -22,11 +23,17 @@ namespace Armyknife.Business.Implementations
                 .FirstOrDefault(t => t.Name == name);
         }
 
-        public IEnumerable<string> GetToolNames()
+        public IEnumerable<ToolMetaDataModel> GetToolMetData()
         {
             return _serviceProvider
                 .GetServices<ITool>()
-                .Select(t => t.Name);
+                .Select(t => new ToolMetaDataModel
+                {
+                    Key = t.Name,
+                    Category = t.Category,
+                    HelpText = t.HelpText,
+                    ShortDescription = t.Description
+                });
         }
     }
 }

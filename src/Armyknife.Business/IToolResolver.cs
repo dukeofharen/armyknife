@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Armyknife.Business.Tools;
+using Armyknife.Models;
 
 namespace Armyknife.Business
 {
@@ -7,6 +8,6 @@ namespace Armyknife.Business
     {
         ITool ResolveTool(string name);
 
-        IEnumerable<string> GetToolNames();
+        IEnumerable<ToolMetaDataModel> GetToolMetData();
     }
 }

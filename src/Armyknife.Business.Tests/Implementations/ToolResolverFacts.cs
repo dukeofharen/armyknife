@@ -26,11 +26,29 @@ namespace Armyknife.Business.Tests.Implementations
             tool1
                 .Setup(m => m.Name)
                 .Returns("tool1");
+            tool1
+                .Setup(m => m.Category)
+                .Returns("category1");
+            tool1
+                .Setup(m => m.Description)
+                .Returns("description1");
+            tool1
+                .Setup(m => m.HelpText)
+                .Returns("help1");
 
             var tool2 = new Mock<ITool>();
             tool2
                 .Setup(m => m.Name)
                 .Returns("tool2");
+            tool2
+                .Setup(m => m.Category)
+                .Returns("category2");
+            tool2
+                .Setup(m => m.Description)
+                .Returns("description2");
+            tool2
+                .Setup(m => m.HelpText)
+                .Returns("help2");
 
             _tools = new[]
             {
@@ -66,16 +84,24 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void ToolResolver_GetToolNames_HappyFlow()
+        public void ToolResolver_GetToolMetData_HappyFlow()
         {
             // act
-            var names = _resolver.GetToolNames().ToArray();
+            var result = _resolver.GetToolMetData().ToArray();
 
             // assert
-            Assert.IsNotNull(names);
-            Assert.AreEqual(_tools.Length, names.Length);
-            Assert.AreEqual(_tools[0].Name, names[0]);
-            Assert.AreEqual(_tools[1].Name, names[1]);
+            Assert.IsNotNull(result);
+            Assert.AreEqual(_tools.Length, result.Length);
+
+            Assert.AreEqual("tool1", result[0].Key);
+            Assert.AreEqual("category1", result[0].Category);
+            Assert.AreEqual("description1", result[0].ShortDescription);
+            Assert.AreEqual("help1", result[0].HelpText);
+
+            Assert.AreEqual("tool2", result[1].Key);
+            Assert.AreEqual("category2", result[1].Category);
+            Assert.AreEqual("description2", result[1].ShortDescription);
+            Assert.AreEqual("help2", result[1].HelpText);
         }
     }
 }

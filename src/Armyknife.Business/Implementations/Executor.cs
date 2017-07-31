@@ -72,11 +72,19 @@ namespace Armyknife.Business.Implementations
         private void ShowGenericHelp()
         {
             var builder = new StringBuilder();
-            var toolNames = _toolResolver.GetToolNames();
-            foreach (string toolName in toolNames)
+            var tools = _toolResolver.GetToolMetData();
+            var toolCategoryGroups = tools
+                .GroupBy(t => t.Category, t => t);
+
+            foreach (var group in toolCategoryGroups)
             {
-                builder.AppendLine($"- {toolName}");
+                builder.AppendLine(group.Key);
+                foreach (var tool in group)
+                {
+                    builder.AppendLine($"- {tool.Key}: {tool.ShortDescription}");
+                }
             }
+
 
             _consoleService.WriteLine(string.Format(ToolResources.GenericHelp, builder));
         }

@@ -14,4 +14,8 @@
     <TreatSpecificWarningsAsErrors />
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Armyknife.Models\Armyknife.Models.csproj" />
+  </ItemGroup>
+
 </Project>
