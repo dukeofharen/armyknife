@@ -1,32 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife", "Armyknife\Armyknife.csproj", "{4B426F17-46A9-4236-9D93-9179EB878DCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Models", "Armyknife.Models\Armyknife.Models.csproj", "{BA77E60A-F3EC-40EA-951A-5DC68BFA74B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Models", "Armyknife.Models\Armyknife.Models.csproj", "{BA77E60A-F3EC-40EA-951A-5DC68BFA74B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Services", "Armyknife.Services\Armyknife.Services.csproj", "{1E232CD7-78AF-452E-BC90-808FC285DEB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Services", "Armyknife.Services\Armyknife.Services.csproj", "{1E232CD7-78AF-452E-BC90-808FC285DEB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Business", "Armyknife.Business\Armyknife.Business.csproj", "{6578670E-7B60-4947-A9F7-E6D40DCC33BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Business", "Armyknife.Business\Armyknife.Business.csproj", "{6578670E-7B60-4947-A9F7-E6D40DCC33BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Utilities", "Armyknife.Utilities\Armyknife.Utilities.csproj", "{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Utilities", "Armyknife.Utilities\Armyknife.Utilities.csproj", "{F549ACEA-547D-4107-AAE2-AB3614AB1F2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Exceptions", "Armyknife.Exceptions\Armyknife.Exceptions.csproj", "{0898F07A-B081-4EBC-A147-577DEE9808AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Exceptions", "Armyknife.Exceptions\Armyknife.Exceptions.csproj", "{0898F07A-B081-4EBC-A147-577DEE9808AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Resources", "Armyknife.Resources\Armyknife.Resources.csproj", "{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Resources", "Armyknife.Resources\Armyknife.Resources.csproj", "{280B35D3-F0B2-43F7-8D22-7C80DED7C53E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B9E7EE41-ACF3-47E8-A781-25049C8D61C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Business.Tests", "Armyknife.Business.Tests\Armyknife.Business.Tests.csproj", "{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Business.Tests", "Armyknife.Business.Tests\Armyknife.Business.Tests.csproj", "{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.TestUtilities", "Armyknife.TestUtilities\Armyknife.TestUtilities.csproj", "{4AAB0F27-968D-4203-B35E-1840D909EA63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.TestUtilities", "Armyknife.TestUtilities\Armyknife.TestUtilities.csproj", "{4AAB0F27-968D-4203-B35E-1840D909EA63}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D60BC7-53AC-4CB8-B1C6-C0908B7C1C10}"
 	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
 		..\scripts\build.ps1 = ..\scripts\build.ps1
 		..\scripts\functions.ps1 = ..\scripts\functions.ps1
+		..\scripts\local_build.bat = ..\scripts\local_build.bat
 		..\scripts\patch_versions.ps1 = ..\scripts\patch_versions.ps1
 	EndProjectSection
 EndProject
@@ -79,5 +81,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
 		{4AAB0F27-968D-4203-B35E-1840D909EA63} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D65628E-0306-4433-BE5E-3BAD3E60D22C}
 	EndGlobalSection
 EndGlobal
