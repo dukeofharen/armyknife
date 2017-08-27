@@ -25,7 +25,7 @@ test_script:
   - cmd: echo Tests already ran
 
 artifacts:
-  - path: src\Armyknife\bin\release\netcoreapp1.1\win10-x64\publish
+  - path: src\Armyknife\bin\release\netcoreapp2.0\win10-x64\publish
     name: armyknife-windows
     type: zip
 
