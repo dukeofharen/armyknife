@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="FromMimeNoResult" xml:space="preserve">
+    <value>No MIME type found for MIME type '{0}'.</value>
+  </data>
   <data name="Md5OutputTypeNotSupported" xml:space="preserve">
     <value>Output type '{0}' is not supported. Supported types: hex, base64.</value>
   </data>

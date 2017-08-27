@@ -61,6 +61,15 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No MIME type found for MIME type &apos;{0}&apos;..
+        /// </summary>
+        public static string FromMimeNoResult {
+            get {
+                return ResourceManager.GetString("FromMimeNoResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Output type &apos;{0}&apos; is not supported. Supported types: hex, base64..
         /// </summary>
         public static string Md5OutputTypeNotSupported {

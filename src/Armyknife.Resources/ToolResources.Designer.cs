@@ -103,6 +103,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checks a given MIME type and finds all corresponding file extensions..
+        /// </summary>
+        public static string FromMimeDescription {
+            get {
+                return ResourceManager.GetString("FromMimeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- frommime text/plain.
+        /// </summary>
+        public static string FromMimeHelp {
+            get {
+                return ResourceManager.GetString("FromMimeHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encodes a piece of text to an MD5 hash..
         /// </summary>
         public static string Md5Description {
