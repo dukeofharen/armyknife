@@ -123,6 +123,9 @@
   <data name="NoArgs" xml:space="preserve">
     <value>No arguments are passed.</value>
   </data>
+  <data name="NoInput" xml:space="preserve">
+    <value>No input provided.</value>
+  </data>
   <data name="NoToolFoundMessage" xml:space="preserve">
     <value>No tool found with name '{0}'. Type 'help' to view some information about Armyknife.</value>
   </data>

@@ -21,7 +21,7 @@ namespace Armyknife.Business.Tools.Implementations
         {
             if (!args.ContainsKey(Constants.InputKey))
             {
-                throw new ArmyknifeException("No input provided.");
+                throw new ArmyknifeException(ExceptionResources.NoInput);
             }
 
             string input = args[Constants.InputKey];

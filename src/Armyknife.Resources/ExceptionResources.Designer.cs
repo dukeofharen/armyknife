@@ -80,6 +80,15 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No input provided..
+        /// </summary>
+        public static string NoInput {
+            get {
+                return ResourceManager.GetString("NoInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No tool found with name &apos;{0}&apos;. Type &apos;help&apos; to view some information about Armyknife..
         /// </summary>
         public static string NoToolFoundMessage {

@@ -25,7 +25,7 @@ namespace Armyknife.Business.Tools.Implementations
         {
             if (!args.ContainsKey(Constants.InputKey))
             {
-                throw new ArmyknifeException("No input provided.");
+                throw new ArmyknifeException(ExceptionResources.NoInput);
             }
 
             string input = args[Constants.InputKey];
@@ -53,8 +53,9 @@ namespace Armyknife.Business.Tools.Implementations
                 }
             }
 
-            string outputType = GetOutputType(args);
+            
             string result;
+            string outputType = GetOutputType(args);
             switch (outputType)
             {
                 case "hex":
