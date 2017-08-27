@@ -113,5 +113,14 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("Sha256OutputTypeNotSupported", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output type &apos;{0}&apos; is not supported. Supported types: hex, base64..
+        /// </summary>
+        public static string Sha384OutputTypeNotSupported {
+            get {
+                return ResourceManager.GetString("Sha384OutputTypeNotSupported", resourceCulture);
+            }
+        }
     }
 }
