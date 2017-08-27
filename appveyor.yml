@@ -1,5 +1,6 @@
 before_build:
   - cmd: dotnet --version
+  - ps:  Get-ChildItem -Path "C:\Program Files\dotnet\sdk"
   - ps: scripts\patch_versions.ps1
 
 branches:
