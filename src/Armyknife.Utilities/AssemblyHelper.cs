@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 
 namespace Armyknife.Utilities
 {
@@ -9,16 +8,13 @@ namespace Armyknife.Utilities
     {
         public static IEnumerable<Type> GetImplementations<TInterface>()
         {
-            var entryAssembly = Assembly.GetEntryAssembly();
-            var assemblyNames = entryAssembly.GetReferencedAssemblies();
+            var types = AppDomain.CurrentDomain
+                .GetAssemblies()
+                .SelectMany(s => s.GetTypes())
+                .Where(p => (typeof(TInterface).IsAssignableFrom(p)) && !p.IsInterface && !p.IsAbstract)
+                .ToArray();
 
-            var result = assemblyNames
-                .Select(Assembly.Load)
-                .SelectMany(a => a.DefinedTypes)
-                .Where(a => a.ImplementedInterfaces.Contains(typeof(TInterface)))
-                .Select(ti => ti.AsType());
-
-            return result;
+            return types;
         }
     }
 }

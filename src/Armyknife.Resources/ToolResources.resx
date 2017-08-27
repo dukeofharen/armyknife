@@ -205,4 +205,12 @@ Optional properties:
 - hmac: the signature key for the SHA512 hash
 - outputType: how the string should be generated (should be 'hex' or 'base64')</value>
   </data>
+  <data name="ToMimeDescription" xml:space="preserve">
+    <value>Converts a given file extension or file name to the corresponding MIME type.</value>
+  </data>
+  <data name="ToMimeHelp" xml:space="preserve">
+    <value>Usage:
+- tomime txt
+- tomime filename.txt</value>
+  </data>
 </root>

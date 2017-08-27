@@ -231,5 +231,25 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("Sha512Help", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Converts a given file extension or file name to the corresponding MIME type..
+        /// </summary>
+        public static string ToMimeDescription {
+            get {
+                return ResourceManager.GetString("ToMimeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- tomime txt
+        ///- tomime filename.txt.
+        /// </summary>
+        public static string ToMimeHelp {
+            get {
+                return ResourceManager.GetString("ToMimeHelp", resourceCulture);
+            }
+        }
     }
 }

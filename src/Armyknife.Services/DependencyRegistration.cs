@@ -10,6 +10,7 @@ namespace Armyknife.Services
             serviceCollection.AddTransient<IAssemblyService, AssemblyService>();
             serviceCollection.AddTransient<IConsoleService, ConsoleService>();
             serviceCollection.AddTransient<IFileService, FileService>();
+            serviceCollection.AddTransient<IMimeService, MimeService>();
         }
     }
 }
