@@ -205,5 +205,31 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("Sha384Help", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encodes a piece of text to a SHA512 hash..
+        /// </summary>
+        public static string Sha512Description {
+            get {
+                return ResourceManager.GetString("Sha512Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- sha512 hash this
+        ///- sha512 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha512 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha512 --input hash this --hmac secret-key
+        ///
+        ///Optional properties:
+        ///- hmac: the signature key for the SHA512 hash
+        ///- outputType: how the string should be generated (should be &apos;hex&apos; or &apos;base64&apos;).
+        /// </summary>
+        public static string Sha512Help {
+            get {
+                return ResourceManager.GetString("Sha512Help", resourceCulture);
+            }
+        }
     }
 }
