@@ -1,24 +1,24 @@
-﻿using System.Collections.Generic;
-using Armyknife.Business.Tools.Implementations;
+﻿using Armyknife.Business.Tools.Implementations;
 using Armyknife.Exceptions;
 using Armyknife.Resources;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace Armyknife.Business.Tests.Tools.Implementations
 {
     [TestClass]
-    public class Md5ToolFacts
+    public class Sha1ToolFacts
     {
-        private Md5Tool _tool;
+        private Sha1Tool _tool;
 
         [TestInitialize]
         public void Initialize()
         {
-            _tool = new Md5Tool();
+            _tool = new Sha1Tool();
         }
 
         [TestMethod]
-        public void Md5Tool_Execute_NoInput_ShouldThrowException()
+        public void Sha1Tool_Execute_NoInput_ShouldThrowException()
         {
             // arrange
             var args = new Dictionary<string, string>();
@@ -31,7 +31,7 @@ namespace Armyknife.Business.Tests.Tools.Implementations
         }
 
         [TestMethod]
-        public void Md5Tool_Execute_WrongOutputType_ShouldThrowException()
+        public void Sha1Tool_Execute_WrongOutputType_ShouldThrowException()
         {
             // arrange
             var args = new Dictionary<string, string>
@@ -44,15 +44,15 @@ namespace Armyknife.Business.Tests.Tools.Implementations
             var exception = Assert.ThrowsException<ArmyknifeException>(() => _tool.Execute(args));
 
             // assert
-            Assert.AreEqual(string.Format(ExceptionResources.Md5OutputTypeNotSupported, args["outputType"]), exception.Message);
+            Assert.AreEqual(string.Format(ExceptionResources.Sha1OutputTypeNotSupported, args["outputType"]), exception.Message);
         }
 
         [TestMethod]
-        public void Md5Tool_Execute_NoOutputType_ShouldDefaultToHex()
+        public void Sha1Tool_Execute_NoOutputType_ShouldDefaultToHex()
         {
             // arrange
             string input = "this is the input";
-            string expectedOutput = "e4397781321a09219dedfc612bb1bc23";
+            string expectedOutput = "828908f1a601a156b29b61fc3dde9bf8c2b49eb7";
             var args = new Dictionary<string, string>
             {
                 { "input", input }
@@ -66,11 +66,11 @@ namespace Armyknife.Business.Tests.Tools.Implementations
         }
 
         [TestMethod]
-        public void Md5Tool_Execute_Hex_NoHmac()
+        public void Sha1Tool_Execute_Hex_NoHmac()
         {
             // arrange
             string input = "this is the input";
-            string expectedOutput = "e4397781321a09219dedfc612bb1bc23";
+            string expectedOutput = "828908f1a601a156b29b61fc3dde9bf8c2b49eb7";
             var args = new Dictionary<string, string>
             {
                 { "input", input },
@@ -85,11 +85,11 @@ namespace Armyknife.Business.Tests.Tools.Implementations
         }
 
         [TestMethod]
-        public void Md5Tool_Execute_Base64_NoHmac()
+        public void Sha1Tool_Execute_Base64_NoHmac()
         {
             // arrange
             string input = "this is the input";
-            string expectedOutput = "5Dl3gTIaCSGd7fxhK7G8Iw==";
+            string expectedOutput = "gokI8aYBoVaym2H8Pd6b+MK0nrc=";
             var args = new Dictionary<string, string>
             {
                 { "input", input },
@@ -104,11 +104,11 @@ namespace Armyknife.Business.Tests.Tools.Implementations
         }
 
         [TestMethod]
-        public void Md5Tool_Execute_Hex_Hmac()
+        public void Sha1Tool_Execute_Hex_Hmac()
         {
             // arrange
             string input = "this is the input";
-            string expectedOutput = "e8eee6ca82b52e0cbbe264ac385bc3e8";
+            string expectedOutput = "e3e43561b7308f86a87f2185d87a45068fb9b982";
             string hmac = "secret key";
             var args = new Dictionary<string, string>
             {
@@ -125,11 +125,11 @@ namespace Armyknife.Business.Tests.Tools.Implementations
         }
 
         [TestMethod]
-        public void Md5Tool_Execute_Base64_Hmac()
+        public void Sha1Tool_Execute_Base64_Hmac()
         {
             // arrange
             string input = "this is the input";
-            string expectedOutput = "6O7myoK1Lgy74mSsOFvD6A==";
+            string expectedOutput = "4+Q1Ybcwj4aofyGF2HpFBo+5uYI=";
             string hmac = "secret key";
             var args = new Dictionary<string, string>
             {

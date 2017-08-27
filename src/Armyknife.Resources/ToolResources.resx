@@ -149,4 +149,18 @@ Optional properties:
 - hmac: the signature key for the MD5 hash
 - outputType: how the string should be generated (should be 'hex' or 'base64')</value>
   </data>
+  <data name="Sha1Description" xml:space="preserve">
+    <value>Encodes a piece of text to a SHA1 hash.</value>
+  </data>
+  <data name="Sha1Help" xml:space="preserve">
+    <value>Usage:
+- sha1 hash this
+- sha1 --input hash this --outputFile "C:\tmp\output.txt"
+- sha1 --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"
+- sha1 --input hash this --hmac secret-key
+
+Optional properties:
+- hmac: the signature key for the MD5 hash
+- outputType: how the string should be generated (should be 'hex' or 'base64')</value>
+  </data>
 </root>

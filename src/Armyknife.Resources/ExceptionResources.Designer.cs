@@ -10,7 +10,6 @@
 
 namespace Armyknife.Resources {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
@@ -20,7 +19,7 @@ namespace Armyknife.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ExceptionResources {
@@ -40,7 +39,7 @@ namespace Armyknife.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Armyknife.Resources.ExceptionResources", typeof(ExceptionResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Armyknife.Resources.ExceptionResources", typeof(ExceptionResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -94,6 +93,15 @@ namespace Armyknife.Resources {
         public static string NoToolFoundMessage {
             get {
                 return ResourceManager.GetString("NoToolFoundMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output type &apos;{0}&apos; is not supported. Supported types: hex, base64..
+        /// </summary>
+        public static string Sha1OutputTypeNotSupported {
+            get {
+                return ResourceManager.GetString("Sha1OutputTypeNotSupported", resourceCulture);
             }
         }
     }

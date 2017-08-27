@@ -10,7 +10,6 @@
 
 namespace Armyknife.Resources {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
@@ -20,7 +19,7 @@ namespace Armyknife.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class ToolResources {
@@ -40,7 +39,7 @@ namespace Armyknife.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Armyknife.Resources.ToolResources", typeof(ToolResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Armyknife.Resources.ToolResources", typeof(ToolResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -126,6 +125,32 @@ namespace Armyknife.Resources {
         public static string Md5Help {
             get {
                 return ResourceManager.GetString("Md5Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encodes a piece of text to a SHA1 hash..
+        /// </summary>
+        public static string Sha1Description {
+            get {
+                return ResourceManager.GetString("Sha1Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- sha1 hash this
+        ///- sha1 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha1 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha1 --input hash this --hmac secret-key
+        ///
+        ///Optional properties:
+        ///- hmac: the signature key for the MD5 hash
+        ///- outputType: how the string should be generated (should be &apos;hex&apos; or &apos;base64&apos;).
+        /// </summary>
+        public static string Sha1Help {
+            get {
+                return ResourceManager.GetString("Sha1Help", resourceCulture);
             }
         }
     }

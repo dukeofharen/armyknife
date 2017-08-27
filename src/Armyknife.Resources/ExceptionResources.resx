@@ -129,4 +129,7 @@
   <data name="NoToolFoundMessage" xml:space="preserve">
     <value>No tool found with name '{0}'. Type 'help' to view some information about Armyknife.</value>
   </data>
+  <data name="Sha1OutputTypeNotSupported" xml:space="preserve">
+    <value>Output type '{0}' is not supported. Supported types: hex, base64.</value>
+  </data>
 </root>

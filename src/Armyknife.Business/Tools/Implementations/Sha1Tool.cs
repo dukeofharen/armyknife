@@ -1,25 +1,25 @@
-﻿using System;
+﻿using Armyknife.Exceptions;
+using Armyknife.Models;
+using Armyknife.Resources;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
-using Armyknife.Exceptions;
-using Armyknife.Resources;
-using Armyknife.Models;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    public class Md5Tool : ITool
+    public class Sha1Tool : ITool
     {
         private const string OutputTypeKey = "outputType";
         private const string HmacKey = "hmac";
 
-        public string Name => "md5";
+        public string Name => "sha1";
 
-        public string Description => ToolResources.Md5Description;
+        public string Description => ToolResources.Sha1Description;
 
         public string Category => CategoryResources.TextCategory;
 
-        public string HelpText => ToolResources.Md5Description;
+        public string HelpText => ToolResources.Sha1Description;
 
         public string Execute(IDictionary<string, string> args)
         {
@@ -39,21 +39,21 @@ namespace Armyknife.Business.Tools.Implementations
             byte[] hash;
             if (string.IsNullOrWhiteSpace(hmac))
             {
-                using (var md5 = MD5.Create())
+                using (var sha1 = SHA1.Create())
                 {
-                    hash = md5.ComputeHash(inputBytes);
+                    hash = sha1.ComputeHash(inputBytes);
                 }
             }
             else
             {
                 var hmacBytes = Encoding.UTF8.GetBytes(hmac);
-                using (var md5 = new HMACMD5(hmacBytes))
+                using (var sha1 = new HMACSHA1(hmacBytes))
                 {
-                    hash = md5.ComputeHash(inputBytes);
+                    hash = sha1.ComputeHash(inputBytes);
                 }
             }
 
-            
+
             string result;
             string outputType = GetOutputType(args);
             switch (outputType)
@@ -65,7 +65,7 @@ namespace Armyknife.Business.Tools.Implementations
                     result = Convert.ToBase64String(hash);
                     break;
                 default:
-                    throw new ArmyknifeException(string.Format(ExceptionResources.Md5OutputTypeNotSupported, outputType));
+                    throw new ArmyknifeException(string.Format(ExceptionResources.Sha1OutputTypeNotSupported, outputType));
             }
 
             return result;
