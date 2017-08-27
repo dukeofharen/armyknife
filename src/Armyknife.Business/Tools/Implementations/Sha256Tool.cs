@@ -8,18 +8,18 @@ using System.Text;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    public class Sha1Tool : ITool
+    public class Sha256Tool : ITool
     {
         private const string OutputTypeKey = "outputType";
         private const string HmacKey = "hmac";
 
-        public string Name => "sha1";
+        public string Name => "sha256";
 
-        public string Description => ToolResources.Sha1Description;
+        public string Description => ToolResources.Sha256Description;
 
         public string Category => CategoryResources.TextCategory;
 
-        public string HelpText => ToolResources.Sha1Help;
+        public string HelpText => ToolResources.Sha256Help;
 
         public string Execute(IDictionary<string, string> args)
         {
@@ -39,17 +39,17 @@ namespace Armyknife.Business.Tools.Implementations
             byte[] hash;
             if (string.IsNullOrWhiteSpace(hmac))
             {
-                using (var sha1 = SHA1.Create())
+                using (var sha256 = SHA256.Create())
                 {
-                    hash = sha1.ComputeHash(inputBytes);
+                    hash = sha256.ComputeHash(inputBytes);
                 }
             }
             else
             {
                 var hmacBytes = Encoding.UTF8.GetBytes(hmac);
-                using (var sha1 = new HMACSHA1(hmacBytes))
+                using (var sha256 = new HMACSHA256(hmacBytes))
                 {
-                    hash = sha1.ComputeHash(inputBytes);
+                    hash = sha256.ComputeHash(inputBytes);
                 }
             }
 
@@ -65,7 +65,7 @@ namespace Armyknife.Business.Tools.Implementations
                     result = Convert.ToBase64String(hash);
                     break;
                 default:
-                    throw new ArmyknifeException(string.Format(ExceptionResources.Sha1OutputTypeNotSupported, outputType));
+                    throw new ArmyknifeException(string.Format(ExceptionResources.Sha256OutputTypeNotSupported, outputType));
             }
 
             return result;

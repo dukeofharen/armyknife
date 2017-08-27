@@ -19,7 +19,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string Category => CategoryResources.TextCategory;
 
-        public string HelpText => ToolResources.Md5Description;
+        public string HelpText => ToolResources.Md5Help;
 
         public string Execute(IDictionary<string, string> args)
         {

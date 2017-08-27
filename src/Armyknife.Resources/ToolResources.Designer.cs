@@ -153,5 +153,31 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("Sha1Help", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Encodes a piece of text to a SHA256 hash..
+        /// </summary>
+        public static string Sha256Description {
+            get {
+                return ResourceManager.GetString("Sha256Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- sha256 hash this
+        ///- sha256 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha256 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha256 --input hash this --hmac secret-key
+        ///
+        ///Optional properties:
+        ///- hmac: the signature key for the SHA256 hash
+        ///- outputType: how the string should be generated (should be &apos;hex&apos; or &apos;base64&apos;).
+        /// </summary>
+        public static string Sha256Help {
+            get {
+                return ResourceManager.GetString("Sha256Help", resourceCulture);
+            }
+        }
     }
 }

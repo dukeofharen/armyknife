@@ -132,4 +132,7 @@
   <data name="Sha1OutputTypeNotSupported" xml:space="preserve">
     <value>Output type '{0}' is not supported. Supported types: hex, base64.</value>
   </data>
+  <data name="Sha256OutputTypeNotSupported" xml:space="preserve">
+    <value>Output type '{0}' is not supported. Supported types: hex, base64.</value>
+  </data>
 </root>
