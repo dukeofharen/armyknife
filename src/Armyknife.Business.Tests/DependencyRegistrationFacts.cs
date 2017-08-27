@@ -7,14 +7,15 @@ namespace Armyknife.Business.Tests
     [TestClass]
     public class DependencyRegistrationFacts
     {
+        private ServiceCollection _serviceCollection;
         private IServiceProvider _serviceProvider;
 
         [TestInitialize]
         public void Initialize()
         {
-            var serviceCollection = new ServiceCollection();
-            DependencyRegistration.RegisterDependencies(serviceCollection);
-            _serviceProvider = serviceCollection.BuildServiceProvider();
+            _serviceCollection = new ServiceCollection();
+            DependencyRegistration.RegisterDependencies(_serviceCollection);
+            _serviceProvider = _serviceCollection.BuildServiceProvider();
         }
 
         [TestMethod]
@@ -25,6 +26,17 @@ namespace Armyknife.Business.Tests
 
             // assert
             Assert.IsNotNull(executor);
+        }
+
+        [TestMethod]
+        public void DependencyRegistration_ResolveAllDependencies_HappyFlow()
+        {
+            // act / assert
+            foreach(var service in _serviceCollection)
+            {
+                var instance = _serviceProvider.GetService(service.ServiceType);
+                Assert.IsNotNull(instance);
+            }
         }
     }
 }
