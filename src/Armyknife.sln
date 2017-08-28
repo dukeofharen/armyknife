@@ -32,7 +32,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D6
 		..\scripts\patch_versions.ps1 = ..\scripts\patch_versions.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Services.Tests", "Armyknife.Services.Tests\Armyknife.Services.Tests.csproj", "{DB845909-D6EE-4BF6-AAAE-DC9B3272D171}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Services.Tests", "Armyknife.Services.Tests\Armyknife.Services.Tests.csproj", "{DB845909-D6EE-4BF6-AAAE-DC9B3272D171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.HelperTool", "Armyknife.HelperTool\Armyknife.HelperTool.csproj", "{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +82,10 @@ Global
 		{DB845909-D6EE-4BF6-AAAE-DC9B3272D171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB845909-D6EE-4BF6-AAAE-DC9B3272D171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB845909-D6EE-4BF6-AAAE-DC9B3272D171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

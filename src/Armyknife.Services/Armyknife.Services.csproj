@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Resources\filetypes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\mime.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
