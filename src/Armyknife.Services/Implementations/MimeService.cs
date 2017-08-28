@@ -6,7 +6,7 @@ using System.Linq;
 namespace Armyknife.Services.Implementations
 {
     // https://github.com/khellang/MimeTypes/blob/master/src/MimeTypes/MimeTypes.cs.pp
-    public class MimeService : IMimeService
+    internal class MimeService : IMimeService
     {
         private const string FallbackMimeType = "application/octet-stream";
         private static Dictionary<string, string> _typeMap;
