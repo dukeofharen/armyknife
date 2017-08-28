@@ -19,7 +19,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string Description => ToolResources.ToMimeDescription;
 
-        public string Category => CategoryResources.TextCategory;
+        public string Category => CategoryResources.FileCategory;
 
         public string HelpText => ToolResources.ToMimeHelp;
 

@@ -61,7 +61,7 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File fools.
+        ///   Looks up a localized string similar to File tools.
         /// </summary>
         public static string FileCategory {
             get {
