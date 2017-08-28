@@ -103,6 +103,36 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lets you fill in a file extension and looks up the corresponding information of that file extension..
+        /// </summary>
+        public static string FilextDescription {
+            get {
+                return ResourceManager.GetString("FilextDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- filext xlsx.
+        /// </summary>
+        public static string FilextHelp {
+            get {
+                return ResourceManager.GetString("FilextHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extension: {0}
+        ///Description: {1}
+        ///Used by: {2}.
+        /// </summary>
+        public static string FilextResult {
+            get {
+                return ResourceManager.GetString("FilextResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Checks a given MIME type and finds all corresponding file extensions..
         /// </summary>
         public static string FromMimeDescription {

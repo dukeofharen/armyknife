@@ -135,6 +135,18 @@
 - base64encode --input encode this --outputFile "C:\tmp\output.txt"
 - base64encode --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"</value>
   </data>
+  <data name="FilextDescription" xml:space="preserve">
+    <value>Lets you fill in a file extension and looks up the corresponding information of that file extension.</value>
+  </data>
+  <data name="FilextHelp" xml:space="preserve">
+    <value>Usage:
+- filext xlsx</value>
+  </data>
+  <data name="FilextResult" xml:space="preserve">
+    <value>Extension: {0}
+Description: {1}
+Used by: {2}</value>
+  </data>
   <data name="FromMimeDescription" xml:space="preserve">
     <value>Checks a given MIME type and finds all corresponding file extensions.</value>
   </data>

@@ -61,6 +61,15 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No file extensions information was found for extension &apos;{0}&apos;..
+        /// </summary>
+        public static string FilextExtensionNotFound {
+            get {
+                return ResourceManager.GetString("FilextExtensionNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No MIME type found for MIME type &apos;{0}&apos;..
         /// </summary>
         public static string FromMimeNoResult {
