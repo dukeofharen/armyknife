@@ -1,5 +1,7 @@
 ﻿using Armyknife.Services.Implementations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using System.IO;
 using System.Linq;
 
 namespace Armyknife.Services.Tests.Implementations
@@ -7,12 +9,30 @@ namespace Armyknife.Services.Tests.Implementations
     [TestClass]
     public class MimeServiceFacts
     {
+        private const string ConsolePath = @"C:\tmp";
+        private const string MimeJson = @"{""xlsx"":""application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"", ""txt"":""text/plain""}";
+        private Mock<IConsoleService> _consoleServiceMock;
+        private Mock<IFileService> _fileServiceMock;
         private MimeService _service;
 
         [TestInitialize]
         public void Initialize()
         {
-            _service = new MimeService();
+            _consoleServiceMock = new Mock<IConsoleService>();
+            _consoleServiceMock
+                .Setup(m => m.GetConsolePath())
+                .Returns(ConsolePath);
+
+            string mimePath = Path.Combine(ConsolePath, "Resources/mime.json");
+
+            _fileServiceMock = new Mock<IFileService>();
+            _fileServiceMock
+                .Setup(m => m.ReadAllText(mimePath))
+                .Returns(MimeJson);
+
+            _service = new MimeService(
+                _consoleServiceMock.Object,
+                _fileServiceMock.Object);
         }
 
         [TestMethod]
