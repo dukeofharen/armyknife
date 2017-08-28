@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    public class FromMimeTool : ITool
+    internal class FromMimeTool : ITool
     {
         private readonly IMimeService _mimeService;
 

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    public class Sha256Tool : ITool
+    internal class Sha256Tool : ITool
     {
         private const string OutputTypeKey = "outputType";
         private const string HmacKey = "hmac";

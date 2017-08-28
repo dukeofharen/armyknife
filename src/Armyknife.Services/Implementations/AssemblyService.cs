@@ -2,7 +2,7 @@
 
 namespace Armyknife.Services.Implementations
 {
-    public class AssemblyService : IAssemblyService
+    internal class AssemblyService : IAssemblyService
     {
         public string GetVersionNumber()
         {
