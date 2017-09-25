@@ -1,8 +1,9 @@
+. "$PSScriptRoot\functions.ps1"
+
 $csprojPath = Join-Path -Path $PSScriptRoot "..\src\Armyknife\Armyknife.csproj"
 
 Write-Host "Reading file '$csprojPath'"
 [xml]$csproj = Get-Content $csprojPath
-
 $propertyGroupNode = $csproj.SelectSingleNode("/Project/PropertyGroup[1]")
 $version = [version]$propertyGroupNode.Version
 
