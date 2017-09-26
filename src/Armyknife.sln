@@ -26,6 +26,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D60BC7-53AC-4CB8-B1C6-C0908B7C1C10}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
+		..\scripts\armyknife.nsi = ..\scripts\armyknife.nsi
 		..\scripts\build.ps1 = ..\scripts\build.ps1
 		..\scripts\functions.ps1 = ..\scripts\functions.ps1
 		..\scripts\local_build.bat = ..\scripts\local_build.bat
@@ -34,7 +35,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D6
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Services.Tests", "Armyknife.Services.Tests\Armyknife.Services.Tests.csproj", "{DB845909-D6EE-4BF6-AAAE-DC9B3272D171}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.HelperTool", "Armyknife.HelperTool\Armyknife.HelperTool.csproj", "{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.HelperTool", "Armyknife.HelperTool\Armyknife.HelperTool.csproj", "{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

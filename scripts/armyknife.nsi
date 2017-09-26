@@ -69,7 +69,7 @@ section "install"
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${COMPANYNAME} ${APPNAME}" "NoRepair" 1
 	WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${COMPANYNAME} ${APPNAME}" "EstimatedSize" $0
 
-    # ExecShell "" "$INSTDIR\Armyknife.exe" ""
+    ExecWait 'powershell.exe -NoProfile -ExecutionPolicy Unrestricted -Command "& \"$INSTDIR\add_path_var.ps1\"" -installFolder \"$INSTDIR\"'
 sectionEnd
  
 function un.onInit
@@ -82,6 +82,8 @@ function un.onInit
 functionEnd
  
 section "uninstall"
+	ExecWait 'powershell.exe -NoProfile -ExecutionPolicy Unrestricted -Command "& \"$INSTDIR\remove_path_var.ps1\"" -installFolder \"$INSTDIR\"'
+
 	rmDir /r "$SMPROGRAMS\${COMPANYNAME}"
  
 	rmDir /r $INSTDIR

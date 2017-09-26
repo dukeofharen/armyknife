@@ -2,7 +2,8 @@ $rootFolder = Join-Path -Path $PSScriptRoot ".."
 $srcFolder = Join-Path -Path $rootFolder "src"
 $mainProjectFile = Join-Path $srcFolder "Armyknife\Armyknife.csproj"
 $nsiPath = Join-Path $PSScriptRoot "armyknife.nsi"
-$binDir = Join-Path $srcFolder "Armyknife\bin\release\netcoreapp2.0\win10-x64\publish"
+$winBinDir = Join-Path $srcFolder "Armyknife\bin\release\netcoreapp2.0\win10-x64\publish"
+$installScriptsPath = Join-Path -Path $PSScriptRoot "installscripts"
 
 $nsisPath = "C:\Program Files (x86)\NSIS\Bin"
 
@@ -46,12 +47,15 @@ $propertyGroupNode = $csproj.SelectSingleNode("/Project/PropertyGroup[1]")
 $version = [version]$propertyGroupNode.Version
 Write-Host "Found version $version"
 
+# Moving install scripts for Windows
+Copy-Item (Join-Path $installScriptsPath "**") $winBinDir -Recurse
+
 # Making installer
 $env:VersionMajor = $version.Major
 $env:VersionMinor = $version.Minor
 $env:VersionBuild = $version.Build
-$env:BuildOutputBinDirectory = $binDir
-$env:BuildOutputDirectory = $binDir
+$env:BuildOutputBinDirectory = $winBinDir
+$env:BuildOutputDirectory = $winBinDir
 Write-Host "Building installer $nsiPath"
 & makensis $nsiPath
 Assert-Cmd-Ok
