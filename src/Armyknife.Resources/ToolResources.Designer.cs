@@ -150,6 +150,29 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generates a number of Lorem Ipsum paragraphs..
+        /// </summary>
+        public static string LipsumDescription {
+            get {
+                return ResourceManager.GetString("LipsumDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- lipsum
+        ///- lipsum --paragraphs 20
+        ///
+        ///Optional properties:
+        ///- paragraphs: the number of Lorem Ipsum paragrahps (5 default)..
+        /// </summary>
+        public static string LipsumHelp {
+            get {
+                return ResourceManager.GetString("LipsumHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encodes a piece of text to an MD5 hash..
         /// </summary>
         public static string Md5Description {

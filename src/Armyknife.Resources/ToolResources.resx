@@ -152,6 +152,17 @@ Used by: {2}</value>
     <value>Usage:
 - frommime text/plain</value>
   </data>
+  <data name="LipsumDescription" xml:space="preserve">
+    <value>Generates a number of Lorem Ipsum paragraphs.</value>
+  </data>
+  <data name="LipsumHelp" xml:space="preserve">
+    <value>Usage:
+- lipsum
+- lipsum --paragraphs 20
+
+Optional properties:
+- paragraphs: the number of Lorem Ipsum paragrahps (5 default).</value>
+  </data>
   <data name="Md5Description" xml:space="preserve">
     <value>Encodes a piece of text to an MD5 hash.</value>
   </data>
