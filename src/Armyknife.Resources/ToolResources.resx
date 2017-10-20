@@ -123,8 +123,7 @@
   <data name="Base64DecodeHelp" xml:space="preserve">
     <value>Usage:
 - base64decode ZGVjb2RlIHRoaXM=
-- base64decode --input ZGVjb2RlIHRoaXM= --outputFile "C:\tmp\output.txt"
-- base64decode --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"</value>
+- base64decode --input ZGVjb2RlIHRoaXM=</value>
   </data>
   <data name="Base64EncodeDescription" xml:space="preserve">
     <value>Encodes a piece of text or a file to a Base64 string.</value>
@@ -132,8 +131,7 @@
   <data name="Base64EncodeHelp" xml:space="preserve">
     <value>Usage:
 - base64encode encode this
-- base64encode --input encode this --outputFile "C:\tmp\output.txt"
-- base64encode --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"</value>
+- base64encode --input encode this</value>
   </data>
   <data name="FilextDescription" xml:space="preserve">
     <value>Lets you fill in a file extension and looks up the corresponding information of that file extension.</value>
@@ -160,8 +158,7 @@ Used by: {2}</value>
   <data name="Md5Help" xml:space="preserve">
     <value>Usage:
 - md5 hash this
-- md5 --input hash this --outputFile "C:\tmp\output.txt"
-- md5 --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"
+- md5 --input hash thi
 - md5 --input hash this --hmac secret-key
 
 Optional properties:
@@ -174,8 +171,7 @@ Optional properties:
   <data name="Sha1Help" xml:space="preserve">
     <value>Usage:
 - sha1 hash this
-- sha1 --input hash this --outputFile "C:\tmp\output.txt"
-- sha1 --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"
+- sha1 --input hash this
 - sha1 --input hash this --hmac secret-key
 
 Optional properties:
@@ -188,8 +184,7 @@ Optional properties:
   <data name="Sha256Help" xml:space="preserve">
     <value>Usage:
 - sha256 hash this
-- sha256 --input hash this --outputFile "C:\tmp\output.txt"
-- sha256 --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"
+- sha256 --input hash this
 - sha256 --input hash this --hmac secret-key
 
 Optional properties:
@@ -202,8 +197,7 @@ Optional properties:
   <data name="Sha384Help" xml:space="preserve">
     <value>Usage:
 - sha384 hash this
-- sha384 --input hash this --outputFile "C:\tmp\output.txt"
-- sha384 --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"
+- sha384 --input hash this
 - sha384 --input hash this --hmac secret-key
 
 Optional properties:
@@ -216,8 +210,7 @@ Optional properties:
   <data name="Sha512Help" xml:space="preserve">
     <value>Usage:
 - sha512 hash this
-- sha512 --input hash this --outputFile "C:\tmp\output.txt"
-- sha512 --inputFile "C:\tmp\input.txt" --outputFile "C:\tmp\output.txt"
+- sha512 --input hash this
 - sha512 --input hash this --hmac secret-key
 
 Optional properties:

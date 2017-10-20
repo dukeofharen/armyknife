@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Armyknife.Services.Implementations
 {
@@ -12,6 +13,23 @@ namespace Armyknife.Services.Implementations
         public string GetConsolePath()
         {
             return AppContext.BaseDirectory;
+        }
+
+        public string ReadPipedData()
+        {
+            if(!Console.IsInputRedirected)
+            {
+                return null;
+            }
+
+            var builder = new StringBuilder();
+            string line;
+            while ((line = Console.ReadLine()) != null)
+            {
+                builder.AppendLine(line);
+            }
+
+            return builder.Length > 0 ? builder.ToString() : null;
         }
     }
 }

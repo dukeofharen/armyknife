@@ -72,8 +72,7 @@ namespace Armyknife.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Usage:
         ///- base64decode ZGVjb2RlIHRoaXM=
-        ///- base64decode --input ZGVjb2RlIHRoaXM= --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- base64decode --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;.
+        ///- base64decode --input ZGVjb2RlIHRoaXM=.
         /// </summary>
         public static string Base64DecodeHelp {
             get {
@@ -93,8 +92,7 @@ namespace Armyknife.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Usage:
         ///- base64encode encode this
-        ///- base64encode --input encode this --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- base64encode --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;.
+        ///- base64encode --input encode this.
         /// </summary>
         public static string Base64EncodeHelp {
             get {
@@ -163,8 +161,7 @@ namespace Armyknife.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Usage:
         ///- md5 hash this
-        ///- md5 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- md5 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- md5 --input hash thi
         ///- md5 --input hash this --hmac secret-key
         ///
         ///Optional properties:
@@ -189,8 +186,7 @@ namespace Armyknife.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Usage:
         ///- sha1 hash this
-        ///- sha1 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- sha1 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha1 --input hash this
         ///- sha1 --input hash this --hmac secret-key
         ///
         ///Optional properties:
@@ -215,8 +211,7 @@ namespace Armyknife.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Usage:
         ///- sha256 hash this
-        ///- sha256 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- sha256 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha256 --input hash this
         ///- sha256 --input hash this --hmac secret-key
         ///
         ///Optional properties:
@@ -241,8 +236,7 @@ namespace Armyknife.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Usage:
         ///- sha384 hash this
-        ///- sha384 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- sha384 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha384 --input hash this
         ///- sha384 --input hash this --hmac secret-key
         ///
         ///Optional properties:
@@ -267,8 +261,7 @@ namespace Armyknife.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Usage:
         ///- sha512 hash this
-        ///- sha512 --input hash this --outputFile &quot;C:\tmp\output.txt&quot;
-        ///- sha512 --inputFile &quot;C:\tmp\input.txt&quot; --outputFile &quot;C:\tmp\output.txt&quot;
+        ///- sha512 --input hash this
         ///- sha512 --input hash this --hmac secret-key
         ///
         ///Optional properties:

@@ -10,29 +10,33 @@ namespace Armyknife.Business.Tests.Implementations
     [TestClass]
     public class InputReaderFacts
     {
-        private Mock<IFileService> _fileServiceMock;
+        private Mock<IConsoleService> _consoleServiceMock;
         private InputReader _reader;
 
         [TestInitialize]
         public void Initialize()
         {
-            _fileServiceMock = new Mock<IFileService>();
-            _reader = new InputReader(_fileServiceMock.Object);
+            _consoleServiceMock = new Mock<IConsoleService>();
+            _reader = new InputReader(_consoleServiceMock.Object);
         }
 
         [TestCleanup]
         public void Cleanup()
         {
-            _fileServiceMock.VerifyAll();
+            _consoleServiceMock.VerifyAll();
         }
 
         [TestMethod]
-        public void InputReader_GetInput_RegularInput()
+        public void InputReader_GetInput_PipedInput()
         {
             // arrange
             var argsDictionary = new Dictionary<string, string>();
-            var args = new[] { "base64encode", "this", "is", "input" };
+            var args = new[] { "base64encode" };
             string expectedInput = "this is input";
+
+            _consoleServiceMock
+                .Setup(m => m.ReadPipedData())
+                .Returns(expectedInput);
 
             // act
             string result = _reader.GetInput(args, argsDictionary);
@@ -42,20 +46,12 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void InputReader_GetInput_FileInput()
+        public void InputReader_GetInput_RegularInput()
         {
             // arrange
-            string filePath = @"C:\tmp\file.txt";
-            var argsDictionary = new Dictionary<string, string>
-            {
-                { Constants.FileInputKey, filePath }
-            };
-            string expectedInput = "these are the file contents";
-            var args = new string[0];
-
-            _fileServiceMock
-                .Setup(m => m.ReadAllText(filePath))
-                .Returns(expectedInput);
+            var argsDictionary = new Dictionary<string, string>();
+            var args = new[] { "base64encode", "this", "is", "input" };
+            string expectedInput = "this is input";
 
             // act
             string result = _reader.GetInput(args, argsDictionary);

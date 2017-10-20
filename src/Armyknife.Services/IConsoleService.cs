@@ -5,5 +5,7 @@
         void WriteLine(string text);
 
         string GetConsolePath();
+
+        string ReadPipedData();
     }
 }
