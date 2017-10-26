@@ -316,5 +316,31 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("ToMimeHelp", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A handy tool to generate a (or many) UUIDs..
+        /// </summary>
+        public static string UuidDescription {
+            get {
+                return ResourceManager.GetString("UuidDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- uuid
+        ///- uuid --brackets true --uppercase true --hyphens true --howmany 1
+        ///
+        ///Optional properties:
+        ///- brackets: whether the GUIDs should be surrounded by brackets (true or false, default false)
+        ///- uppercase: whether the GUIDs should be uppercase (true or false, default false)
+        ///- hyphens: whether the GUID parts should be separated by hyphens (true or false, default true)
+        ///- howmany: how many GUIDs should be generated (default 1).
+        /// </summary>
+        public static string UuidHelp {
+            get {
+                return ResourceManager.GetString("UuidHelp", resourceCulture);
+            }
+        }
     }
 }

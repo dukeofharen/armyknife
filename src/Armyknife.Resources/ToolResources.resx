@@ -236,4 +236,18 @@ Optional properties:
 - tomime txt
 - tomime filename.txt</value>
   </data>
+  <data name="UuidDescription" xml:space="preserve">
+    <value>A handy tool to generate a (or many) UUIDs.</value>
+  </data>
+  <data name="UuidHelp" xml:space="preserve">
+    <value>Usage:
+- uuid
+- uuid --brackets true --uppercase true --hyphens true --howmany 1
+
+Optional properties:
+- brackets: whether the GUIDs should be surrounded by brackets (true or false, default false)
+- uppercase: whether the GUIDs should be uppercase (true or false, default false)
+- hyphens: whether the GUID parts should be separated by hyphens (true or false, default true)
+- howmany: how many GUIDs should be generated (default 1)</value>
+  </data>
 </root>
