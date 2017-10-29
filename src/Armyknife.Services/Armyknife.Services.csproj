@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Armyknife.Exceptions\Armyknife.Exceptions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Resources\filetypes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
