@@ -11,15 +11,19 @@ namespace Armyknife.Business.Tools.Implementations
     {
         private const string WidthKey = "width";
         private const string HeightKey = "height";
+        private const string OpenFileKey = "openFile";
         private readonly IBarcodeService _barcodeService;
         private readonly IFileService _fileService;
+        private readonly IProcessService _processService;
 
         public WriteQrTool(
             IBarcodeService barcodeService,
-            IFileService fileService)
+            IFileService fileService,
+            IProcessService processService)
         {
             _barcodeService = barcodeService;
             _fileService = fileService;
+            _processService = processService;
         }
 
         public string Name => "writeqr";
@@ -46,6 +50,13 @@ namespace Armyknife.Business.Tools.Implementations
             int height = args.GetValue(HeightKey, 250);
             var qrBytes = _barcodeService.GenerateQrCode(input, height, width);
             _fileService.WriteAllBytes(writeLocation, qrBytes);
+
+            bool openImage = args.GetValue(OpenFileKey, false);
+            if (openImage)
+            {
+                _processService.StartProcess(writeLocation);
+            }
+
             return string.Empty;
         }
     }

@@ -358,7 +358,8 @@ namespace Armyknife.Resources {
         ///
         ///Optional properties:
         ///- width: the PNG file width in pixels (default 250)
-        ///- height: the PNG height in pixels (default 250).
+        ///- height: the PNG height in pixels (default 250)
+        ///- openFile: whether the file should be opened after saving (true or false, default false).
         /// </summary>
         public static string WriteQrHelp {
             get {

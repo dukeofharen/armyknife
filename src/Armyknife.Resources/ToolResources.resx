@@ -259,6 +259,7 @@ Optional properties:
 
 Optional properties:
 - width: the PNG file width in pixels (default 250)
-- height: the PNG height in pixels (default 250)</value>
+- height: the PNG height in pixels (default 250)
+- openFile: whether the file should be opened after saving (true or false, default false)</value>
   </data>
 </root>
