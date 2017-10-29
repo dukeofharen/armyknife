@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Armyknife.Utilities
@@ -49,6 +50,26 @@ namespace Armyknife.Utilities
             }
 
             return result;
+        }
+
+        public static bool GetValue(this IDictionary<string, string> args, string key, bool defaultValue)
+        {
+            if(!args.TryGetValue(key, out string value))
+            {
+                return defaultValue;
+            }
+
+            if(string.Equals(value, "1") || string.Equals(value, "true", StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            if (string.Equals(value, "0") || string.Equals(value, "false", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            return defaultValue;
         }
     }
 }
