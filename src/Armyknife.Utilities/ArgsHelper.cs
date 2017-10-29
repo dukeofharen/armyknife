@@ -29,5 +29,26 @@ namespace Armyknife.Utilities
             return subResult
                 .ToDictionary(d => d.Key, d => string.Join(" ", d.Value));
         }
+
+        public static string GetValue(this IDictionary<string, string> args, string key)
+        {
+            args.TryGetValue(key, out string value);
+            return value;
+        }
+
+        public static int GetValue(this IDictionary<string, string> args, string key, int defaultValue)
+        {
+            if(!args.TryGetValue(key, out string value))
+            {
+                return defaultValue;
+            }
+
+            if(!int.TryParse(value, out int result))
+            {
+                return defaultValue;
+            }
+
+            return result;
+        }
     }
 }
