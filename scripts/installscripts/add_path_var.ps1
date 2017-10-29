@@ -7,5 +7,8 @@ Param(
 $environmentLocation = "hklm:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment"
 $environment = Get-ItemProperty $environmentLocation
 $pathVar = $environment.Path
-$pathVar = "$pathVar;$installFolder"
-New-ItemProperty -Path $environmentLocation -Name "Path" -Value $pathVar -Force
+if(!($pathVar -like "*$installFolder*"))
+{
+   $pathVar = "$pathVar;$installFolder"
+   New-ItemProperty -Path $environmentLocation -Name "Path" -Value $pathVar -Force
+}

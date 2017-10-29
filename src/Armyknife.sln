@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife", "Armyknife\Armyknife.csproj", "{4B426F17-46A9-4236-9D93-9179EB878DCC}"
 EndProject
@@ -36,6 +36,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Services.Tests", "Armyknife.Services.Tests\Armyknife.Services.Tests.csproj", "{DB845909-D6EE-4BF6-AAAE-DC9B3272D171}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.HelperTool", "Armyknife.HelperTool\Armyknife.HelperTool.csproj", "{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "installscripts", "installscripts", "{FD3A39B7-601F-41DD-9AE3-57A78AE74D03}"
+	ProjectSection(SolutionItems) = preProject
+		..\scripts\installscripts\add_path_var.ps1 = ..\scripts\installscripts\add_path_var.ps1
+		..\scripts\installscripts\remove_path_var.ps1 = ..\scripts\installscripts\remove_path_var.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +101,7 @@ Global
 		{3AEA4F76-E8E7-412F-B41C-ECAC4AC1A744} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
 		{4AAB0F27-968D-4203-B35E-1840D909EA63} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
 		{DB845909-D6EE-4BF6-AAAE-DC9B3272D171} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
+		{FD3A39B7-601F-41DD-9AE3-57A78AE74D03} = {E7D60BC7-53AC-4CB8-B1C6-C0908B7C1C10}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D65628E-0306-4433-BE5E-3BAD3E60D22C}
