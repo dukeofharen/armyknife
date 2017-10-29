@@ -61,11 +61,38 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Encoding tools.
+        /// </summary>
+        public static string EncodingCategory {
+            get {
+                return ResourceManager.GetString("EncodingCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File tools.
         /// </summary>
         public static string FileCategory {
             get {
                 return ResourceManager.GetString("FileCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hashing tools.
+        /// </summary>
+        public static string HashingCategory {
+            get {
+                return ResourceManager.GetString("HashingCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number tools.
+        /// </summary>
+        public static string NumberCategory {
+            get {
+                return ResourceManager.GetString("NumberCategory", resourceCulture);
             }
         }
         

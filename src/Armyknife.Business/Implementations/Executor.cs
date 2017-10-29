@@ -81,6 +81,8 @@ namespace Armyknife.Business.Implementations
                 {
                     builder.AppendLine($"- {tool.Key}: {tool.ShortDescription}");
                 }
+
+                builder.AppendLine();
             }
 
             string version = _assemblyService.GetVersionNumber();

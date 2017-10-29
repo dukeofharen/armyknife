@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="EncodingCategory" xml:space="preserve">
+    <value>Encoding tools</value>
+  </data>
   <data name="FileCategory" xml:space="preserve">
     <value>File tools</value>
+  </data>
+  <data name="HashingCategory" xml:space="preserve">
+    <value>Hashing tools</value>
+  </data>
+  <data name="NumberCategory" xml:space="preserve">
+    <value>Number tools</value>
   </data>
   <data name="TextCategory" xml:space="preserve">
     <value>Text tools</value>

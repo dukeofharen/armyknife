@@ -13,7 +13,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string Description => ToolResources.Base64DecodeDescription;
 
-        public string Category => CategoryResources.TextCategory;
+        public string Category => CategoryResources.EncodingCategory;
 
         public string HelpText => ToolResources.Base64DecodeHelp;
 

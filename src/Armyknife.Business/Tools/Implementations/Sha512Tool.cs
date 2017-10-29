@@ -17,7 +17,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string Description => ToolResources.Sha512Description;
 
-        public string Category => CategoryResources.TextCategory;
+        public string Category => CategoryResources.HashingCategory;
 
         public string HelpText => ToolResources.Sha512Help;
 

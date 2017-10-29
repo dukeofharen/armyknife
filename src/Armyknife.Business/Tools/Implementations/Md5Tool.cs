@@ -17,7 +17,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string Description => ToolResources.Md5Description;
 
-        public string Category => CategoryResources.TextCategory;
+        public string Category => CategoryResources.HashingCategory;
 
         public string HelpText => ToolResources.Md5Help;
 

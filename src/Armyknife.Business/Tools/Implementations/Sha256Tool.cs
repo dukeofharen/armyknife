@@ -17,7 +17,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string Description => ToolResources.Sha256Description;
 
-        public string Category => CategoryResources.TextCategory;
+        public string Category => CategoryResources.HashingCategory;
 
         public string HelpText => ToolResources.Sha256Help;
 

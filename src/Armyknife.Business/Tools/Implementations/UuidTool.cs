@@ -16,7 +16,7 @@ namespace Armyknife.Business.Tools.Implementations
 
         public string Description => ToolResources.UuidDescription;
 
-        public string Category => CategoryResources.TextCategory;
+        public string Category => CategoryResources.NumberCategory;
 
         public string HelpText => ToolResources.UuidHelp;
 
