@@ -126,6 +126,9 @@
   <data name="HashingCategory" xml:space="preserve">
     <value>Hashing tools</value>
   </data>
+  <data name="ImagingCategory" xml:space="preserve">
+    <value>Imaging tools</value>
+  </data>
   <data name="NumberCategory" xml:space="preserve">
     <value>Number tools</value>
   </data>

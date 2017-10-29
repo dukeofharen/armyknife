@@ -88,6 +88,15 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Imaging tools.
+        /// </summary>
+        public static string ImagingCategory {
+            get {
+                return ResourceManager.GetString("ImagingCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number tools.
         /// </summary>
         public static string NumberCategory {

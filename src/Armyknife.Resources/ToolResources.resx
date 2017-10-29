@@ -250,4 +250,15 @@ Optional properties:
 - hyphens: whether the GUID parts should be separated by hyphens (true or false, default true)
 - howmany: how many GUIDs should be generated (default 1)</value>
   </data>
+  <data name="WriteQrDescription" xml:space="preserve">
+    <value>A handy tool to generate QR codes.</value>
+  </data>
+  <data name="WriteQrHelp" xml:space="preserve">
+    <value>Usage:
+- writeqr --input this is the QR content --outputFile C:\temp\qr.png --width 250 --height 250
+
+Optional properties:
+- width: the PNG file width in pixels (default 250)
+- height: the PNG height in pixels (default 250)</value>
+  </data>
 </root>

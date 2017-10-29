@@ -342,5 +342,28 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("UuidHelp", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A handy tool to generate QR codes..
+        /// </summary>
+        public static string WriteQrDescription {
+            get {
+                return ResourceManager.GetString("WriteQrDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- writeqr --input this is the QR content --outputFile C:\temp\qr.png --width 250 --height 250
+        ///
+        ///Optional properties:
+        ///- width: the PNG file width in pixels (default 250)
+        ///- height: the PNG height in pixels (default 250).
+        /// </summary>
+        public static string WriteQrHelp {
+            get {
+                return ResourceManager.GetString("WriteQrHelp", resourceCulture);
+            }
+        }
     }
 }
