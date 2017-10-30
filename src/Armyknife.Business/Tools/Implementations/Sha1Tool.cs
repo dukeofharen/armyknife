@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    internal class Sha1Tool : ITool
+    internal class Sha1Tool : ISynchronousTool
     {
         private const string OutputTypeKey = "outputType";
         private const string HmacKey = "hmac";

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    internal class UuidTool : ITool
+    internal class UuidTool : ISynchronousTool
     {
         private const string HowManyKey = "howmany";
         private const string BracketsKey = "brackets";

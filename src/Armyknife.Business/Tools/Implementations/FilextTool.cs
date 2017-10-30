@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    internal class FilextTool : ITool
+    internal class FilextTool : ISynchronousTool
     {
         private readonly IFileExtensionService _fileExtensionService;
 

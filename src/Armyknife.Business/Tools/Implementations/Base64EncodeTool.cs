@@ -7,7 +7,7 @@ using Armyknife.Resources;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    internal class Base64EncodeTool : ITool
+    internal class Base64EncodeTool : ISynchronousTool
     {
         public string Name => "base64encode";
 

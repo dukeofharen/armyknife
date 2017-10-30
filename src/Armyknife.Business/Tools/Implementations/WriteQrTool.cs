@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    internal class WriteQrTool : ITool
+    internal class WriteQrTool : ISynchronousTool
     {
         private const string WidthKey = "width";
         private const string HeightKey = "height";

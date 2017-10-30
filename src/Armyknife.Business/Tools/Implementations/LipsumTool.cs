@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    internal class LipsumTool : ITool
+    internal class LipsumTool : ISynchronousTool
     {
         private const string ParagraphsKey = "paragraphs";
         private static Random _random = new Random();

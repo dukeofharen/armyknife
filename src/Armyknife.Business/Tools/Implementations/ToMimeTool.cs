@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    internal class ToMimeTool : ITool
+    internal class ToMimeTool : ISynchronousTool
     {
         private readonly IMimeService _mimeService;
 

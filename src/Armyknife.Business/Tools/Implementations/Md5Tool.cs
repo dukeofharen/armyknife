@@ -8,7 +8,7 @@ using Armyknife.Models;
 
 namespace Armyknife.Business.Tools.Implementations
 {
-    internal class Md5Tool : ITool
+    internal class Md5Tool : ISynchronousTool
     {
         private const string OutputTypeKey = "outputType";
         private const string HmacKey = "hmac";
