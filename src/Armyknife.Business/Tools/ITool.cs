@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Armyknife.Business.Tools
+﻿namespace Armyknife.Business.Tools
 {
     public interface ITool
     {
@@ -11,7 +9,5 @@ namespace Armyknife.Business.Tools
         string Category { get; }
 
         string HelpText { get; }
-
-        string Execute(IDictionary<string, string> args);
     }
 }

@@ -147,4 +147,7 @@
   <data name="Sha512OutputTypeNotSupported" xml:space="preserve">
     <value>Output type '{0}' is not supported. Supported types: hex, base64.</value>
   </data>
+  <data name="ToolTypeNotSupported" xml:space="preserve">
+    <value>The tool type of tool '{0}' is not supported.</value>
+  </data>
 </root>

@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System.Threading.Tasks;
 
 namespace Armyknife.Business
 {
     public interface IExecutor
     {
-        void Execute(string[] args);
+        Task ExecuteAsync(string[] args);
     }
 }

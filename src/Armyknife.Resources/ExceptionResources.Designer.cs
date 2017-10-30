@@ -149,5 +149,14 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("Sha512OutputTypeNotSupported", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The tool type of tool &apos;{0}&apos; is not supported..
+        /// </summary>
+        public static string ToolTypeNotSupported {
+            get {
+                return ResourceManager.GetString("ToolTypeNotSupported", resourceCulture);
+            }
+        }
     }
 }

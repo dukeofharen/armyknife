@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Armyknife.Business.Tools;
 using Armyknife.Exceptions;
 using Armyknife.Models;
@@ -32,7 +33,7 @@ namespace Armyknife.Business.Implementations
             _toolResolver = toolResolver;
         }
 
-        public void Execute(string[] args)
+        public async Task ExecuteAsync(string[] args)
         {
             if (ShouldShowHelp(args))
             {
@@ -60,7 +61,19 @@ namespace Armyknife.Business.Implementations
                         argsDictionary.Add(Constants.InputKey, input);
                     }
 
-                    var result = tool.Execute(argsDictionary);
+                    string result;
+                    if (tool is IAsynchronousTool asyncTool)
+                    {
+                        result = await asyncTool.ExecuteAsync(argsDictionary);
+                    }
+                    else if (tool is ISynchronousTool syncTool)
+                    {
+                        result = syncTool.Execute(argsDictionary);
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException(string.Format(ExceptionResources.ToolTypeNotSupported, tool.Name));
+                    }
 
                     _outputWriter.WriteOutput(result, argsDictionary);
                 }

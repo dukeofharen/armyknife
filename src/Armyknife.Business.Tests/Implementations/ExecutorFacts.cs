@@ -8,6 +8,7 @@ using Armyknife.Resources;
 using Armyknife.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System.Threading.Tasks;
 
 namespace Armyknife.Business.Tests.Implementations
 {
@@ -48,7 +49,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_ArgsNull_ShouldShowHelp()
+        public async Task Executor_ExecuteAsync_ArgsNull_ShouldShowHelp()
         {
             // arrange
             string[] args = null;
@@ -61,7 +62,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Returns("1.0.0.0");
 
             // act
-            _executor.Execute(args);
+            await _executor.ExecuteAsync(args);
 
             // assert
             _consoleServiceMock
@@ -72,7 +73,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_ArgsEmpty_ShouldShowHelp()
+        public async Task Executor_ExecuteAsync_ArgsEmpty_ShouldShowHelp()
         {
             // arrange
             string[] args = new string[0];
@@ -85,7 +86,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Returns("1.0.0.0");
 
             // act
-            _executor.Execute(args);
+            await _executor.ExecuteAsync(args);
 
             // assert
             _consoleServiceMock
@@ -96,7 +97,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_ShowGenericHelp()
+        public async Task Executor_ExecuteAsync_ShowGenericHelp()
         {
             // arrange
             string[] args = { Constants.HelpKey };
@@ -109,7 +110,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Returns("1.0.0.0");
 
             // act
-            _executor.Execute(args);
+            await _executor.ExecuteAsync(args);
 
             // assert
             _consoleServiceMock
@@ -120,7 +121,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_ToolNotFound_ShouldThrowException()
+        public async Task Executor_ExecuteAsync_ToolNotFound_ShouldThrowException()
         {
             // arrange
             string toolName = "testtool";
@@ -132,7 +133,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Returns(null as ITool);
 
             // act
-            var exception = Assert.ThrowsException<ArmyknifeException>(() => _executor.Execute(args));
+            var exception = await Assert.ThrowsExceptionAsync<ArmyknifeException>(() => _executor.ExecuteAsync(args));
 
             // assert
             Assert.IsNotNull(exception);
@@ -140,7 +141,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_ShowToolHelp()
+        public async Task Executor_ExecuteAsync_ShowToolHelp()
         {
             // arrange
             string toolName = "testtool";
@@ -167,7 +168,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Setup(m => m.WriteLine(expectedText));
 
             // act
-            _executor.Execute(args);
+            await _executor.ExecuteAsync(args);
 
             // assert
             _consoleServiceMock
@@ -175,7 +176,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_InputReaderReturnsInput_ShouldBeAddedToArgsDictionary()
+        public async Task Executor_ExecuteAsync_InputReaderReturnsInput_ShouldBeAddedToArgsDictionary()
         {
             // arrange
             IDictionary<string, string> actualArgsDictionary = null;
@@ -183,7 +184,7 @@ namespace Armyknife.Business.Tests.Implementations
             string[] args = { toolName };
             string input = "this is the input";
 
-            var toolMock = new Mock<ITool>();
+            var toolMock = new Mock<ISynchronousTool>();
 
             _toolResolverMock
                 .Setup(m => m.ResolveTool(toolName))
@@ -198,7 +199,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Returns(input);
 
             // act
-            _executor.Execute(args);
+            await _executor.ExecuteAsync(args);
 
             // assert
             Assert.IsNotNull(actualArgsDictionary);
@@ -207,7 +208,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_InputReaderReturnsNoInput_ArgsDictionaryShouldBeEmpty()
+        public async Task Executor_ExecuteAsync_InputReaderReturnsNoInput_ArgsDictionaryShouldBeEmpty()
         {
             // arrange
             IDictionary<string, string> actualArgsDictionary = null;
@@ -215,7 +216,7 @@ namespace Armyknife.Business.Tests.Implementations
             string[] args = { toolName };
             string input = string.Empty;
 
-            var toolMock = new Mock<ITool>();
+            var toolMock = new Mock<ISynchronousTool>();
 
             _toolResolverMock
                 .Setup(m => m.ResolveTool(toolName))
@@ -230,7 +231,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Returns(input);
 
             // act
-            _executor.Execute(args);
+            await _executor.ExecuteAsync(args);
 
             // assert
             Assert.IsNotNull(actualArgsDictionary);
@@ -238,7 +239,7 @@ namespace Armyknife.Business.Tests.Implementations
         }
 
         [TestMethod]
-        public void Executor_Execute_ResultIsSuccessfullyWrittenToOutput()
+        public async Task Executor_ExecuteAsync_SynchronousTool_ResultIsSuccessfullyWrittenToOutput()
         {
             // arrange
             IDictionary<string, string> actualArgsDictionary = null;
@@ -247,7 +248,7 @@ namespace Armyknife.Business.Tests.Implementations
             string input = string.Empty;
             string output = "123";
 
-            var toolMock = new Mock<ITool>();
+            var toolMock = new Mock<ISynchronousTool>();
 
             toolMock
                 .Setup(m => m.Execute(It.IsAny<IDictionary<string, string>>()))
@@ -269,7 +270,7 @@ namespace Armyknife.Business.Tests.Implementations
                 .Setup(m => m.WriteOutput(output, It.IsAny<IDictionary<string, string>>()));
 
             // act
-            _executor.Execute(args);
+            await _executor.ExecuteAsync(args);
 
             // assert
             Assert.IsNotNull(actualArgsDictionary);
@@ -279,6 +280,84 @@ namespace Armyknife.Business.Tests.Implementations
 
             _outputWriterMock
                 .Verify(m => m.WriteOutput(output, It.IsAny<IDictionary<string, string>>()), Times.Once);
+        }
+
+        [TestMethod]
+        public async Task Executor_ExecuteAsync_AsynchronousTool_ResultIsSuccessfullyWrittenToOutput()
+        {
+            // arrange
+            IDictionary<string, string> actualArgsDictionary = null;
+            string toolName = "testtool";
+            string[] args = { toolName };
+            string input = string.Empty;
+            string output = "123";
+
+            var toolMock = new Mock<IAsynchronousTool>();
+
+            toolMock
+                .Setup(m => m.ExecuteAsync(It.IsAny<IDictionary<string, string>>()))
+                .ReturnsAsync(output);
+
+            _toolResolverMock
+                .Setup(m => m.ResolveTool(toolName))
+                .Returns(toolMock.Object);
+
+            _inputReaderMock
+                .Setup(m => m.GetInput(args, It.IsAny<IDictionary<string, string>>()))
+                .Callback((string[] passedArgs, IDictionary<string, string> passedArgsDictionary) =>
+                {
+                    actualArgsDictionary = passedArgsDictionary;
+                })
+                .Returns(input);
+
+            _outputWriterMock
+                .Setup(m => m.WriteOutput(output, It.IsAny<IDictionary<string, string>>()));
+
+            // act
+            await _executor.ExecuteAsync(args);
+
+            // assert
+            Assert.IsNotNull(actualArgsDictionary);
+
+            toolMock
+                .Verify(m => m.ExecuteAsync(It.IsAny<IDictionary<string, string>>()), Times.Once);
+
+            _outputWriterMock
+                .Verify(m => m.WriteOutput(output, It.IsAny<IDictionary<string, string>>()), Times.Once);
+        }
+
+        [TestMethod]
+        public async Task Executor_ExecuteAsync_OtherTool_ShouldThrowInvalidOperationException()
+        {
+            // arrange
+            IDictionary<string, string> actualArgsDictionary = null;
+            string toolName = "testtool";
+            string[] args = { toolName };
+            string input = string.Empty;
+            string output = "123";
+
+            var toolMock = new Mock<ITool>();
+
+            _toolResolverMock
+                .Setup(m => m.ResolveTool(toolName))
+                .Returns(toolMock.Object);
+
+            _inputReaderMock
+                .Setup(m => m.GetInput(args, It.IsAny<IDictionary<string, string>>()))
+                .Callback((string[] passedArgs, IDictionary<string, string> passedArgsDictionary) =>
+                {
+                    actualArgsDictionary = passedArgsDictionary;
+                })
+                .Returns(input);
+
+            // act
+            await Assert.ThrowsExceptionAsync<InvalidOperationException>(() => _executor.ExecuteAsync(args));
+
+            // assert
+            Assert.IsNotNull(actualArgsDictionary);
+
+            _outputWriterMock
+                .Verify(m => m.WriteOutput(output, It.IsAny<IDictionary<string, string>>()), Times.Never);
         }
     }
 }

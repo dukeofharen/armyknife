@@ -17,7 +17,7 @@ namespace Armyknife
 
             try
             {
-                executor.Execute(args);
+                executor.ExecuteAsync(args).Wait();
             }
             catch (ArmyknifeException exception)
             {
