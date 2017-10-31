@@ -15,7 +15,6 @@ namespace Armyknife
             var provider = serviceCollection.BuildServiceProvider();
 
             var executor = provider.GetService<IExecutor>();
-
             try
             {
                 executor.ExecuteAsync(args).Wait();

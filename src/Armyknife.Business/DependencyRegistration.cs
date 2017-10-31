@@ -14,6 +14,9 @@ namespace Armyknife.Business
             serviceCollection.AddTransient<IOutputWriter, OutputWriter>();
             serviceCollection.AddTransient<IToolResolver, ToolResolver>();
 
+            // This is done so the types in the Armyknife.Tools project are preloaded and available through reflection.
+            var toolType = typeof(Tools.Implementations.Base64DecodeTool);
+
             var toolTypes = AssemblyHelper.GetImplementations<ITool>();
             foreach (var type in toolTypes)
             {
