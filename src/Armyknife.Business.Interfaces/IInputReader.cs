@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Armyknife.Business
+namespace Armyknife.Business.Interfaces
 {
     public interface IInputReader
     {

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using Armyknife.Business.Tools;
 using Armyknife.Models;
 
-namespace Armyknife.Business
+namespace Armyknife.Business.Interfaces
 {
     public interface IToolResolver
     {

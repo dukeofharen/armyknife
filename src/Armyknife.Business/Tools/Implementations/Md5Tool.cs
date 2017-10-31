@@ -5,6 +5,7 @@ using System.Text;
 using Armyknife.Exceptions;
 using Armyknife.Resources;
 using Armyknife.Models;
+using Armyknife.Business.Interfaces;
 
 namespace Armyknife.Business.Tools.Implementations
 {

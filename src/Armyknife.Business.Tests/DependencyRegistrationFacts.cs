@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Armyknife.Business.Interfaces;
 
 namespace Armyknife.Business.Tests
 {

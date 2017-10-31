@@ -43,6 +43,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "installscripts", "installsc
 		..\scripts\installscripts\remove_path_var.ps1 = ..\scripts\installscripts\remove_path_var.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Business.Interfaces", "Armyknife.Business.Interfaces\Armyknife.Business.Interfaces.csproj", "{45A2FC2C-36FB-4468-BEDD-D0DEDA409557}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A2FC2C-36FB-4468-BEDD-D0DEDA409557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A2FC2C-36FB-4468-BEDD-D0DEDA409557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A2FC2C-36FB-4468-BEDD-D0DEDA409557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A2FC2C-36FB-4468-BEDD-D0DEDA409557}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

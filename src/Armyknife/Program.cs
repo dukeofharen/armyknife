@@ -2,6 +2,7 @@
 using Armyknife.Business;
 using Armyknife.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
+using Armyknife.Business.Interfaces;
 
 namespace Armyknife
 {

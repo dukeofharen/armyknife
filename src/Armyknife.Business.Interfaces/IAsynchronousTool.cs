@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Armyknife.Business.Tools
+namespace Armyknife.Business.Interfaces
 {
     public interface IAsynchronousTool : ITool
     {

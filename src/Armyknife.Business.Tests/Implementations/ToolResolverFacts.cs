@@ -7,6 +7,7 @@ using Armyknife.Business.Tools;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Armyknife.Business.Interfaces;
 
 namespace Armyknife.Business.Tests.Implementations
 {

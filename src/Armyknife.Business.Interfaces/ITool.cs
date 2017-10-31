@@ -1,4 +1,4 @@
-﻿namespace Armyknife.Business.Tools
+﻿namespace Armyknife.Business.Interfaces
 {
     public interface ITool
     {
