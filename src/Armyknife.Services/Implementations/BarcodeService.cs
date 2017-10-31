@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using Armyknife.Services.Interfaces;
+using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using ZXing;

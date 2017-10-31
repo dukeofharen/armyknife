@@ -1,8 +1,7 @@
 ﻿using Armyknife.Services.Implementations;
+using Armyknife.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using System.IO;
 using System.Linq;
 
 namespace Armyknife.Services.Tests.Implementations

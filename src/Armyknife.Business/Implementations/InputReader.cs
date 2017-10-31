@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Armyknife.Services;
 using Armyknife.Business.Interfaces;
+using Armyknife.Services.Interfaces;
 
 namespace Armyknife.Business.Implementations
 {

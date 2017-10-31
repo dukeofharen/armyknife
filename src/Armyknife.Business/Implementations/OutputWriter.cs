@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Armyknife.Services;
 using Armyknife.Business.Interfaces;
+using Armyknife.Services.Interfaces;
 
 namespace Armyknife.Business.Implementations
 {

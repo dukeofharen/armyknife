@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using Armyknife.Business.Implementations;
-using Armyknife.Models;
-using Armyknife.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Armyknife.Services.Interfaces;
 
 namespace Armyknife.Business.Tests.Implementations
 {

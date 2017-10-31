@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Armyknife.Services
+namespace Armyknife.Services.Interfaces
 {
     public interface IMimeService
     {

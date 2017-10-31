@@ -2,6 +2,7 @@
 using Armyknife.Exceptions;
 using Armyknife.Resources;
 using Armyknife.Services;
+using Armyknife.Services.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;

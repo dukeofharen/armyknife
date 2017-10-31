@@ -1,4 +1,4 @@
-﻿namespace Armyknife.Services
+﻿namespace Armyknife.Services.Interfaces
 {
     public interface IConsoleService
     {

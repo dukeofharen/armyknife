@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Armyknife.Exceptions\Armyknife.Exceptions.csproj" />
+    <ProjectReference Include="..\Armyknife.Services.Interfaces\Armyknife.Services.Interfaces.csproj" />
   </ItemGroup>
 
   <ItemGroup>

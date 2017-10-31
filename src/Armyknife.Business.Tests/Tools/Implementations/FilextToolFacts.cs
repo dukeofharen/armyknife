@@ -1,8 +1,8 @@
 ﻿using Armyknife.Business.Tools.Implementations;
 using Armyknife.Exceptions;
+using Armyknife.Models;
 using Armyknife.Resources;
-using Armyknife.Services;
-using Armyknife.Services.Models;
+using Armyknife.Services.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;

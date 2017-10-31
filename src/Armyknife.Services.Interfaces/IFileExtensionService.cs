@@ -1,6 +1,6 @@
-﻿using Armyknife.Services.Models;
+﻿using Armyknife.Models;
 
-namespace Armyknife.Services
+namespace Armyknife.Services.Interfaces
 {
     public interface IFileExtensionService
     {

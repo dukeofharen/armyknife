@@ -1,4 +1,4 @@
-﻿namespace Armyknife.Services.Models
+﻿namespace Armyknife.Models
 {
     public class FileExtensionInfoModel
     {
