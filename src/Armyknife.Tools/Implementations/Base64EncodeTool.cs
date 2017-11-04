@@ -18,6 +18,8 @@ namespace Armyknife.Tools.Implementations
 
         public string HelpText => ToolResources.Base64EncodeHelp;
 
+        public bool ShowToolInHelp => true;
+
         public string Execute(IDictionary<string, string> args)
         {
             if (!args.ContainsKey(Constants.InputKey))

@@ -21,6 +21,8 @@ namespace Armyknife.Tools.Implementations
 
         public string HelpText => ToolResources.UuidHelp;
 
+        public bool ShowToolInHelp => true;
+
         public string Execute(IDictionary<string, string> args)
         {
             var result = new List<string>();

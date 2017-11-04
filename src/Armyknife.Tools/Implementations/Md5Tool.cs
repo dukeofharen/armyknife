@@ -22,6 +22,8 @@ namespace Armyknife.Tools.Implementations
 
         public string HelpText => ToolResources.Md5Help;
 
+        public bool ShowToolInHelp => true;
+
         public string Execute(IDictionary<string, string> args)
         {
             if (!args.ContainsKey(Constants.InputKey))

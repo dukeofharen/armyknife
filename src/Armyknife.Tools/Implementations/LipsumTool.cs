@@ -18,6 +18,8 @@ namespace Armyknife.Tools.Implementations
 
         public string HelpText => ToolResources.LipsumHelp;
 
+        public bool ShowToolInHelp => true;
+
         public string Execute(IDictionary<string, string> args)
         {
             int paragraphs = GetNumberOfParagraphs(args);
