@@ -9,5 +9,7 @@
         public string HelpText { get; set; }
 
         public string Category { get; set; }
+
+        public bool ShowToolInHelp { get; set; }
     }
 }

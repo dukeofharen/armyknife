@@ -32,7 +32,8 @@ namespace Armyknife.Business.Implementations
                     Key = t.Name,
                     Category = t.Category,
                     HelpText = t.HelpText,
-                    ShortDescription = t.Description
+                    ShortDescription = t.Description,
+                    ShowToolInHelp = t.ShowToolInHelp
                 });
         }
     }
