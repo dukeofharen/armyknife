@@ -15,6 +15,7 @@ namespace Armyknife.Services
             serviceCollection.AddTransient<IFileService, FileService>();
             serviceCollection.AddTransient<IMimeService, MimeService>();
             serviceCollection.AddTransient<IProcessService, ProcessService>();
+            serviceCollection.AddTransient<IWebService, WebService>();
         }
     }
 }
