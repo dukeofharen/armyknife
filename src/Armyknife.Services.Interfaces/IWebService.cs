@@ -5,6 +5,6 @@ namespace Armyknife.Services.Interfaces
 {
     public interface IWebService
     {
-        Task<HttpResponseMessage> DoRequest(HttpRequestMessage request);
+        Task<HttpResponseMessage> DoRequestAsync(HttpRequestMessage request);
     }
 }

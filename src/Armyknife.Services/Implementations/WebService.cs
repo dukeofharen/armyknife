@@ -8,7 +8,7 @@ namespace Armyknife.Services.Implementations
     {
         private static HttpClient _httpClient = new HttpClient();
 
-        public async Task<HttpResponseMessage> DoRequest(HttpRequestMessage request)
+        public async Task<HttpResponseMessage> DoRequestAsync(HttpRequestMessage request)
         {
             return await _httpClient.SendAsync(request);
         }
