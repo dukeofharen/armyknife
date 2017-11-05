@@ -122,7 +122,7 @@
 - armyknife &lt;toolname&gt; &lt;arguments&gt;
 
 Use this command to show the help page of a specific tool:
-- armyknife &lt;toolname&gt; help
+- armyknife help &lt;toolname&gt;
 
 These tools are available:
 
