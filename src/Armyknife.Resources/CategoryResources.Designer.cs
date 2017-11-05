@@ -113,5 +113,14 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("TextCategory", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web tools.
+        /// </summary>
+        public static string WebCategory {
+            get {
+                return ResourceManager.GetString("WebCategory", resourceCulture);
+            }
+        }
     }
 }

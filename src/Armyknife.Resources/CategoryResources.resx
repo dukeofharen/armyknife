@@ -135,4 +135,7 @@
   <data name="TextCategory" xml:space="preserve">
     <value>Text tools</value>
   </data>
+  <data name="WebCategory" xml:space="preserve">
+    <value>Web tools</value>
+  </data>
 </root>

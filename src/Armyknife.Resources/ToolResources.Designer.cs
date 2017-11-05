@@ -298,6 +298,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A handy tool to generate shortened URLs at tinyurl.com..
+        /// </summary>
+        public static string TinyUrlDescription {
+            get {
+                return ResourceManager.GetString("TinyUrlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- tinyurl https://google.com.
+        /// </summary>
+        public static string TinyUrlHelp {
+            get {
+                return ResourceManager.GetString("TinyUrlHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Converts a given file extension or file name to the corresponding MIME type..
         /// </summary>
         public static string ToMimeDescription {

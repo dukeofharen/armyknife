@@ -228,6 +228,13 @@ Optional properties:
 - hmac: the signature key for the SHA512 hash
 - outputType: how the string should be generated (should be 'hex' or 'base64')</value>
   </data>
+  <data name="TinyUrlDescription" xml:space="preserve">
+    <value>A handy tool to generate shortened URLs at tinyurl.com.</value>
+  </data>
+  <data name="TinyUrlHelp" xml:space="preserve">
+    <value>Usage:
+- tinyurl https://google.com</value>
+  </data>
   <data name="ToMimeDescription" xml:space="preserve">
     <value>Converts a given file extension or file name to the corresponding MIME type.</value>
   </data>
