@@ -45,7 +45,7 @@ namespace Armyknife.Tools.Implementations
                 RequestUri = new Uri(url)
             };
 
-            var response = await _webService.DoRequest(request);
+            var response = await _webService.DoRequestAsync(request);
             if(response.StatusCode != HttpStatusCode.OK)
             {
                 throw new ArmyknifeException($"TinyURL returned unexpected HTTP status code '{response.StatusCode}'.");
