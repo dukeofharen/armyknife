@@ -53,23 +53,23 @@ namespace Armyknife.Business.Tests.Implementations
         {
             // arrange
             string[] args = null;
+            string helpText = "This is the help text.";
 
-            _consoleServiceMock
-                .Setup(m => m.WriteLine(It.IsAny<string>()));
+            var toolMock = new Mock<ISynchronousTool>();
+            toolMock
+                .Setup(m => m.Execute(It.IsAny<IDictionary<string, string>>()))
+                .Returns(helpText);
 
-            _assemblyServiceMock
-                .Setup(m => m.GetVersionNumber())
-                .Returns("1.0.0.0");
+            _toolResolverMock
+                .Setup(m => m.ResolveTool(Constants.HelpKey))
+                .Returns(toolMock.Object);
 
             // act
             await _executor.ExecuteAsync(args);
 
             // assert
-            _consoleServiceMock
-                .Verify(m => m.WriteLine(It.IsAny<string>()), Times.Once);
-
-            _assemblyServiceMock
-                .Verify(m => m.GetVersionNumber(), Times.Once);
+            _outputWriterMock
+                .Verify(m => m.WriteOutput(helpText, It.IsAny<IDictionary<string, string>>()), Times.Once);
         }
 
         [TestMethod]
@@ -77,23 +77,23 @@ namespace Armyknife.Business.Tests.Implementations
         {
             // arrange
             string[] args = new string[0];
+            string helpText = "This is the help text.";
 
-            _consoleServiceMock
-                .Setup(m => m.WriteLine(It.IsAny<string>()));
+            var toolMock = new Mock<ISynchronousTool>();
+            toolMock
+                .Setup(m => m.Execute(It.IsAny<IDictionary<string, string>>()))
+                .Returns(helpText);
 
-            _assemblyServiceMock
-                .Setup(m => m.GetVersionNumber())
-                .Returns("1.0.0.0");
+            _toolResolverMock
+                .Setup(m => m.ResolveTool(Constants.HelpKey))
+                .Returns(toolMock.Object);
 
             // act
             await _executor.ExecuteAsync(args);
 
             // assert
-            _consoleServiceMock
-                .Verify(m => m.WriteLine(It.IsAny<string>()), Times.Once);
-
-            _assemblyServiceMock
-                .Verify(m => m.GetVersionNumber(), Times.Once);
+            _outputWriterMock
+                .Verify(m => m.WriteOutput(helpText, It.IsAny<IDictionary<string, string>>()), Times.Once);
         }
 
         [TestMethod]
@@ -101,23 +101,23 @@ namespace Armyknife.Business.Tests.Implementations
         {
             // arrange
             string[] args = { Constants.HelpKey };
+            string helpText = "This is the help text.";
 
-            _consoleServiceMock
-                .Setup(m => m.WriteLine(It.IsAny<string>()));
+            var toolMock = new Mock<ISynchronousTool>();
+            toolMock
+                .Setup(m => m.Execute(It.IsAny<IDictionary<string, string>>()))
+                .Returns(helpText);
 
-            _assemblyServiceMock
-                .Setup(m => m.GetVersionNumber())
-                .Returns("1.0.0.0");
+            _toolResolverMock
+                .Setup(m => m.ResolveTool(Constants.HelpKey))
+                .Returns(toolMock.Object);
 
             // act
             await _executor.ExecuteAsync(args);
 
             // assert
-            _consoleServiceMock
-                .Verify(m => m.WriteLine(It.IsAny<string>()), Times.Once);
-
-            _assemblyServiceMock
-                .Verify(m => m.GetVersionNumber(), Times.Once);
+            _outputWriterMock
+                .Verify(m => m.WriteOutput(helpText, It.IsAny<IDictionary<string, string>>()), Times.Once);
         }
 
         [TestMethod]
@@ -138,41 +138,6 @@ namespace Armyknife.Business.Tests.Implementations
             // assert
             Assert.IsNotNull(exception);
             Assert.AreEqual(expectedExceptionMessage, exception.Message);
-        }
-
-        [TestMethod]
-        public async Task Executor_ExecuteAsync_ShowToolHelp()
-        {
-            // arrange
-            string toolName = "testtool";
-            string[] args = { toolName, Constants.HelpKey };
-            string helpText = "this is the tool help text";
-            string descriptionText = "this is the description";
-            string expectedText = $"{descriptionText}{Environment.NewLine}{helpText}";
-
-            var toolMock = new Mock<ITool>();
-
-            toolMock
-                .Setup(m => m.HelpText)
-                .Returns(helpText);
-
-            toolMock
-                .Setup(m => m.Description)
-                .Returns(descriptionText);
-
-            _toolResolverMock
-                .Setup(m => m.ResolveTool(toolName))
-                .Returns(toolMock.Object);
-
-            _consoleServiceMock
-                .Setup(m => m.WriteLine(expectedText));
-
-            // act
-            await _executor.ExecuteAsync(args);
-
-            // assert
-            _consoleServiceMock
-                .Verify(m => m.WriteLine(expectedText), Times.Once);
         }
 
         [TestMethod]
