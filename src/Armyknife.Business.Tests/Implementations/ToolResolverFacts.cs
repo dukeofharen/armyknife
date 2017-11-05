@@ -20,33 +20,8 @@ namespace Armyknife.Business.Tests.Implementations
         {
             _serviceProviderMock = new Mock<IServiceProvider>();
 
-            var tool1 = new Mock<ITool>();
-            tool1
-                .Setup(m => m.Name)
-                .Returns("tool1");
-            tool1
-                .Setup(m => m.Category)
-                .Returns("category1");
-            tool1
-                .Setup(m => m.Description)
-                .Returns("description1");
-            tool1
-                .Setup(m => m.HelpText)
-                .Returns("help1");
-
-            var tool2 = new Mock<ITool>();
-            tool2
-                .Setup(m => m.Name)
-                .Returns("tool2");
-            tool2
-                .Setup(m => m.Category)
-                .Returns("category2");
-            tool2
-                .Setup(m => m.Description)
-                .Returns("description2");
-            tool2
-                .Setup(m => m.HelpText)
-                .Returns("help2");
+            var tool1 = SetupTool("tool1", "category1", "description1", "help1", false);
+            var tool2 = SetupTool("tool2", "category2", "description2", "help2", true);
 
             _tools = new[]
             {
@@ -95,11 +70,35 @@ namespace Armyknife.Business.Tests.Implementations
             Assert.AreEqual("category1", result[0].Category);
             Assert.AreEqual("description1", result[0].ShortDescription);
             Assert.AreEqual("help1", result[0].HelpText);
+            Assert.AreEqual(false, result[0].ShowToolInHelp);
 
             Assert.AreEqual("tool2", result[1].Key);
             Assert.AreEqual("category2", result[1].Category);
             Assert.AreEqual("description2", result[1].ShortDescription);
             Assert.AreEqual("help2", result[1].HelpText);
+            Assert.AreEqual(true, result[1].ShowToolInHelp);
+        }
+
+        private Mock<ITool> SetupTool(string name, string category, string description, string help, bool showInHelp)
+        {
+            var tool = new Mock<ITool>();
+            tool
+                .Setup(m => m.Name)
+                .Returns(name);
+            tool
+                .Setup(m => m.Category)
+                .Returns(category);
+            tool
+                .Setup(m => m.Description)
+                .Returns(description);
+            tool
+                .Setup(m => m.HelpText)
+                .Returns(help);
+            tool
+                .Setup(m => m.ShowToolInHelp)
+                .Returns(showInHelp);
+
+            return tool;
         }
     }
 }
