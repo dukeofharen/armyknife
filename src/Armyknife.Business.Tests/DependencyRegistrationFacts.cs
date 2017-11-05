@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Armyknife.Business.Interfaces;
+using System.Linq;
 
 namespace Armyknife.Business.Tests
 {
@@ -33,11 +34,22 @@ namespace Armyknife.Business.Tests
         public void DependencyRegistration_ResolveAllDependencies_HappyFlow()
         {
             // act / assert
+            var services = _serviceCollection.Where(s => s.ServiceType != typeof(ITool));
             foreach(var service in _serviceCollection)
             {
                 var instance = _serviceProvider.GetService(service.ServiceType);
                 Assert.IsNotNull(instance);
             }
+        }
+
+        [TestMethod]
+        public void DependencyRegistration_ResolveTools_HappyFlow()
+        {
+            // act
+            var services = _serviceProvider.GetServices<ITool>();
+
+            // assert
+            Assert.IsTrue(services.Count() > 0);
         }
     }
 }
