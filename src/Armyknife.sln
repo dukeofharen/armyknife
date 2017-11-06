@@ -45,11 +45,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "installscripts", "installsc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Business.Interfaces", "Armyknife.Business.Interfaces\Armyknife.Business.Interfaces.csproj", "{45A2FC2C-36FB-4468-BEDD-D0DEDA409557}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Services.Interfaces", "Armyknife.Services.Interfaces\Armyknife.Services.Interfaces.csproj", "{B40D3FD9-38E0-43D0-9B8C-4AB8B3D35366}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Services.Interfaces", "Armyknife.Services.Interfaces\Armyknife.Services.Interfaces.csproj", "{B40D3FD9-38E0-43D0-9B8C-4AB8B3D35366}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Tools", "Armyknife.Tools\Armyknife.Tools.csproj", "{468422FA-57A6-4EB7-BCF9-3B08C2D85FBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Tools", "Armyknife.Tools\Armyknife.Tools.csproj", "{468422FA-57A6-4EB7-BCF9-3B08C2D85FBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Tools.Tests", "Armyknife.Tools.Tests\Armyknife.Tools.Tests.csproj", "{DE583F49-12E6-48A2-BA3A-E2C53E915D89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Tools.Tests", "Armyknife.Tools.Tests\Armyknife.Tools.Tests.csproj", "{DE583F49-12E6-48A2-BA3A-E2C53E915D89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7D9958DE-3601-4F9E-9419-ED76EF015A23}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
