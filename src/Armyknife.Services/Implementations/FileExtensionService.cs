@@ -8,36 +8,33 @@ using Armyknife.Models;
 
 namespace Armyknife.Services.Implementations
 {
-    internal class FileExtensionService : IFileExtensionService
-    {
-        private List<FileExtensionInfoModel> _extensions;
-        private readonly IConsoleService _consoleService;
-        private readonly IFileService _fileService;
+   internal class FileExtensionService : IFileExtensionService
+   {
+      private List<FileExtensionInfoModel> _extensions;
+      private readonly IConsoleService _consoleService;
+      private readonly IFileService _fileService;
 
-        public FileExtensionService(
-            IConsoleService consoleService,
-            IFileService fileService)
-        {
-            _consoleService = consoleService;
-            _fileService = fileService;
-            InitializeExtensions();
-        }
+      public FileExtensionService(
+          IConsoleService consoleService,
+          IFileService fileService)
+      {
+         _consoleService = consoleService;
+         _fileService = fileService;
+         InitializeExtensions();
+      }
 
-        public FileExtensionInfoModel GetFileExtensionInfo(string extension)
-        {
-            var result = _extensions
-                .FirstOrDefault(e => e.Extension.Equals(extension, StringComparison.OrdinalIgnoreCase));
-            return result;
-        }
+      public FileExtensionInfoModel GetFileExtensionInfo(string extension)
+      {
+         var result = _extensions
+             .FirstOrDefault(e => e.Extension.Equals(extension, StringComparison.OrdinalIgnoreCase));
+         return result;
+      }
 
-        private void InitializeExtensions()
-        {
-            if (_extensions == null)
-            {
-                string mimePath = Path.Combine(_consoleService.GetConsolePath(), "Resources/filetypes.json");
-                string contents = _fileService.ReadAllText(mimePath);
-                _extensions = JsonConvert.DeserializeObject<List<FileExtensionInfoModel>>(contents);
-            }
-        }
-    }
+      private void InitializeExtensions()
+      {
+         string mimePath = Path.Combine(_consoleService.GetConsolePath(), "Resources/filetypes.json");
+         string contents = _fileService.ReadAllText(mimePath);
+         _extensions = JsonConvert.DeserializeObject<List<FileExtensionInfoModel>>(contents);
+      }
+   }
 }

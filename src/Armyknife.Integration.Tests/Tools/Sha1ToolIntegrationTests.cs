@@ -4,14 +4,14 @@ using System.Threading.Tasks;
 namespace Armyknife.Integration.Tests.Tools
 {
    [TestClass]
-   public class Base64EncodeToolIntegrationTests : IntegrationTestBase
+   public class Sha1ToolIntegrationTests : IntegrationTestBase
    {
       [TestMethod]
-      public async Task Base64EncodeTool_IntegrationTest()
+      public async Task Sha1Tool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs($"base64encode this is the input");
-         string expectedOutput = "dGhpcyBpcyB0aGUgaW5wdXQ=";
+         string[] args = GetArgs("sha1 --input this is the input --hmac secret key --outputType base64");
+         string expectedOutput = "4+Q1Ybcwj4aofyGF2HpFBo+5uYI=";
 
          // act
          await _executor.ExecuteAsync(args);
