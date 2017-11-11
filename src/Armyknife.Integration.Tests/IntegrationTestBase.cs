@@ -75,15 +75,5 @@ namespace Armyknife.Integration.Tests
       {
          return input.Split(' ');
       }
-
-      protected void InitializeFileTypes()
-      {
-         
-      }
-
-      protected void InitializeMimeTypes()
-      {
-         
-      }
    }
 }
