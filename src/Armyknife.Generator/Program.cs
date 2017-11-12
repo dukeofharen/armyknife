@@ -9,9 +9,34 @@ namespace Armyknife.Generator
    {
       static void Main(string[] args)
       {
-         string toolName = "Test";
-         string categoryName = "Text";
-         var toolType = ToolType.AsynchronousTool;
+         string toolName = null;
+         string categoryName = null;
+         ToolType toolType = ToolType.NotSet;
+         bool ready = false;
+         while (!ready)
+         {
+            while (string.IsNullOrWhiteSpace(toolName))
+            {
+               Console.WriteLine("Tool name:");
+               toolName = Console.ReadLine();
+            }
+
+            while (string.IsNullOrWhiteSpace(categoryName))
+            {
+               Console.WriteLine("Category name:");
+               categoryName = Console.ReadLine();
+            }
+
+            while (toolType == ToolType.NotSet)
+            {
+               Console.WriteLine("Tool type (SynchronousTool or AsynchronousTool)");
+               if (Enum.TryParse(Console.ReadLine(), out toolType))
+               {
+                  ready = true;
+               }
+            }
+         }
+
          GenerateTool(toolName, categoryName, toolType);
       }
 
@@ -117,6 +142,7 @@ namespace Armyknife.Generator
 
       private enum ToolType
       {
+         NotSet,
          SynchronousTool,
          AsynchronousTool
       }
