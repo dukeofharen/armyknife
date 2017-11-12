@@ -20,7 +20,7 @@ namespace Armyknife.Business.Implementations
         {
             return _serviceProvider
                 .GetServices<ITool>()
-                .FirstOrDefault(t => t.Name == name);
+                .Single(t => t.Name == name);
         }
 
         public IEnumerable<ToolMetaDataModel> GetToolMetData()
