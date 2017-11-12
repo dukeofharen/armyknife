@@ -178,17 +178,19 @@ Optional properties:
 - paragraphs: the number of Lorem Ipsum paragrahps (5 default).</value>
   </data>
   <data name="LongurlDescription" xml:space="preserve">
-    <value>A handy tool to lengthen URLs from several (not all) URL shortening services. Works with (at least):
+    <value>A handy tool to lengthen URLs from several (not all) URL shortening services.</value>
+  </data>
+  <data name="LongurlHelp" xml:space="preserve">
+    <value>Usage:
+- longurl http://tinyurl.com/123
+
+Works with (at least):
 - bit.ly
 - goo.gl
 - is.gd
 - tinyurl.com
 - t.co
 - fb.me</value>
-  </data>
-  <data name="LongurlHelp" xml:space="preserve">
-    <value>Usage:
-- longurl http://tinyurl.com/123</value>
   </data>
   <data name="Md5Description" xml:space="preserve">
     <value>Encodes a piece of text to an MD5 hash.</value>
