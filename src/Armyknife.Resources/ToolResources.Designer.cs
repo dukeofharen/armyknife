@@ -150,6 +150,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A simple to to HTML decode a given string..
+        /// </summary>
+        public static string HtmldecodeDescription {
+            get {
+                return ResourceManager.GetString("HtmldecodeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- htmldecode &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;.
+        /// </summary>
+        public static string HtmldecodeHelp {
+            get {
+                return ResourceManager.GetString("HtmldecodeHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A simple to to HTML encode a given string..
         /// </summary>
         public static string HtmlencodeDescription {

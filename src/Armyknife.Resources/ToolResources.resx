@@ -152,6 +152,13 @@ Used by: {2}</value>
     <value>Usage:
 - frommime text/plain</value>
   </data>
+  <data name="HtmldecodeDescription" xml:space="preserve">
+    <value>A simple to to HTML decode a given string.</value>
+  </data>
+  <data name="HtmldecodeHelp" xml:space="preserve">
+    <value>Usage:
+- htmldecode &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;</value>
+  </data>
   <data name="HtmlencodeDescription" xml:space="preserve">
     <value>A simple to to HTML encode a given string.</value>
   </data>
