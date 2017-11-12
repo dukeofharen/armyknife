@@ -51,6 +51,15 @@ namespace Armyknife.Generator
          string toolClassName = $"{actualToolName}Tool";
          string toolClassPath = Path.Combine(sourcePath, "Armyknife.Tools", "Implementations", $"{toolClassName}.cs");
 
+         if (File.Exists(toolClassPath))
+         {
+            Console.WriteLine($"The tool '{toolClassName}' already exists. Type 'y' and press enter to confirm the creation of this tool.");
+            if(!string.Equals(Console.ReadLine(), "y", StringComparison.OrdinalIgnoreCase))
+            {
+               return;
+            }
+         }
+
          string unitTestClassName = $"{toolClassName}Facts";
          string unitTestClassPath = Path.Combine(sourcePath, "Armyknife.Tools.Tests", "Implementations", $"{unitTestClassName}.cs");
 
