@@ -14,7 +14,7 @@ namespace Armyknife.Tools.Implementations
 
       public string Description => ToolResources.HtmldecodeDescription;
 
-      public string Category => CategoryResources.WebCategory;
+      public string Category => CategoryResources.EncodingCategory;
 
       public string HelpText => ToolResources.HtmldecodeHelp;
 

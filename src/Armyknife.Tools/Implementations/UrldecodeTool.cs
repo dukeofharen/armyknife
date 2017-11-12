@@ -14,7 +14,7 @@ namespace Armyknife.Tools.Implementations
 
       public string Description => ToolResources.UrldecodeDescription;
 
-      public string Category => CategoryResources.WebCategory;
+      public string Category => CategoryResources.EncodingCategory;
 
       public string HelpText => ToolResources.UrldecodeHelp;
 
