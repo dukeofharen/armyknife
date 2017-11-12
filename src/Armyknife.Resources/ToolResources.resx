@@ -228,6 +228,13 @@ Optional properties:
 - hmac: the signature key for the SHA512 hash
 - outputType: how the string should be generated (should be 'hex' or 'base64')</value>
   </data>
+  <data name="StringreverseDescription" xml:space="preserve">
+    <value>This tool lets you reverse a string.</value>
+  </data>
+  <data name="StringreverseHelp" xml:space="preserve">
+    <value>Usage:
+- stringreverse Reverse this string my man.</value>
+  </data>
   <data name="TinyUrlDescription" xml:space="preserve">
     <value>A handy tool to generate shortened URLs at tinyurl.com.</value>
   </data>

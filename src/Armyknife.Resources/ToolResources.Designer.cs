@@ -298,6 +298,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This tool lets you reverse a string..
+        /// </summary>
+        public static string StringreverseDescription {
+            get {
+                return ResourceManager.GetString("StringreverseDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- stringreverse Reverse this string my man..
+        /// </summary>
+        public static string StringreverseHelp {
+            get {
+                return ResourceManager.GetString("StringreverseHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A handy tool to generate shortened URLs at tinyurl.com..
         /// </summary>
         public static string TinyUrlDescription {
