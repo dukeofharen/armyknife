@@ -263,6 +263,13 @@ Optional properties:
 - tomime txt
 - tomime filename.txt</value>
   </data>
+  <data name="UrlencodeDescription" xml:space="preserve">
+    <value>A simple tool to URL encode a given string.</value>
+  </data>
+  <data name="UrlencodeHelp" xml:space="preserve">
+    <value>Usage:
+- urlencode https://www.google.com</value>
+  </data>
   <data name="UuidDescription" xml:space="preserve">
     <value>A handy tool to generate a (or many) UUIDs.</value>
   </data>
