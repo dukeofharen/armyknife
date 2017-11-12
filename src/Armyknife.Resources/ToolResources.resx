@@ -152,6 +152,13 @@ Used by: {2}</value>
     <value>Usage:
 - frommime text/plain</value>
   </data>
+  <data name="HtmlencodeDescription" xml:space="preserve">
+    <value>A simple to to HTML encode a given string.</value>
+  </data>
+  <data name="HtmlencodeHelp" xml:space="preserve">
+    <value>Usage:
+You can't use characters like '&lt;' or '&gt;' as input, so you need to provide the input via piping.</value>
+  </data>
   <data name="LipsumDescription" xml:space="preserve">
     <value>Generates a number of Lorem Ipsum paragraphs.</value>
   </data>

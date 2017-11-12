@@ -150,6 +150,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A simple to to HTML encode a given string..
+        /// </summary>
+        public static string HtmlencodeDescription {
+            get {
+                return ResourceManager.GetString("HtmlencodeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///You can&apos;t use characters like &apos;&lt;&apos; or &apos;&gt;&apos; as input, so you need to provide the input via piping..
+        /// </summary>
+        public static string HtmlencodeHelp {
+            get {
+                return ResourceManager.GetString("HtmlencodeHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generates a number of Lorem Ipsum paragraphs..
         /// </summary>
         public static string LipsumDescription {
