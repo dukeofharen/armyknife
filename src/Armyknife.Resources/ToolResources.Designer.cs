@@ -173,6 +173,31 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A handy tool to lengthen URLs from several (not all) URL shortening services. Works with (at least):
+        ///- bit.ly
+        ///- goo.gl
+        ///- is.gd
+        ///- tinyurl.com
+        ///- t.co
+        ///- fb.me.
+        /// </summary>
+        public static string LongurlDescription {
+            get {
+                return ResourceManager.GetString("LongurlDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- longurl http://tinyurl.com/123.
+        /// </summary>
+        public static string LongurlHelp {
+            get {
+                return ResourceManager.GetString("LongurlHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encodes a piece of text to an MD5 hash..
         /// </summary>
         public static string Md5Description {
