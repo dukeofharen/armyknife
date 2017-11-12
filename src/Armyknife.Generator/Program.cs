@@ -10,8 +10,8 @@ namespace Armyknife.Generator
       static void Main(string[] args)
       {
          string toolName = "Test";
-         string categoryName = "Test";
-         var toolType = ToolType.SynchronousTool;
+         string categoryName = "Text";
+         var toolType = ToolType.AsynchronousTool;
          GenerateTool(toolName, categoryName, toolType);
       }
 
@@ -82,6 +82,8 @@ namespace Armyknife.Generator
          {
             case ToolType.SynchronousTool:
                return GeneratorResources.SynchronousToolTemplate;
+            case ToolType.AsynchronousTool:
+               return GeneratorResources.AsynchronousToolTemplate;
             default:
                throw new NotImplementedException($"Tool type {toolType} not supported.");
          }
@@ -93,6 +95,8 @@ namespace Armyknife.Generator
          {
             case ToolType.SynchronousTool:
                return GeneratorResources.SynchronousUnitTestTemplate;
+            case ToolType.AsynchronousTool:
+               return GeneratorResources.AsynchronousUnitTestTemplate;
             default:
                throw new NotImplementedException($"Tool type {toolType} not supported.");
          }
@@ -104,6 +108,8 @@ namespace Armyknife.Generator
          {
             case ToolType.SynchronousTool:
                return GeneratorResources.SynchronousIntegrationTestTemplate;
+            case ToolType.AsynchronousTool:
+               return GeneratorResources.AsynchronousIntegrationTestTemplate;
             default:
                throw new NotImplementedException($"Tool type {toolType} not supported.");
          }

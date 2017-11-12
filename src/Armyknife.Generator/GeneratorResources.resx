@@ -117,6 +117,123 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AsynchronousIntegrationTestTemplate" xml:space="preserve">
+    <value>using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Threading.Tasks;
+
+namespace Armyknife.Integration.Tests.Tools
+{
+   [TestClass]
+   public class [INTEGRATIONTESTCLASSNAME] : IntegrationTestBase
+   {
+      [TestMethod]
+      public async Task [TOOLCLASSNAME]_IntegrationTest()
+      {
+         // arrange
+         var args = GetArgs($"[TOOLKEY] some input");
+         string expectedOutput = string.Empty;
+
+         // act
+         await _executor.ExecuteAsync(args);
+
+         // assert
+         Assert.AreEqual(expectedOutput, _output);
+      }
+   }
+}</value>
+  </data>
+  <data name="AsynchronousToolTemplate" xml:space="preserve">
+    <value>using System.Collections.Generic;
+using System.Threading.Tasks;
+using Armyknife.Exceptions;
+using Armyknife.Resources;
+using Armyknife.Models;
+using Armyknife.Business.Interfaces;
+
+namespace Armyknife.Tools.Implementations
+{
+   internal class [TOOLCLASSNAME] : I[TOOLTYPE]
+   {
+      public string Name =&gt; "[TOOLKEY]";
+
+      public string Description =&gt; ToolResources.[TOOLNAME]Description;
+
+      public string Category =&gt; CategoryResources.[CATEGORYNAME]Category;
+
+      public string HelpText =&gt; ToolResources.[TOOLNAME]Help;
+
+      public bool ShowToolInHelp =&gt; true;
+
+      public async Task&lt;string&gt; ExecuteAsync(IDictionary&lt;string, string&gt; args)
+      {
+         // TODO remove this, this is only used to let the build succeed
+         await Task.CompletedTask;
+         if (!args.ContainsKey(Constants.InputKey))
+         {
+            throw new ArmyknifeException(ExceptionResources.NoInput);
+         }
+
+         return string.Empty;
+      }
+   }
+}</value>
+  </data>
+  <data name="AsynchronousUnitTestTemplate" xml:space="preserve">
+    <value>using Armyknife.Exceptions;
+using Armyknife.Models;
+using Armyknife.Tools.Implementations;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Armyknife.Tools.Tests.Implementations
+{
+   [TestClass]
+   public class [UNITTESTCLASSNAME]
+   {
+      private [TOOLCLASSNAME] _tool;
+
+      [TestInitialize]
+      public void Initialize()
+      {
+         _tool = new [TOOLCLASSNAME]();
+      }
+
+      [TestCleanup]
+      public void Cleanup()
+      {
+         // Empty for now
+      }
+
+      [TestMethod]
+      public async Task [TOOLCLASSNAME]_ExecuteAsync_NoInput_ShouldThrowArmyknifeException()
+      {
+         // arrange
+         var argsDictionary = new Dictionary&lt;string, string&gt;();
+
+         // act / assert
+         await Assert.ThrowsExceptionAsync&lt;ArmyknifeException&gt;(() =&gt; _tool.ExecuteAsync(argsDictionary));
+      }
+
+      [TestMethod]
+      public async Task [TOOLCLASSNAME]_ExecuteAsync_HappyFlow()
+      {
+         // arrange
+         var argsDictionary = new Dictionary&lt;string, string&gt;
+         {
+            { Constants.InputKey, Guid.NewGuid().ToString() }
+         };
+
+         // act
+         string output = await _tool.ExecuteAsync(argsDictionary);
+
+         // assert
+         Assert.AreEqual(string.Empty, output);
+      }
+   }
+}</value>
+  </data>
   <data name="SynchronousIntegrationTestTemplate" xml:space="preserve">
     <value>using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;

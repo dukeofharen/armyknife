@@ -81,6 +81,89 @@ namespace Armyknife.Generator {
         ///
         ///         // [rest of string was truncated]&quot;;.
         /// </summary>
+        internal static string AsynchronousIntegrationTestTemplate {
+            get {
+                return ResourceManager.GetString("AsynchronousIntegrationTestTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System.Collections.Generic;
+        ///using System.Threading.Tasks;
+        ///using Armyknife.Exceptions;
+        ///using Armyknife.Resources;
+        ///using Armyknife.Models;
+        ///using Armyknife.Business.Interfaces;
+        ///
+        ///namespace Armyknife.Tools.Implementations
+        ///{
+        ///   internal class [TOOLCLASSNAME] : I[TOOLTYPE]
+        ///   {
+        ///      public string Name =&gt; &quot;[TOOLKEY]&quot;;
+        ///
+        ///      public string Description =&gt; ToolResources.[TOOLNAME]Description;
+        ///
+        ///      public string Category =&gt; CategoryResources.[CATEGORYNAME]Category;
+        ///
+        ///      public string HelpTex [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AsynchronousToolTemplate {
+            get {
+                return ResourceManager.GetString("AsynchronousToolTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using Armyknife.Exceptions;
+        ///using Armyknife.Models;
+        ///using Armyknife.Tools.Implementations;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using System;
+        ///using System.Collections.Generic;
+        ///using System.Threading.Tasks;
+        ///
+        ///namespace Armyknife.Tools.Tests.Implementations
+        ///{
+        ///   [TestClass]
+        ///   public class [UNITTESTCLASSNAME]
+        ///   {
+        ///      private [TOOLCLASSNAME] _tool;
+        ///
+        ///      [TestInitialize]
+        ///      public void Initialize()
+        ///      {
+        ///         _tool = new [TOOLCLASSNAME]();
+        ///      }
+        ///
+        ///      [TestCle [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AsynchronousUnitTestTemplate {
+            get {
+                return ResourceManager.GetString("AsynchronousUnitTestTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using System.Threading.Tasks;
+        ///
+        ///namespace Armyknife.Integration.Tests.Tools
+        ///{
+        ///   [TestClass]
+        ///   public class [INTEGRATIONTESTCLASSNAME] : IntegrationTestBase
+        ///   {
+        ///      [TestMethod]
+        ///      public async Task [TOOLCLASSNAME]_IntegrationTest()
+        ///      {
+        ///         // arrange
+        ///         var args = GetArgs($&quot;[TOOLKEY] some input&quot;);
+        ///         string expectedOutput = string.Empty;
+        ///
+        ///         // act
+        ///         await _executor.ExecuteAsync(args);
+        ///
+        ///         // [rest of string was truncated]&quot;;.
+        /// </summary>
         internal static string SynchronousIntegrationTestTemplate {
             get {
                 return ResourceManager.GetString("SynchronousIntegrationTestTemplate", resourceCulture);
