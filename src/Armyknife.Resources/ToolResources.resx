@@ -263,6 +263,13 @@ Optional properties:
 - tomime txt
 - tomime filename.txt</value>
   </data>
+  <data name="UrldecodeDescription" xml:space="preserve">
+    <value>A simple tool to URL decode a given string.</value>
+  </data>
+  <data name="UrldecodeHelp" xml:space="preserve">
+    <value>Usage:
+- urldecode https%3a%2f%2fgoogle.com</value>
+  </data>
   <data name="UrlencodeDescription" xml:space="preserve">
     <value>A simple tool to URL encode a given string.</value>
   </data>

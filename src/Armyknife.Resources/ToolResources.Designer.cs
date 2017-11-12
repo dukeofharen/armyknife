@@ -381,6 +381,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A simple tool to URL decode a given string..
+        /// </summary>
+        public static string UrldecodeDescription {
+            get {
+                return ResourceManager.GetString("UrldecodeDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- urldecode https%3a%2f%2fgoogle.com.
+        /// </summary>
+        public static string UrldecodeHelp {
+            get {
+                return ResourceManager.GetString("UrldecodeHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A simple tool to URL encode a given string..
         /// </summary>
         public static string UrlencodeDescription {
