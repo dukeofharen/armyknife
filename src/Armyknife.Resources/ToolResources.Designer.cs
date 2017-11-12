@@ -382,6 +382,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A tool which shows the current week number..
+        /// </summary>
+        public static string WeeknumberDescription {
+            get {
+                return ResourceManager.GetString("WeeknumberDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- weeknumber.
+        /// </summary>
+        public static string WeeknumberHelp {
+            get {
+                return ResourceManager.GetString("WeeknumberHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A handy tool to generate QR codes..
         /// </summary>
         public static string WriteQrDescription {

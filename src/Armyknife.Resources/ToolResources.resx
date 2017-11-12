@@ -264,6 +264,13 @@ Optional properties:
 - hyphens: whether the GUID parts should be separated by hyphens (true or false, default true)
 - howmany: how many GUIDs should be generated (default 1)</value>
   </data>
+  <data name="WeeknumberDescription" xml:space="preserve">
+    <value>A tool which shows the current week number.</value>
+  </data>
+  <data name="WeeknumberHelp" xml:space="preserve">
+    <value>Usage:
+- weeknumber</value>
+  </data>
   <data name="WriteQrDescription" xml:space="preserve">
     <value>A handy tool to generate QR codes.</value>
   </data>

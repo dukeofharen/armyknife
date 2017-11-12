@@ -61,6 +61,15 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date / time tools.
+        /// </summary>
+        public static string DateCategory {
+            get {
+                return ResourceManager.GetString("DateCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encoding tools.
         /// </summary>
         public static string EncodingCategory {

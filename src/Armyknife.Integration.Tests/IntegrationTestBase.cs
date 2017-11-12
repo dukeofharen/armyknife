@@ -14,6 +14,7 @@ namespace Armyknife.Integration.Tests
       private const string ConsolePath = @"C:\tmp";
       protected Mock<IBarcodeService> _barcodeServiceMock;
       protected Mock<IConsoleService> _consoleService;
+      protected Mock<IDateTimeService> _dateTimeServiceMock;
       protected Mock<IFileService> _fileServiceMock;
       protected Mock<IOutputWriter> _outputWriterMock;
       protected Mock<IProcessService> _processServiceMock;
@@ -34,6 +35,8 @@ namespace Armyknife.Integration.Tests
             .Setup(m => m.GetConsolePath())
             .Returns(ConsolePath);
 
+         _dateTimeServiceMock = new Mock<IDateTimeService>();
+
          _fileServiceMock = new Mock<IFileService>();
          _fileServiceMock
             .Setup(m => m.ReadAllText(Path.Combine(ConsolePath, "Resources/filetypes.json")))
@@ -52,6 +55,7 @@ namespace Armyknife.Integration.Tests
 
          serviceCollection.AddSingleton(_barcodeServiceMock.Object);
          serviceCollection.AddSingleton(_consoleService.Object);
+         serviceCollection.AddSingleton(_dateTimeServiceMock.Object);
          serviceCollection.AddSingleton(_fileServiceMock.Object);
          serviceCollection.AddSingleton(_outputWriterMock.Object);
          serviceCollection.AddSingleton(_processServiceMock.Object);
@@ -66,6 +70,7 @@ namespace Armyknife.Integration.Tests
       public void Cleanup()
       {
          _barcodeServiceMock.VerifyAll();
+         _dateTimeServiceMock.VerifyAll();
          _fileServiceMock.VerifyAll();
          _outputWriterMock.VerifyAll();
          _webServiceMock.VerifyAll();
