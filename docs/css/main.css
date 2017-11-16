@@ -1,0 +1,16 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.navbar-inverse{
+    background-image: linear-gradient(to bottom,#B50000 0,#B50000 100%);
+    border: none;
+}
+.navbar-inverse a{
+    color: #FFFFFF !important;
+}
+
+img{
+    max-width: 100%;
+}
