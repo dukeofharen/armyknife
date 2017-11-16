@@ -14,3 +14,11 @@ body {
 img{
     max-width: 100%;
 }
+
+pre.powershell{
+    background-color: #012456;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 0;
+    font-family: "Lucida Console", Consolas;
+}

@@ -60,7 +60,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Integration.Tests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{8D9587DF-1928-4A4D-9FBE-695564D9984B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Generator", "Armyknife.Generator\Armyknife.Generator.csproj", "{ED6507C9-D7EB-456C-88A5-F9607620E697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Generator", "Armyknife.Generator\Armyknife.Generator.csproj", "{ED6507C9-D7EB-456C-88A5-F9607620E697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.DocGenerator", "Armyknife.DocGenerator\Armyknife.DocGenerator.csproj", "{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,6 +138,10 @@ Global
 		{ED6507C9-D7EB-456C-88A5-F9607620E697}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED6507C9-D7EB-456C-88A5-F9607620E697}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED6507C9-D7EB-456C-88A5-F9607620E697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +155,7 @@ Global
 		{DE583F49-12E6-48A2-BA3A-E2C53E915D89} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
 		{06A08E39-3C75-4F43-B7D6-E618ADE9298D} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
 		{ED6507C9-D7EB-456C-88A5-F9607620E697} = {8D9587DF-1928-4A4D-9FBE-695564D9984B}
+		{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE} = {8D9587DF-1928-4A4D-9FBE-695564D9984B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D65628E-0306-4433-BE5E-3BAD3E60D22C}

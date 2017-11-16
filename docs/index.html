@@ -54,6 +54,22 @@
     <div class="col-md-12">
       <h2>Recipes</h2>
       <a name="recipes"></a>
+
+      <h3>Windows</h3>
+      <p>
+        <strong>Make use of "piping"</strong>
+      </p>
+      <p>
+<pre class="powershell"><code>PS C:\Users\Duco\Desktop> Get-Content .\test.txt | armyknife base64encode
+VGhpcyBpcyBhIHRlc3QgZmlsZSENCg==</code></pre>
+      </p>
+      <p>
+        <strong>Pass clipboard data to Armyknife through piping</strong>
+      </p>
+      <p>
+<pre class="powershell"><code>PS C:\Users\Duco\Desktop> Get-Clipboard | armyknife sha1
+69776a1e2e0bfa8505342952cc6978d56342cc14</code></pre>
+      </p>
     </div>
     <div class="col-md-12">
       <h2>Tools</h2>

@@ -20,7 +20,7 @@ namespace Armyknife.Tools.Implementations
 
         public string Category => CategoryResources.HashingCategory;
 
-        public string HelpText => ToolResources.Sha1Description;
+        public string HelpText => ToolResources.Sha1Help;
 
         public bool ShowToolInHelp => true;
 
