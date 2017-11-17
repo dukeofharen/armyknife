@@ -1,9 +1,12 @@
+$ErrorActionPreference = 'Stop'
+
 $rootFolder = Join-Path -Path $PSScriptRoot ".."
 $srcFolder = Join-Path -Path $rootFolder "src"
 $mainProjectFile = Join-Path $srcFolder "Armyknife\Armyknife.csproj"
 $nsiPath = Join-Path $PSScriptRoot "armyknife.nsi"
 $winBinDir = Join-Path $srcFolder "Armyknife\bin\release\netcoreapp2.0\win10-x64\publish"
 $installScriptsPath = Join-Path -Path $PSScriptRoot "installscripts"
+$docsFolder = Join-Path -Path $rootFolder "docs"
 
 $nsisPath = "C:\Program Files (x86)\NSIS\Bin"
 
@@ -58,4 +61,15 @@ $env:BuildOutputBinDirectory = $winBinDir
 $env:BuildOutputDirectory = $winBinDir
 Write-Host "Building installer $nsiPath"
 & makensis $nsiPath
+Assert-Cmd-Ok
+
+# Patch documentation
+$docGenProjectFile = Join-Path -Path $srcFolder "Armyknife.DocGenerator\Armyknife.DocGenerator.csproj"
+Write-Host "Building project $docGenProjectFile"
+& dotnet build $docGenProjectFile
+Assert-Cmd-Ok
+
+$docGenDllFile = Join-Path -Path $srcFolder "Armyknife.DocGenerator\bin\Debug\netcoreapp2.0\Armyknife.DocGenerator.dll"
+Write-Host "Now running $docGenDllFile"
+& dotnet $docGenDllFile
 Assert-Cmd-Ok

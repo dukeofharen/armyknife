@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 
@@ -68,7 +69,7 @@ namespace Armyknife.DocGenerator
                builder.AppendLine($@"<a name=""{toolAnchor}""></a>");
                builder.AppendLine($"<h3>{tool.Key}</h3>");
                builder.AppendLine($"<p>{tool.ShortDescription}</p>");
-               builder.AppendLine($"<p>{helpText}</p>");
+               builder.AppendLine($"<pre>{WebUtility.HtmlEncode(helpText)}</pre>");
                builder.AppendLine("</div>");
             }
          }
