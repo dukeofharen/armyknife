@@ -59,13 +59,14 @@
 <li><a href="#frommime">frommime</a></li>
 <li><a href="#tomime">tomime</a></li>
 </ul></li>
+<li><strong><a href="#Web-tools">Web tools</a></strong><ul>
+<li><a href="#jsonprettify">jsonprettify</a></li>
+<li><a href="#longurl">longurl</a></li>
+<li><a href="#tinyurl">tinyurl</a></li>
+</ul></li>
 <li><strong><a href="#Text-tools">Text tools</a></strong><ul>
 <li><a href="#lipsum">lipsum</a></li>
 <li><a href="#stringreverse">stringreverse</a></li>
-</ul></li>
-<li><strong><a href="#Web-tools">Web tools</a></strong><ul>
-<li><a href="#longurl">longurl</a></li>
-<li><a href="#tinyurl">tinyurl</a></li>
 </ul></li>
 <li><strong><a href="#Hashing-tools">Hashing tools</a></strong><ul>
 <li><a href="#md5">md5</a></li>
@@ -181,28 +182,20 @@ You can&#39;t use characters like &#39;&lt;&#39; or &#39;&gt;&#39; as input, so 
 - tomime txt
 - tomime filename.txt</pre>
 </div>
-<a name="Text-tools"></a>
-<h2>Text tools</h2>
-<div class="col-md-12">
-<a name="lipsum"></a>
-<h3>lipsum</h3>
-<p>Generates a number of Lorem Ipsum paragraphs.</p>
-<pre>Usage:
-- lipsum
-- lipsum --paragraphs 20
-
-Optional properties:
-- paragraphs: the number of Lorem Ipsum paragrahps (5 default).</pre>
-</div>
-<div class="col-md-12">
-<a name="stringreverse"></a>
-<h3>stringreverse</h3>
-<p>This tool lets you reverse a string.</p>
-<pre>Usage:
-- stringreverse Reverse this string my man.</pre>
-</div>
 <a name="Web-tools"></a>
 <h2>Web tools</h2>
+<div class="col-md-12">
+<a name="jsonprettify"></a>
+<h3>jsonprettify</h3>
+<p>A handy tool to prettify a JSON string.</p>
+<pre>Usage:
+- jsonprettify {&quot;key&quot;: &quot;value&quot;}
+- jsonprettify --input {&quot;key&quot;: &quot;value&quot;} --character space --tabsize 3
+
+Optional parameters:
+- character: whether the indentation character should be either &quot;tab&quot; or &quot;space&quot; (default space)
+- tabsize: the indentation size (default 3)</pre>
+</div>
 <div class="col-md-12">
 <a name="longurl"></a>
 <h3>longurl</h3>
@@ -224,6 +217,26 @@ Works with (at least):
 <p>A handy tool to generate shortened URLs at tinyurl.com.</p>
 <pre>Usage:
 - tinyurl https://google.com</pre>
+</div>
+<a name="Text-tools"></a>
+<h2>Text tools</h2>
+<div class="col-md-12">
+<a name="lipsum"></a>
+<h3>lipsum</h3>
+<p>Generates a number of Lorem Ipsum paragraphs.</p>
+<pre>Usage:
+- lipsum
+- lipsum --paragraphs 20
+
+Optional properties:
+- paragraphs: the number of Lorem Ipsum paragrahps (5 default).</pre>
+</div>
+<div class="col-md-12">
+<a name="stringreverse"></a>
+<h3>stringreverse</h3>
+<p>This tool lets you reverse a string.</p>
+<pre>Usage:
+- stringreverse Reverse this string my man.</pre>
 </div>
 <a name="Hashing-tools"></a>
 <h2>Hashing tools</h2>
