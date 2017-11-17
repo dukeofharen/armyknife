@@ -46,7 +46,44 @@
             <strong>Tools</strong>
           </a>
           <ul>
-            [TOOLS-LIST]
+            <li><strong><a href="#Encoding-tools">Encoding tools</a></strong><ul>
+<li><a href="#base64decode">base64decode</a></li>
+<li><a href="#base64encode">base64encode</a></li>
+<li><a href="#htmldecode">htmldecode</a></li>
+<li><a href="#htmlencode">htmlencode</a></li>
+<li><a href="#urldecode">urldecode</a></li>
+<li><a href="#urlencode">urlencode</a></li>
+</ul></li>
+<li><strong><a href="#File-tools">File tools</a></strong><ul>
+<li><a href="#filext">filext</a></li>
+<li><a href="#frommime">frommime</a></li>
+<li><a href="#tomime">tomime</a></li>
+</ul></li>
+<li><strong><a href="#Text-tools">Text tools</a></strong><ul>
+<li><a href="#lipsum">lipsum</a></li>
+<li><a href="#stringreverse">stringreverse</a></li>
+</ul></li>
+<li><strong><a href="#Web-tools">Web tools</a></strong><ul>
+<li><a href="#longurl">longurl</a></li>
+<li><a href="#tinyurl">tinyurl</a></li>
+</ul></li>
+<li><strong><a href="#Hashing-tools">Hashing tools</a></strong><ul>
+<li><a href="#md5">md5</a></li>
+<li><a href="#sha1">sha1</a></li>
+<li><a href="#sha256">sha256</a></li>
+<li><a href="#sha384">sha384</a></li>
+<li><a href="#sha512">sha512</a></li>
+</ul></li>
+<li><strong><a href="#Number-tools">Number tools</a></strong><ul>
+<li><a href="#uuid">uuid</a></li>
+</ul></li>
+<li><strong><a href="#Date-/-time-tools">Date / time tools</a></strong><ul>
+<li><a href="#weeknumber">weeknumber</a></li>
+</ul></li>
+<li><strong><a href="#Imaging-tools">Imaging tools</a></strong><ul>
+<li><a href="#writeqr">writeqr</a></li>
+</ul></li>
+
           </ul>
         </li>
       </ul>
@@ -74,7 +111,227 @@ VGhpcyBpcyBhIHRlc3QgZmlsZSENCg==</code></pre>
     <div class="col-md-12">
       <h2>Tools</h2>
       <a name="tools"></a>
-      [TOOLS]
+      <a name="Encoding-tools"></a>
+<h2>Encoding tools</h2>
+<div class="col-md-12">
+<a name="base64decode"></a>
+<h3>base64decode</h3>
+<p>Decodes a piece of Base64 encoded text.</p>
+<pre>Usage:
+- base64decode ZGVjb2RlIHRoaXM=
+- base64decode --input ZGVjb2RlIHRoaXM=</pre>
+</div>
+<div class="col-md-12">
+<a name="base64encode"></a>
+<h3>base64encode</h3>
+<p>Encodes a piece of text or a file to a Base64 string.</p>
+<pre>Usage:
+- base64encode encode this
+- base64encode --input encode this</pre>
+</div>
+<div class="col-md-12">
+<a name="htmldecode"></a>
+<h3>htmldecode</h3>
+<p>A simple to to HTML decode a given string.</p>
+<pre>Usage:
+- htmldecode &amp;lt;html&amp;gt;&amp;lt;/html&amp;gt;</pre>
+</div>
+<div class="col-md-12">
+<a name="htmlencode"></a>
+<h3>htmlencode</h3>
+<p>A simple to to HTML encode a given string.</p>
+<pre>Usage:
+You can&#39;t use characters like &#39;&lt;&#39; or &#39;&gt;&#39; as input, so you need to provide the input via piping.</pre>
+</div>
+<div class="col-md-12">
+<a name="urldecode"></a>
+<h3>urldecode</h3>
+<p>A simple tool to URL decode a given string.</p>
+<pre>Usage:
+- urldecode https%3a%2f%2fgoogle.com</pre>
+</div>
+<div class="col-md-12">
+<a name="urlencode"></a>
+<h3>urlencode</h3>
+<p>A simple tool to URL encode a given string.</p>
+<pre>Usage:
+- urlencode https://www.google.com</pre>
+</div>
+<a name="File-tools"></a>
+<h2>File tools</h2>
+<div class="col-md-12">
+<a name="filext"></a>
+<h3>filext</h3>
+<p>Lets you fill in a file extension and looks up the corresponding information of that file extension.</p>
+<pre>Usage:
+- filext xlsx</pre>
+</div>
+<div class="col-md-12">
+<a name="frommime"></a>
+<h3>frommime</h3>
+<p>Checks a given MIME type and finds all corresponding file extensions.</p>
+<pre>Usage:
+- frommime text/plain</pre>
+</div>
+<div class="col-md-12">
+<a name="tomime"></a>
+<h3>tomime</h3>
+<p>Converts a given file extension or file name to the corresponding MIME type.</p>
+<pre>Usage:
+- tomime txt
+- tomime filename.txt</pre>
+</div>
+<a name="Text-tools"></a>
+<h2>Text tools</h2>
+<div class="col-md-12">
+<a name="lipsum"></a>
+<h3>lipsum</h3>
+<p>Generates a number of Lorem Ipsum paragraphs.</p>
+<pre>Usage:
+- lipsum
+- lipsum --paragraphs 20
+
+Optional properties:
+- paragraphs: the number of Lorem Ipsum paragrahps (5 default).</pre>
+</div>
+<div class="col-md-12">
+<a name="stringreverse"></a>
+<h3>stringreverse</h3>
+<p>This tool lets you reverse a string.</p>
+<pre>Usage:
+- stringreverse Reverse this string my man.</pre>
+</div>
+<a name="Web-tools"></a>
+<h2>Web tools</h2>
+<div class="col-md-12">
+<a name="longurl"></a>
+<h3>longurl</h3>
+<p>A handy tool to lengthen URLs from several (not all) URL shortening services.</p>
+<pre>Usage:
+- longurl http://tinyurl.com/123
+
+Works with (at least):
+- bit.ly
+- goo.gl
+- is.gd
+- tinyurl.com
+- t.co
+- fb.me</pre>
+</div>
+<div class="col-md-12">
+<a name="tinyurl"></a>
+<h3>tinyurl</h3>
+<p>A handy tool to generate shortened URLs at tinyurl.com.</p>
+<pre>Usage:
+- tinyurl https://google.com</pre>
+</div>
+<a name="Hashing-tools"></a>
+<h2>Hashing tools</h2>
+<div class="col-md-12">
+<a name="md5"></a>
+<h3>md5</h3>
+<p>Encodes a piece of text to an MD5 hash.</p>
+<pre>Usage:
+- md5 hash this
+- md5 --input hash thi
+- md5 --input hash this --hmac secret-key
+
+Optional properties:
+- hmac: the signature key for the MD5 hash
+- outputType: how the string should be generated (should be &#39;hex&#39; or &#39;base64&#39;)</pre>
+</div>
+<div class="col-md-12">
+<a name="sha1"></a>
+<h3>sha1</h3>
+<p>Encodes a piece of text to a SHA1 hash.</p>
+<pre>Usage:
+- sha1 hash this
+- sha1 --input hash this
+- sha1 --input hash this --hmac secret-key
+
+Optional properties:
+- hmac: the signature key for the MD5 hash
+- outputType: how the string should be generated (should be &#39;hex&#39; or &#39;base64&#39;)</pre>
+</div>
+<div class="col-md-12">
+<a name="sha256"></a>
+<h3>sha256</h3>
+<p>Encodes a piece of text to a SHA256 hash.</p>
+<pre>Usage:
+- sha256 hash this
+- sha256 --input hash this
+- sha256 --input hash this --hmac secret-key
+
+Optional properties:
+- hmac: the signature key for the SHA256 hash
+- outputType: how the string should be generated (should be &#39;hex&#39; or &#39;base64&#39;)</pre>
+</div>
+<div class="col-md-12">
+<a name="sha384"></a>
+<h3>sha384</h3>
+<p>Encodes a piece of text to a SHA384 hash.</p>
+<pre>Usage:
+- sha384 hash this
+- sha384 --input hash this
+- sha384 --input hash this --hmac secret-key
+
+Optional properties:
+- hmac: the signature key for the SHA384 hash
+- outputType: how the string should be generated (should be &#39;hex&#39; or &#39;base64&#39;)</pre>
+</div>
+<div class="col-md-12">
+<a name="sha512"></a>
+<h3>sha512</h3>
+<p>Encodes a piece of text to a SHA512 hash.</p>
+<pre>Usage:
+- sha512 hash this
+- sha512 --input hash this
+- sha512 --input hash this --hmac secret-key
+
+Optional properties:
+- hmac: the signature key for the SHA512 hash
+- outputType: how the string should be generated (should be &#39;hex&#39; or &#39;base64&#39;)</pre>
+</div>
+<a name="Number-tools"></a>
+<h2>Number tools</h2>
+<div class="col-md-12">
+<a name="uuid"></a>
+<h3>uuid</h3>
+<p>A handy tool to generate a (or many) UUIDs.</p>
+<pre>Usage:
+- uuid
+- uuid --brackets true --uppercase true --hyphens true --howmany 1
+
+Optional properties:
+- brackets: whether the GUIDs should be surrounded by brackets (true or false, default false)
+- uppercase: whether the GUIDs should be uppercase (true or false, default false)
+- hyphens: whether the GUID parts should be separated by hyphens (true or false, default true)
+- howmany: how many GUIDs should be generated (default 1)</pre>
+</div>
+<a name="Date-/-time-tools"></a>
+<h2>Date / time tools</h2>
+<div class="col-md-12">
+<a name="weeknumber"></a>
+<h3>weeknumber</h3>
+<p>A tool which shows the current week number.</p>
+<pre>Usage:
+- weeknumber</pre>
+</div>
+<a name="Imaging-tools"></a>
+<h2>Imaging tools</h2>
+<div class="col-md-12">
+<a name="writeqr"></a>
+<h3>writeqr</h3>
+<p>A handy tool to generate QR codes.</p>
+<pre>Usage:
+- writeqr --input this is the QR content --outputFile C:\temp\qr.png --width 250 --height 250
+
+Optional properties:
+- width: the PNG file width in pixels (default 250)
+- height: the PNG height in pixels (default 250)
+- openFile: whether the file should be opened after saving (true or false, default false)</pre>
+</div>
+
     </div>
 
     <hr>
