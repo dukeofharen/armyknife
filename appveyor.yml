@@ -41,4 +41,8 @@ after_deploy:
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
   - git config --global user.email $($env:github_email)
   - git config --global user.name "Duco"
-  - git subtree push --prefix docs origin gh-pages
+  - git add .
+  - git commit -m "Docs for version $(versionString)"
+  - git push
+  on:
+    branch: master
