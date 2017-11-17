@@ -6,9 +6,6 @@ before_build:
 environment:
   access_token:
     secure: Zcoti9GsS4Y1t12qVcWhfDXMJLW8QLt4SdeQi8VKUFBtd/gVyWsZlLXDOHLP8i5U
-  git_email:
-    secure: iJtd56dA1OpqZhduaPwoCA==
-    
 
 branches:
   only:
@@ -39,7 +36,7 @@ deploy:
 after_deploy:
   - cmd: git config --global credential.helper store
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-  - ps: git config --global user.email $($env:github_email)
+  - ps: git config --global user.email github@winterwerp.it
   - cmd: git config --global user.name "Duco"
   - cmd: git add .
   - ps: git commit -m "Docs for version $($env:versionString)"
