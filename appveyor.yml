@@ -43,4 +43,4 @@ after_deploy:
   - git config --global user.name "Duco"
   - git add .
   - git commit -m "Docs for version $(versionString)"
-  - git push
+  - git push origin HEAD:$(APPVEYOR_REPO_BRANCH)
