@@ -35,3 +35,11 @@ deploy:
   draft: true
   on:
     branch: master
+
+deploy_script:
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email %github_email%
+  - git config --global user.name "Duco".
+  - git push origin --delete gh-pages
+  - git subtree push --prefix docs origin gh-pages
