@@ -1,4 +1,4 @@
-using Armyknife.Exceptions;
+﻿using Armyknife.Exceptions;
 using Armyknife.Models;
 using Armyknife.Tools.Implementations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -35,19 +35,41 @@ namespace Armyknife.Tools.Tests.Implementations
       }
 
       [TestMethod]
-      public void JsonprettifyTool_Execute_HappyFlow()
+      public void JsonprettifyTool_Execute_HappyFlow_DefaultValues()
       {
          // arrange
          var argsDictionary = new Dictionary<string, string>
          {
-            { Constants.InputKey, Guid.NewGuid().ToString() }
+            { Constants.InputKey, @"{""key"": ""value""}" }
          };
 
          // act
          string output = _tool.Execute(argsDictionary);
 
          // assert
-         Assert.AreEqual(string.Empty, output);
+         var parts = output.Split(Environment.NewLine);
+         Assert.AreEqual(3, parts.Length);
+         Assert.IsTrue(parts[1].Contains("   "));
+      }
+
+      [TestMethod]
+      public void JsonprettifyTool_Execute_HappyFlow_CustomValues()
+      {
+         // arrange
+         var argsDictionary = new Dictionary<string, string>
+         {
+            { Constants.InputKey, @"{""key"": ""value""}" },
+            { "character", "tab" },
+            { "tabsize", "2" }
+         };
+
+         // act
+         string output = _tool.Execute(argsDictionary);
+
+         // assert
+         var parts = output.Split(Environment.NewLine);
+         Assert.AreEqual(3, parts.Length);
+         Assert.IsTrue(parts[1].Contains("\t\t"));
       }
    }
 }
