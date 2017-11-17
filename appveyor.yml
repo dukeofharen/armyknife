@@ -11,8 +11,7 @@ branches:
 build_script:
   - ps: scripts\build.ps1
 
-test_script:
-  - cmd: echo Tests already ran
+test: off
 
 artifacts:
   - path: src\Armyknife\bin\release\netcoreapp2.0\win10-x64\publish\armyknife_*.exe
