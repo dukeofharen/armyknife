@@ -33,11 +33,11 @@ deploy:
   on:
     branch: master
 
-after_deploy:
+on_success:
   - cmd: git config --global credential.helper store
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
   - ps: git config --global user.email github@winterwerp.it
   - cmd: git config --global user.name "Duco"
   - cmd: git add .
   - ps: git commit -m "Docs for version $($env:versionString)"
-  - ps: git push origin HEAD:$($env:APPVEYOR_REPO_BRANCH)
+  - cmd: git push origin HEAD:%APPVEYOR_REPO_BRANCH%
