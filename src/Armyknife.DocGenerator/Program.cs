@@ -80,8 +80,9 @@ namespace Armyknife.DocGenerator
       private static void ReplaceDocVariables(string toolList, string toolDetails)
       {
          string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+         string docTemplatePath = Path.Combine(assemblyPath, "..", "..", "..", "..", "..", "docs", "index-template.html");
          string docPath = Path.Combine(assemblyPath, "..", "..", "..", "..", "..", "docs", "index.html");
-         string docContents = File.ReadAllText(docPath);
+         string docContents = File.ReadAllText(docTemplatePath);
          docContents = docContents.Replace("[TOOLS-LIST]", toolList);
          docContents = docContents.Replace("[TOOLS]", toolDetails);
          File.WriteAllText(docPath, docContents);
