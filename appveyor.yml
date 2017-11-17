@@ -37,8 +37,8 @@ deploy:
     branch: master
 
 deploy_script:
-  - cmd: git config --global credential.helper store
-  - ps: Add-Content "$env:USERPROFILE.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-  - cmd: git config --global user.email $($env:github_email)
-  - cmd: git config --global user.name "Duco"
-  - cmd: git subtree push --prefix docs origin gh-pages
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email %github_email%
+  - git config --global user.name "Duco"
+  - git subtree push --prefix docs origin gh-pages
