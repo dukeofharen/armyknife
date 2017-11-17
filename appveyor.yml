@@ -39,8 +39,8 @@ deploy:
 after_deploy:
   - git config --global credential.helper store
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-  - git config --global user.email $($env:github_email)
+  - git config --global user.email %github_email%
   - git config --global user.name "Duco"
   - git add .
-  - git commit -m "Docs for version $($env:versionString)"
-  - git push origin HEAD:$($env:APPVEYOR_REPO_BRANCH)
+  - git commit -m "Docs for version %versionString%"
+  - git push origin HEAD:%APPVEYOR_REPO_BRANCH%
