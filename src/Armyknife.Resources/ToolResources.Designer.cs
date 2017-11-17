@@ -188,6 +188,30 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A handy tool to prettify a JSON string..
+        /// </summary>
+        public static string JsonprettifyDescription {
+            get {
+                return ResourceManager.GetString("JsonprettifyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- jsonprettify {&quot;key&quot;: &quot;value&quot;}
+        ///- jsonprettify --input {&quot;key&quot;: &quot;value&quot;} --character space --tabsize 3
+        ///
+        ///Optional parameters:
+        ///- character: whether the indentation character should be either &quot;tab&quot; or &quot;space&quot; (default space)
+        ///- tabsize: the indentation size (default 3).
+        /// </summary>
+        public static string JsonprettifyHelp {
+            get {
+                return ResourceManager.GetString("JsonprettifyHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generates a number of Lorem Ipsum paragraphs..
         /// </summary>
         public static string LipsumDescription {

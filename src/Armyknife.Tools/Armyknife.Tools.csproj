@@ -15,6 +15,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Armyknife.Business.Interfaces\Armyknife.Business.Interfaces.csproj" />
     <ProjectReference Include="..\Armyknife.Exceptions\Armyknife.Exceptions.csproj" />
     <ProjectReference Include="..\Armyknife.Resources\Armyknife.Resources.csproj" />

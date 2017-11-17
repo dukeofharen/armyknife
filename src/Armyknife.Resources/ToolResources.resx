@@ -166,6 +166,18 @@ Used by: {2}</value>
     <value>Usage:
 You can't use characters like '&lt;' or '&gt;' as input, so you need to provide the input via piping.</value>
   </data>
+  <data name="JsonprettifyDescription" xml:space="preserve">
+    <value>A handy tool to prettify a JSON string.</value>
+  </data>
+  <data name="JsonprettifyHelp" xml:space="preserve">
+    <value>Usage:
+- jsonprettify {"key": "value"}
+- jsonprettify --input {"key": "value"} --character space --tabsize 3
+
+Optional parameters:
+- character: whether the indentation character should be either "tab" or "space" (default space)
+- tabsize: the indentation size (default 3)</value>
+  </data>
   <data name="LipsumDescription" xml:space="preserve">
     <value>Generates a number of Lorem Ipsum paragraphs.</value>
   </data>
