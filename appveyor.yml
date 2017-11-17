@@ -39,5 +39,5 @@ on_success:
   - ps: git config --global user.email github@winterwerp.it
   - cmd: git config --global user.name "Duco"
   - cmd: git add .
-  - ps: git commit -m "skip ci Docs for version $($env:versionString)"
+  - ps: git commit -m "[skip ci] Docs for version $($env:versionString)"
   - cmd: git push origin HEAD:%APPVEYOR_REPO_BRANCH%
