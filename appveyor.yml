@@ -44,5 +44,3 @@ after_deploy:
   - git add .
   - git commit -m "Docs for version $(versionString)"
   - git push
-  on:
-    branch: master
