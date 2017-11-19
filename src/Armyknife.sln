@@ -54,6 +54,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7D9958DE-3601-4F9E-9419-ED76EF015A23}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		..\LICENSE.txt = ..\LICENSE.txt
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Integration.Tests", "Armyknife.Integration.Tests\Armyknife.Integration.Tests.csproj", "{06A08E39-3C75-4F43-B7D6-E618ADE9298D}"
@@ -62,7 +64,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{8D95
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Generator", "Armyknife.Generator\Armyknife.Generator.csproj", "{ED6507C9-D7EB-456C-88A5-F9607620E697}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.DocGenerator", "Armyknife.DocGenerator\Armyknife.DocGenerator.csproj", "{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.DocGenerator", "Armyknife.DocGenerator\Armyknife.DocGenerator.csproj", "{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
