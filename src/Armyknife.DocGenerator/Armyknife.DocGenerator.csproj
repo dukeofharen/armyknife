@@ -20,4 +20,17 @@
   <ItemGroup>
     <ProjectReference Include="..\Armyknife.Business\Armyknife.Business.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="DocGeneratorResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DocGeneratorResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="DocGeneratorResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocGeneratorResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

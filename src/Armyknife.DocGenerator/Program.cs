@@ -1,6 +1,7 @@
 ﻿using Armyknife.Business;
 using Armyknife.Business.Interfaces;
 using Armyknife.Models;
+using Armyknife.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -23,9 +24,12 @@ namespace Armyknife.DocGenerator
          var toolResolver = provider.GetService<IToolResolver>();
          var tools = toolResolver.GetToolMetData();
 
+         var assemblyService = provider.GetService<IAssemblyService>();
+         string version = assemblyService.GetVersionNumber();
+
          string toolList = GetToolList(tools);
          string toolDetails = GetToolDetails(tools);
-         ReplaceDocVariables(toolList, toolDetails);
+         ReplaceDocVariables(toolList, toolDetails, version);
       }
 
       private static string GetToolList(IEnumerable<ToolMetaDataModel> tools)
@@ -64,7 +68,7 @@ namespace Armyknife.DocGenerator
             foreach (var tool in category)
             {
                string toolAnchor = tool.Key.Replace(" ", "-");
-               string helpText = tool.HelpText.Replace(Environment.NewLine, "<br />");
+               string helpText = tool.HelpText;
                builder.AppendLine(@"<div class=""col-md-12"">");
                builder.AppendLine($@"<a name=""{toolAnchor}""></a>");
                builder.AppendLine($"<h3>{tool.Key}</h3>");
@@ -77,14 +81,17 @@ namespace Armyknife.DocGenerator
          return builder.ToString();
       }
 
-      private static void ReplaceDocVariables(string toolList, string toolDetails)
+      private static void ReplaceDocVariables(string toolList, string toolDetails, string version)
       {
          string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-         string docTemplatePath = Path.Combine(assemblyPath, "..", "..", "..", "..", "..", "docs", "index-template.html");
          string docPath = Path.Combine(assemblyPath, "..", "..", "..", "..", "..", "docs", "index.html");
-         string docContents = File.ReadAllText(docTemplatePath);
+         string docContents = DocGeneratorResources.Template;
+         var now = DateTime.Now;
          docContents = docContents.Replace("[TOOLS-LIST]", toolList);
          docContents = docContents.Replace("[TOOLS]", toolDetails);
+         docContents = docContents.Replace("[YEAR]", now.Year.ToString());
+         docContents = docContents.Replace("[VERSION]", version);
+         docContents = docContents.Replace("[BUILD-DATE]", now.ToString("yyyy-MM-dd HH:mm:ss"));
          File.WriteAllText(docPath, docContents);
       }
    }
