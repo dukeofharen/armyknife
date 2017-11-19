@@ -178,6 +178,13 @@ Optional parameters:
 - character: whether the indentation character should be either "tab" or "space" (default space)
 - tabsize: the indentation size (default 3)</value>
   </data>
+  <data name="JsonuglifyDescription" xml:space="preserve">
+    <value>This handy tool allows you to format a multiline JSON string to a single line.</value>
+  </data>
+  <data name="JsonuglifyHelp" xml:space="preserve">
+    <value>Usage:
+You can't provide multiline strings directly from the command line, but you can, for example, pipe the contents of a file or the clipboard to Armyknife.</value>
+  </data>
   <data name="LipsumDescription" xml:space="preserve">
     <value>Generates a number of Lorem Ipsum paragraphs.</value>
   </data>

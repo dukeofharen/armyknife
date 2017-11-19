@@ -212,6 +212,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This handy tool allows you to format a multiline JSON string to a single line..
+        /// </summary>
+        public static string JsonuglifyDescription {
+            get {
+                return ResourceManager.GetString("JsonuglifyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///You can&apos;t provide multiline strings directly from the command line, but you can, for example, pipe the contents of a file or the clipboard to Armyknife..
+        /// </summary>
+        public static string JsonuglifyHelp {
+            get {
+                return ResourceManager.GetString("JsonuglifyHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generates a number of Lorem Ipsum paragraphs..
         /// </summary>
         public static string LipsumDescription {
