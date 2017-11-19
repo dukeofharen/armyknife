@@ -130,4 +130,10 @@ These tools are available:
 
 (c) 2017 Ducode.org - Armyknife version {1}</value>
   </data>
+  <data name="GithubUrl" xml:space="preserve">
+    <value>https://github.com/dukeofharen/armyknife</value>
+  </data>
+  <data name="SomethingWentWrong" xml:space="preserve">
+    <value>There was an exception while executing tool. The exception was: {0}. If you want to see more debugging information, start the application like this: "armyknife &lt;toolname&gt; &lt;extra parameters&gt; --debug". If you think this is a bug, file a bug report on the GitHub repository on {1}.</value>
+  </data>
 </root>

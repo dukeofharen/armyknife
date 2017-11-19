@@ -78,5 +78,23 @@ namespace Armyknife.Resources {
                 return ResourceManager.GetString("GenericHelp", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/dukeofharen/armyknife.
+        /// </summary>
+        public static string GithubUrl {
+            get {
+                return ResourceManager.GetString("GithubUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an exception while executing tool. The exception was: {0}. If you want to see more debugging information, start the application like this: &quot;armyknife &lt;toolname&gt; &lt;extra parameters&gt; --debug&quot;. If you think this is a bug, file a bug report on the GitHub repository on {1}..
+        /// </summary>
+        public static string SomethingWentWrong {
+            get {
+                return ResourceManager.GetString("SomethingWentWrong", resourceCulture);
+            }
+        }
     }
 }

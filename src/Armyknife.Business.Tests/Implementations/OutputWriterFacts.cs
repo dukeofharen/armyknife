@@ -36,10 +36,8 @@ namespace Armyknife.Business.Tests.Implementations
             // arrange
             string expectedResult = "123";
 
-            var argsDictionary = new Dictionary<string, string>();
-
             // act
-            _writer.WriteOutput(expectedResult, argsDictionary);
+            _writer.WriteOutput(expectedResult);
 
             // assert
             _consoleServiceMock

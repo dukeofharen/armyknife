@@ -17,7 +17,7 @@ namespace Armyknife.Business.Implementations
             _fileService = fileService;
         }
 
-        public void WriteOutput(string result, IDictionary<string, string> argsDictionary)
+        public void WriteOutput(string result)
         {
             _consoleService.WriteLine(result);
         }

@@ -47,8 +47,8 @@ namespace Armyknife.Integration.Tests
 
          _outputWriterMock = new Mock<IOutputWriter>();
          _outputWriterMock
-            .Setup(m => m.WriteOutput(It.IsAny<string>(), It.IsAny<IDictionary<string, string>>()))
-            .Callback<string, IDictionary<string, string>>((result, a) => _output = result);
+            .Setup(m => m.WriteOutput(It.IsAny<string>()))
+            .Callback<string>(result => _output = result);
 
          _processServiceMock = new Mock<IProcessService>();
          _webServiceMock = new Mock<IWebService>();
