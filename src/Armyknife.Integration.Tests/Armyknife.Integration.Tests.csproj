@@ -2,9 +2,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <IsPackable>false</IsPackable>
-    <Version>1.1.0.65</Version>
-    <AssemblyVersion>1.1.0.65</AssemblyVersion>
-    <FileVersion>1.1.0.65</FileVersion>
+    <Version>1.1.0.66</Version>
+    <AssemblyVersion>1.1.0.66</AssemblyVersion>
+    <FileVersion>1.1.0.66</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
