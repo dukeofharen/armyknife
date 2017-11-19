@@ -1,10 +1,14 @@
+$ErrorActionPreference = 'Stop'
+
 . "$PSScriptRoot\functions.ps1"
 
-$csprojPath = Join-Path -Path $PSScriptRoot "..\src\Armyknife\Armyknife.csproj"
+$rootFolder = Join-Path -Path $PSScriptRoot ".."
+$srcFolder = Join-Path -Path $rootFolder "src"
+$csprojPath = Join-Path -Path $srcFolder "Armyknife\Armyknife.csproj"
 
 Write-Host "Reading file '$csprojPath'"
-[xml]$csproj = Get-Content $csprojPath
-$propertyGroupNode = $csproj.SelectSingleNode("/Project/PropertyGroup[1]")
+[xml]$mainCsproj = Get-Content $csprojPath
+$propertyGroupNode = $mainCsproj.SelectSingleNode("/Project/PropertyGroup[1]")
 $version = [version]$propertyGroupNode.Version
 
 Write-Host "Current version number: '$version'"
@@ -15,8 +19,14 @@ Write-Host "New version number: '$versionString'"
 
 $env:versionString = $versionString
 
-$propertyGroupNode.Version = $versionString
-$propertyGroupNode.AssemblyVersion = $versionString
-$propertyGroupNode.FileVersion = $versionString
-
-$csproj.Save($csprojPath)
+$csprojFiles = Get-ChildItem -Path $srcFolder -Filter *.csproj -Recurse
+foreach($csprojFile in $csprojFiles)
+{
+    Write-Host "Parsing .csproj file $($csprojFile.FullName)"
+    [xml]$csprojContents = Get-Content $csprojFile.FullName
+    $propertyGroupNode = $csprojContents.SelectSingleNode("/Project/PropertyGroup[1]")
+    $propertyGroupNode.Version = $versionString
+    $propertyGroupNode.AssemblyVersion = $versionString
+    $propertyGroupNode.FileVersion = $versionString
+    $csprojContents.Save($csprojFile.FullName)
+}
