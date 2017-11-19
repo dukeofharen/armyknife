@@ -1,6 +1,7 @@
 ﻿using Armyknife.Business;
 using Microsoft.Extensions.DependencyInjection;
 using Armyknife.Business.Interfaces;
+using System;
 
 namespace Armyknife
 {
@@ -13,7 +14,8 @@ namespace Armyknife
          var provider = serviceCollection.BuildServiceProvider();
 
          var executor = provider.GetService<IExecutor>();
-         executor.ExecuteAsync(args).Wait();
+         int exitCode = executor.ExecuteAsync(args).Result;
+         Environment.Exit(exitCode);
       }
    }
 }

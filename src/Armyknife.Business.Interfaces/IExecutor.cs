@@ -4,6 +4,6 @@ namespace Armyknife.Business.Interfaces
 {
     public interface IExecutor
     {
-        Task ExecuteAsync(string[] args);
+        Task<int> ExecuteAsync(string[] args);
     }
 }

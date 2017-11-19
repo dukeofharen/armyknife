@@ -70,11 +70,13 @@ namespace Armyknife.Business.Tests.Implementations
              .Returns(toolMock.Object);
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          _outputWriterMock
              .Verify(m => m.WriteOutput(helpText), Times.Once);
+
+         Assert.AreEqual(0, result);
       }
 
       [TestMethod]
@@ -94,11 +96,13 @@ namespace Armyknife.Business.Tests.Implementations
              .Returns(toolMock.Object);
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          _outputWriterMock
              .Verify(m => m.WriteOutput(helpText), Times.Once);
+
+         Assert.AreEqual(0, result);
       }
 
       [TestMethod]
@@ -118,11 +122,13 @@ namespace Armyknife.Business.Tests.Implementations
              .Returns(toolMock.Object);
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          _outputWriterMock
              .Verify(m => m.WriteOutput(helpText), Times.Once);
+
+         Assert.AreEqual(0, result);
       }
 
       [TestMethod]
@@ -138,10 +144,11 @@ namespace Armyknife.Business.Tests.Implementations
              .Returns(null as ITool);
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          Assert.IsTrue(_logger.GetLogMessages().Any(m => m.Contains(expectedExceptionMessage)));
+         Assert.AreEqual(-1, result);
       }
 
       [TestMethod]
@@ -168,12 +175,13 @@ namespace Armyknife.Business.Tests.Implementations
              .Returns(input);
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          Assert.IsNotNull(actualArgsDictionary);
          Assert.AreEqual(1, actualArgsDictionary.Count);
          Assert.AreEqual(input, actualArgsDictionary[Constants.InputKey]);
+         Assert.AreEqual(0, result);
       }
 
       [TestMethod]
@@ -200,11 +208,12 @@ namespace Armyknife.Business.Tests.Implementations
              .Returns(input);
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          Assert.IsNotNull(actualArgsDictionary);
          Assert.AreEqual(0, actualArgsDictionary.Count);
+         Assert.AreEqual(0, result);
       }
 
       [TestMethod]
@@ -239,7 +248,7 @@ namespace Armyknife.Business.Tests.Implementations
              .Setup(m => m.WriteOutput(output));
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          Assert.IsNotNull(actualArgsDictionary);
@@ -249,6 +258,8 @@ namespace Armyknife.Business.Tests.Implementations
 
          _outputWriterMock
              .Verify(m => m.WriteOutput(output), Times.Once);
+
+         Assert.AreEqual(0, result);
       }
 
       [TestMethod]
@@ -283,7 +294,7 @@ namespace Armyknife.Business.Tests.Implementations
              .Setup(m => m.WriteOutput(output));
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          Assert.IsNotNull(actualArgsDictionary);
@@ -293,6 +304,8 @@ namespace Armyknife.Business.Tests.Implementations
 
          _outputWriterMock
              .Verify(m => m.WriteOutput(output), Times.Once);
+
+         Assert.AreEqual(0, result);
       }
 
       [TestMethod]
@@ -324,7 +337,7 @@ namespace Armyknife.Business.Tests.Implementations
              .Callback<string>(o => actualOutput = o);
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          toolMock
@@ -337,6 +350,8 @@ namespace Armyknife.Business.Tests.Implementations
          {
             Assert.IsTrue(actualOutput.Contains(message));
          }
+
+         Assert.AreEqual(0, result);
       }
 
       [TestMethod]
@@ -356,11 +371,12 @@ namespace Armyknife.Business.Tests.Implementations
              .Setup(m => m.WriteOutput(expectedOutput));
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          _outputWriterMock
              .Verify(m => m.WriteOutput(expectedOutput), Times.Once);
+         Assert.AreEqual(-1, result);
       }
 
       [TestMethod]
@@ -381,11 +397,12 @@ namespace Armyknife.Business.Tests.Implementations
              .Setup(m => m.WriteOutput(expectedOutput));
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          _outputWriterMock
              .Verify(m => m.WriteOutput(expectedOutput), Times.Once);
+         Assert.AreEqual(-1, result);
       }
 
       [TestMethod]
@@ -408,12 +425,13 @@ namespace Armyknife.Business.Tests.Implementations
              .Returns(input);
 
          // act
-         await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(args);
 
          // assert
          _outputWriterMock
              .Verify(m => m.WriteOutput(output), Times.Never);
          Assert.IsTrue(_logger.GetLogMessages().Any(m => m.Contains("InvalidOperationException")));
+         Assert.AreEqual(-1, result);
       }
    }
 }

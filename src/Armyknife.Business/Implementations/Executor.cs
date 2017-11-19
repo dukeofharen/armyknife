@@ -36,8 +36,9 @@ namespace Armyknife.Business.Implementations
          _toolResolver = toolResolver;
       }
 
-      public async Task ExecuteAsync(string[] args)
+      public async Task<int> ExecuteAsync(string[] args)
       {
+         int exitCode = -1;
          bool debug = false;
          string result;
          string toolName = string.Empty;
@@ -83,6 +84,8 @@ namespace Armyknife.Business.Implementations
             {
                throw new InvalidOperationException(string.Format(ExceptionResources.ToolTypeNotSupported, tool.Name));
             }
+
+            exitCode = 0;
          }
          catch (ArmyknifeException exception)
          {
@@ -99,7 +102,7 @@ namespace Armyknife.Business.Implementations
          {
             _logger.Log(this, $"The returned result: {result}");
             var builder = new StringBuilder();
-            foreach(string message in _logger.GetLogMessages())
+            foreach (string message in _logger.GetLogMessages())
             {
                builder.AppendLine(message);
             }
@@ -110,6 +113,8 @@ namespace Armyknife.Business.Implementations
          {
             _outputWriter.WriteOutput(result);
          }
-       }
+
+         return exitCode;
+      }
    }
 }
