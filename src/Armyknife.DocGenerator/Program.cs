@@ -64,7 +64,7 @@ namespace Armyknife.DocGenerator
             foreach (var tool in category)
             {
                string toolAnchor = tool.Key.Replace(" ", "-");
-               string helpText = tool.HelpText.Replace(Environment.NewLine, "<br />");
+               string helpText = tool.HelpText;
                builder.AppendLine(@"<div class=""col-md-12"">");
                builder.AppendLine($@"<a name=""{toolAnchor}""></a>");
                builder.AppendLine($"<h3>{tool.Key}</h3>");
@@ -80,9 +80,8 @@ namespace Armyknife.DocGenerator
       private static void ReplaceDocVariables(string toolList, string toolDetails)
       {
          string assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-         string docTemplatePath = Path.Combine(assemblyPath, "..", "..", "..", "..", "..", "docs", "index-template.html");
          string docPath = Path.Combine(assemblyPath, "..", "..", "..", "..", "..", "docs", "index.html");
-         string docContents = File.ReadAllText(docTemplatePath);
+         string docContents = DocGeneratorResources.Template;
          docContents = docContents.Replace("[TOOLS-LIST]", toolList);
          docContents = docContents.Replace("[TOOLS]", toolDetails);
          File.WriteAllText(docPath, docContents);
