@@ -296,6 +296,99 @@ namespace Armyknife.Business.Tests.Implementations
       }
 
       [TestMethod]
+      public async Task Executor_ExecuteAsync_DebugMode_ShouldPrintLogMessagesInConsole()
+      {
+         // arrange
+         string actualOutput = null;
+         string toolName = "testtool";
+         string[] args = { toolName, "--debug" };
+         string input = string.Empty;
+         string output = "123";
+
+         var toolMock = new Mock<ISynchronousTool>();
+
+         toolMock
+             .Setup(m => m.Execute(It.IsAny<IDictionary<string, string>>()))
+             .Returns(output);
+
+         _toolResolverMock
+             .Setup(m => m.ResolveTool(toolName))
+             .Returns(toolMock.Object);
+
+         _inputReaderMock
+             .Setup(m => m.GetInput(args, It.IsAny<IDictionary<string, string>>()))
+             .Returns(input);
+
+         _outputWriterMock
+             .Setup(m => m.WriteOutput(It.IsAny<string>()))
+             .Callback<string>(o => actualOutput = o);
+
+         // act
+         await _executor.ExecuteAsync(args);
+
+         // assert
+         toolMock
+             .Verify(m => m.Execute(It.IsAny<IDictionary<string, string>>()), Times.Once);
+
+         _outputWriterMock
+             .Verify(m => m.WriteOutput(It.IsAny<string>()), Times.Once);
+
+         foreach(string message in _logger.GetLogMessages())
+         {
+            Assert.IsTrue(actualOutput.Contains(message));
+         }
+      }
+
+      [TestMethod]
+      public async Task Executor_ExecuteAsync_ArmyknifeExceptionIsThrown_ShouldLogException()
+      {
+         // arrange
+         string toolName = "testtool";
+         string[] args = { toolName };
+         string input = string.Empty;
+         string expectedOutput = "ERROR!";
+
+         _toolResolverMock
+             .Setup(m => m.ResolveTool(toolName))
+             .Throws(new ArmyknifeException(expectedOutput));
+
+         _outputWriterMock
+             .Setup(m => m.WriteOutput(expectedOutput));
+
+         // act
+         await _executor.ExecuteAsync(args);
+
+         // assert
+         _outputWriterMock
+             .Verify(m => m.WriteOutput(expectedOutput), Times.Once);
+      }
+
+      [TestMethod]
+      public async Task Executor_ExecuteAsync_OtherExceptionIsThrown_ShouldLogException()
+      {
+         // arrange
+         string toolName = "testtool";
+         string[] args = { toolName };
+         string input = string.Empty;
+         string exceptionText = "ERROR!";
+         string expectedOutput = string.Format(GenericResources.SomethingWentWrong, toolName, exceptionText, GenericResources.GithubUrl);
+
+         _toolResolverMock
+             .Setup(m => m.ResolveTool(toolName))
+             .Throws(new InvalidOperationException(exceptionText));
+
+         _outputWriterMock
+             .Setup(m => m.WriteOutput(expectedOutput));
+
+         // act
+         await _executor.ExecuteAsync(args);
+
+         // assert
+         _outputWriterMock
+             .Verify(m => m.WriteOutput(expectedOutput), Times.Once);
+      }
+
+      [TestMethod]
       public async Task Executor_ExecuteAsync_OtherTool_ShouldThrowInvalidOperationException()
       {
          // arrange

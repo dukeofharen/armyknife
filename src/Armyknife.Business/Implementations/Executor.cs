@@ -7,6 +7,7 @@ using Armyknife.Resources;
 using Armyknife.Utilities;
 using Armyknife.Business.Interfaces;
 using Armyknife.Services.Interfaces;
+using System.Text;
 
 namespace Armyknife.Business.Implementations
 {
@@ -37,7 +38,9 @@ namespace Armyknife.Business.Implementations
 
       public async Task ExecuteAsync(string[] args)
       {
+         bool debug = false;
          string result;
+         string toolName = string.Empty;
          try
          {
             if (args == null || args.Length == 0)
@@ -48,7 +51,8 @@ namespace Armyknife.Business.Implementations
             _logger.Log(this, $"Armyknife called with the following arguments: {string.Join(" ", args)}");
 
             var argsDictionary = args.Parse();
-            string toolName = args.FirstOrDefault();
+            debug = argsDictionary.Keys.Any(k => string.Equals(k, "debug", StringComparison.OrdinalIgnoreCase));
+            toolName = args.FirstOrDefault();
             var tool = _toolResolver.ResolveTool(toolName);
             if (tool == null)
             {
@@ -87,12 +91,25 @@ namespace Armyknife.Business.Implementations
          }
          catch (Exception exception)
          {
-            result = string.Format(GenericResources.SomethingWentWrong, exception.Message, GenericResources.GithubUrl);
+            result = string.Format(GenericResources.SomethingWentWrong, toolName, exception.Message, GenericResources.GithubUrl);
             _logger.Log(this, exception);
          }
 
-         _logger.Log(this, $"The returned result: {result}");
-         _outputWriter.WriteOutput(result);
-      }
+         if (debug)
+         {
+            _logger.Log(this, $"The returned result: {result}");
+            var builder = new StringBuilder();
+            foreach(string message in _logger.GetLogMessages())
+            {
+               builder.AppendLine(message);
+            }
+
+            _outputWriter.WriteOutput(builder.ToString());
+         }
+         else
+         {
+            _outputWriter.WriteOutput(result);
+         }
+       }
    }
 }

@@ -67,6 +67,9 @@ namespace Armyknife.Resources {
         ///Use this command to show the help page of a specific tool:
         ///- armyknife help &lt;toolname&gt;
         ///
+        ///For debugging purposes, add the &quot;--debug&quot; flag:
+        ///- armyknife help &lt;toolname&gt; --debug
+        ///
         ///These tools are available:
         ///
         ///{0}
@@ -89,7 +92,7 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There was an exception while executing tool. The exception was: {0}. If you want to see more debugging information, start the application like this: &quot;armyknife &lt;toolname&gt; &lt;extra parameters&gt; --debug&quot;. If you think this is a bug, file a bug report on the GitHub repository on {1}..
+        ///   Looks up a localized string similar to There was an exception while executing tool &apos;{0}&apos;. The exception was: {1}. If you want to see more debugging information, start the application like this: &quot;armyknife &lt;toolname&gt; &lt;extra parameters&gt; --debug&quot;. If you think this is a bug, file a bug report on the GitHub repository on {2}..
         /// </summary>
         public static string SomethingWentWrong {
             get {
