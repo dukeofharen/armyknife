@@ -1,21 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.1.0.64</Version>
+    <AssemblyVersion>1.1.0.64</AssemblyVersion>
+    <FileVersion>1.1.0.64</FileVersion>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <TreatSpecificWarningsAsErrors />
     <WarningsAsErrors />
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <TreatSpecificWarningsAsErrors />
     <WarningsAsErrors />
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Update="CategoryResources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -38,7 +37,6 @@
       <DependentUpon>ToolResources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="CategoryResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -57,5 +55,4 @@
       <LastGenOutput>ToolResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
 </Project>

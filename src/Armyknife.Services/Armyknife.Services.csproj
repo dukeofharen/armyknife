@@ -1,33 +1,30 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.1.0.64</Version>
+    <AssemblyVersion>1.1.0.64</AssemblyVersion>
+    <FileVersion>1.1.0.64</FileVersion>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <TreatSpecificWarningsAsErrors />
     <WarningsAsErrors />
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <TreatSpecificWarningsAsErrors />
     <WarningsAsErrors />
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="CoreCompat.System.Drawing" Version="1.0.0-beta006" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="ZXing.Net" Version="0.16.2" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Armyknife.Exceptions\Armyknife.Exceptions.csproj" />
     <ProjectReference Include="..\Armyknife.Services.Interfaces\Armyknife.Services.Interfaces.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="Resources\filetypes.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -36,5 +33,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>
