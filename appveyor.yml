@@ -38,6 +38,7 @@ on_success:
   - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
   - ps: git config --global user.email github@winterwerp.it
   - cmd: git config --global user.name "Duco"
-  - cmd: git add .
-  - ps: git commit -m "[skip ci] Docs for version $($env:versionString)"
+  - cmd: git add *.csproj
+  - cmd: git add docs/index.html
+  - ps: git commit -m "[skip ci] Updated files for version $($env:versionString)"
   - cmd: git push origin HEAD:%APPVEYOR_REPO_BRANCH%
