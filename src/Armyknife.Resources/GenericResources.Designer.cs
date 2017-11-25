@@ -68,17 +68,26 @@ namespace Armyknife.Resources {
         ///- armyknife help &lt;toolname&gt;
         ///
         ///For debugging purposes, add the &quot;--debug&quot; flag:
-        ///- armyknife help &lt;toolname&gt; --debug
-        ///
-        ///These tools are available:
-        ///
-        ///{0}
-        ///
-        ///(c) 2017 Ducode.org - Armyknife version {1}.
+        ///- armyknife help &lt;toolname&gt; --debug.
         /// </summary>
         public static string GenericHelp {
             get {
                 return ResourceManager.GetString("GenericHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}
+        ///
+        ///These tools are available:
+        ///
+        ///{1}
+        ///
+        ///(c) 2017 Ducode.org - Armyknife version {2}.
+        /// </summary>
+        public static string GenericHelpTemplate {
+            get {
+                return ResourceManager.GetString("GenericHelpTemplate", resourceCulture);
             }
         }
         

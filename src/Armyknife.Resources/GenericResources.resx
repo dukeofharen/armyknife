@@ -125,13 +125,16 @@ Use this command to show the help page of a specific tool:
 - armyknife help &lt;toolname&gt;
 
 For debugging purposes, add the "--debug" flag:
-- armyknife help &lt;toolname&gt; --debug
+- armyknife help &lt;toolname&gt; --debug</value>
+  </data>
+  <data name="GenericHelpTemplate" xml:space="preserve">
+    <value>{0}
 
 These tools are available:
 
-{0}
+{1}
 
-(c) 2017 Ducode.org - Armyknife version {1}</value>
+(c) 2017 Ducode.org - Armyknife version {2}</value>
   </data>
   <data name="GithubUrl" xml:space="preserve">
     <value>https://github.com/dukeofharen/armyknife</value>
