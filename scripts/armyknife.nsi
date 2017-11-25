@@ -75,7 +75,8 @@ sectionEnd
 function un.onInit
 	SetShellVarContext all
  
-	MessageBox MB_OKCANCEL "Permanantly remove ${APPNAME}?" IDOK next
+	MessageBox MB_YESNO "Permanantly remove ${APPNAME}?" /SD IDYES IDYES next IDNO abort
+	abort:
 		Abort
 	next:
 	!insertmacro VerifyUserIsAdmin
