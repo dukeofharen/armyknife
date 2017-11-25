@@ -11,7 +11,7 @@ $packageArgs = @{
 
   softwareName  = 'armyknife*'
 
-  checksum      = ''
+  checksum      = '[CHECKSUM]'
   checksumType  = 'sha256'
 
   silentArgs    = '/S'
