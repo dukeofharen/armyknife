@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$fileLocation = Join-Path $toolsDir 'armyknife_1.2.0.exe'
+$fileLocation = Join-Path $toolsDir 'armyknife_install.exe'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName

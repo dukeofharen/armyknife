@@ -17,7 +17,7 @@ InstallDir "$PROGRAMFILES\${COMPANYNAME}\${APPNAME}"
 
 LicenseData "..\LICENSE.txt"
 Name "${COMPANYNAME} - ${APPNAME}"
-outFile "$%BuildOutputDirectory%\armyknife_$%VERSIONMAJOR%.$%VERSIONMINOR%.$%VERSIONBUILD%.exe"
+outFile "$%BuildOutputDirectory%\armyknife_install.exe"
  
 !include LogicLib.nsh
 
