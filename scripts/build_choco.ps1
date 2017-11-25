@@ -63,3 +63,7 @@ Write-Host "Found version $version"
 Write-Host "Patching version to $nuspecPath"
 $nuspec = (Get-Content $nuspecPath).Replace("[VERSION]", $version)
 [System.IO.File]::WriteAllLines($nuspecPath, $nuspec, $Utf8NoBomEncoding)
+
+Write-Host "Building Chocolatey packages"
+& choco pack $nuspecPath
+Assert-Cmd-Ok

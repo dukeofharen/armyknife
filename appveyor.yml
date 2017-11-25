@@ -23,6 +23,9 @@ artifacts:
     type: zip
   - path: docs
     name: docs
+    type: zip`
+  - path: choco\armyknife.*.nupkg
+    name: armyknife-choco
     type: zip
 
 deploy:
