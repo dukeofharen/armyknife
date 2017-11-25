@@ -14,6 +14,7 @@ branches:
 
 build_script:
   - ps: scripts\build.ps1
+  - ps: scripts\build_choco.ps1
 
 test: off
 
