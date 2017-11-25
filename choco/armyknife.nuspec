@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>armyknife</id>
+    <version>__REPLACE__</version>
+    <packageSourceUrl>https://github.com/dukeofharen/armyknife</packageSourceUrl>
+    <owners>Duco Winterwerp</owners>
+    <title>Armyknife</title>
+    <authors>Duco Winterwerp</authors>
+    <projectUrl>https://dukeofharen.github.io/armyknife/</projectUrl>
+    <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/armyknife.png</iconUrl>-->
+    <copyright>2017 Duco Winterwerp</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/dukeofharen/armyknife/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>-->
+    <projectSourceUrl>https://github.com/dukeofharen/armyknife</projectSourceUrl>
+    <docsUrl>https://dukeofharen.github.io/armyknife/</docsUrl>
+    <bugTrackerUrl>https://github.com/dukeofharen/armyknife/issues</bugTrackerUrl>
+    <tags>armyknife tool tools command-line</tags>
+    <summary>A cross-platform console app with lots of handy tools.</summary>
+    <description>A cross-platform console app with lots of handy tools. </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
