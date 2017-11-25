@@ -5,7 +5,7 @@ in verifying that this package's contents are trustworthy.
 The installer is built using AppVeyor (https://ci.appveyor.com/project/dukeofharen/armyknife) and can be verified using these steps.
 
 You can use one of the following methods to obtain the checksum
-  - Use powershell function 'Get-Filehash'
+  - Use powershell function 'Get-Filehash -Algorithm SHA256'
   - Use chocolatey utility 'checksum.exe'
 
 checksum: [CHECKSUM]
