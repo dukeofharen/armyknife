@@ -28,6 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D6
 		..\appveyor.yml = ..\appveyor.yml
 		..\scripts\armyknife.nsi = ..\scripts\armyknife.nsi
 		..\scripts\build.ps1 = ..\scripts\build.ps1
+		..\scripts\build_choco.ps1 = ..\scripts\build_choco.ps1
 		..\scripts\functions.ps1 = ..\scripts\functions.ps1
 		..\scripts\local_build.bat = ..\scripts\local_build.bat
 		..\scripts\patch_versions.ps1 = ..\scripts\patch_versions.ps1
