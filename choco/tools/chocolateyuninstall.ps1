@@ -8,7 +8,6 @@ $packageArgs = @{
   validExitCodes= @(0)
 }
 
-$uninstalled = $false
 [array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs['softwareName']
 
 if ($key.Count -eq 1) {
