@@ -1,6 +1,7 @@
 ﻿using Armyknife.Business;
 using Armyknife.Business.Interfaces;
 using Armyknife.Models;
+using Armyknife.Resources;
 using Armyknife.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -92,6 +93,7 @@ namespace Armyknife.DocGenerator
          docContents = docContents.Replace("[YEAR]", now.Year.ToString());
          docContents = docContents.Replace("[VERSION]", version);
          docContents = docContents.Replace("[BUILD-DATE]", now.ToString("yyyy-MM-dd HH:mm:ss"));
+         docContents = docContents.Replace("[HELPTEXT]", WebUtility.HtmlEncode(GenericResources.GenericHelp));
          File.WriteAllText(docPath, docContents);
       }
    }

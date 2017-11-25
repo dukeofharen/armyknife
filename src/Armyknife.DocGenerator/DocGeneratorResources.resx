@@ -145,6 +145,13 @@
       &lt;p&gt;
         &lt;a href="https://github.com/dukeofharen/armyknife/releases/latest"&gt;Download the latest version&lt;/a&gt;
       &lt;/p&gt;
+      &lt;h2&gt;Install on Windows&lt;/h2&gt;
+      &lt;p&gt;
+        Armyknife can be installed using &lt;a href="https://chocolatey.org/"&gt;Chocolatey&lt;/a&gt;, a package manager for Windows.
+      &lt;/p&gt;
+      &lt;p&gt;
+&lt;pre class="powershell"&gt;&lt;code&gt;PS C:\Users\Duco\Desktop&gt; choco install armyknife -y&lt;/code&gt;&lt;/pre&gt;
+      &lt;/p&gt;
       &lt;p&gt;
         Armyknife is a nice little tool which contains many handy little command line tools. It contains tools like base64 encoder
         / decoder, URL shortener, SHA512 hasher and more.
@@ -156,6 +163,11 @@
     &lt;div class="col-md-12"&gt;
       &lt;h2&gt;Chapters&lt;/h2&gt;
       &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href="#help"&gt;
+                &lt;strong&gt;Help&lt;/strong&gt;
+            &lt;/a&gt;
+        &lt;/li&gt;
         &lt;li&gt;
           &lt;a href="#recipes"&gt;
             &lt;strong&gt;Recipes&lt;/strong&gt;
@@ -172,6 +184,13 @@
       &lt;/ul&gt;
     &lt;/div&gt;
     &lt;div class="col-md-12"&gt;
+        &lt;h2&gt;Help&lt;/h2&gt;
+        &lt;a name="help"&gt;&lt;/a&gt;
+        &lt;p&gt;
+&lt;pre&gt;[HELPTEXT]&lt;/pre&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;div class="col-md-12"&gt;
       &lt;h2&gt;Recipes&lt;/h2&gt;
       &lt;a name="recipes"&gt;&lt;/a&gt;
 
@@ -187,8 +206,8 @@ VGhpcyBpcyBhIHRlc3QgZmlsZSENCg==&lt;/code&gt;&lt;/pre&gt;
         &lt;strong&gt;Pass clipboard data to Armyknife through piping&lt;/strong&gt;
       &lt;/p&gt;
       &lt;p&gt;
-&lt;pre class="powershell"&gt;&lt;code&gt;PS C:\Users\Duco\Desktop&gt; Get-Clipboard | armyknife sha1
-69776a1e2e0bfa8505342952cc6978d56342cc14&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;PS C:\Users\Duco\Desktop&gt; Get-Clipboard | armyknife sha1
+69776a1e2e0bfa8505342952cc6978d56342cc14&lt;/pre&gt;
       &lt;/p&gt;
     &lt;/div&gt;
     &lt;div class="col-md-12"&gt;
