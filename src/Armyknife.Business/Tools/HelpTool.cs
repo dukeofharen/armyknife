@@ -75,7 +75,7 @@ namespace Armyknife.Business.Tools
                     builder.AppendLine();
                 }
 
-                result = string.Format(GenericResources.GenericHelp, builder, version);
+                result = string.Format(GenericResources.GenericHelpTemplate, GenericResources.GenericHelp, builder, version);
             }
 
             return result;
