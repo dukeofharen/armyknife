@@ -25,6 +25,13 @@
       <p>
         <a href="https://github.com/dukeofharen/armyknife/releases/latest">Download the latest version</a>
       </p>
+      <h2>Install on Windows</h2>
+      <p>
+        Armyknife can be installed using <a href="https://chocolatey.org/">Chocolatey</a>, a package manager for Windows.
+      </p>
+      <p>
+<pre class="powershell"><code>PS C:\Users\Duco\Desktop> choco install armyknife -y</code></pre>
+      </p>
       <p>
         Armyknife is a nice little tool which contains many handy little command line tools. It contains tools like base64 encoder
         / decoder, URL shortener, SHA512 hasher and more.
@@ -36,6 +43,11 @@
     <div class="col-md-12">
       <h2>Chapters</h2>
       <ul>
+        <li>
+            <a href="#help">
+                <strong>Help</strong>
+            </a>
+        </li>
         <li>
           <a href="#recipes">
             <strong>Recipes</strong>
@@ -91,6 +103,20 @@
       </ul>
     </div>
     <div class="col-md-12">
+        <h2>Help</h2>
+        <a name="help"></a>
+        <p>
+<pre>Use this program like this:
+- armyknife &lt;toolname&gt; &lt;arguments&gt;
+
+Use this command to show the help page of a specific tool:
+- armyknife help &lt;toolname&gt;
+
+For debugging purposes, add the &quot;--debug&quot; flag:
+- armyknife help &lt;toolname&gt; --debug</pre>
+        </p>
+      </div>
+    <div class="col-md-12">
       <h2>Recipes</h2>
       <a name="recipes"></a>
 
@@ -106,8 +132,8 @@ VGhpcyBpcyBhIHRlc3QgZmlsZSENCg==</code></pre>
         <strong>Pass clipboard data to Armyknife through piping</strong>
       </p>
       <p>
-<pre class="powershell"><code>PS C:\Users\Duco\Desktop> Get-Clipboard | armyknife sha1
-69776a1e2e0bfa8505342952cc6978d56342cc14</code></pre>
+<pre>PS C:\Users\Duco\Desktop> Get-Clipboard | armyknife sha1
+69776a1e2e0bfa8505342952cc6978d56342cc14</pre>
       </p>
     </div>
     <div class="col-md-12">
@@ -358,7 +384,7 @@ Optional properties:
     <hr>
 
     <footer>
-      <p>&copy; Ducode 2017 - Built on 2017-11-25 21:51:16 for version 1.2.0.71</p>
+      <p>&copy; Ducode 2017 - Built on 2017-11-25 22:42:51 for version 1.2.0.72</p>
     </footer>
   </div>
   <script src="js/vendor/jquery-1.11.2.min.js"></script>
