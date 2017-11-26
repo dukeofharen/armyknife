@@ -44,7 +44,6 @@ else
 }
 
 Write-Host "Running unit test project $unitTestPath"
-& dotnet build $solutionFile /p:DebugType=Full
 & $openCoverPath -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test $unitTestPath --configuration Debug --no-build" -filter:"+[Armyknife*]* -[*.Tests*]*" -oldStyle -register:user -output:"$openCoverReportFilePath" -returntargetcode:1
 Assert-Cmd-Ok
 & $reportGeneratorPath -reports:$openCoverReportFilePath -targetdir:$openCoverReportPath -verbosity:Error
