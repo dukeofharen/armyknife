@@ -30,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D6
 		..\scripts\functions.ps1 = ..\scripts\functions.ps1
 		..\scripts\local_build.bat = ..\scripts\local_build.bat
 		..\scripts\patch_versions.ps1 = ..\scripts\patch_versions.ps1
+		..\scripts\upload_coveralls.bat = ..\scripts\upload_coveralls.bat
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.HelperTool", "Armyknife.HelperTool\Armyknife.HelperTool.csproj", "{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}"
@@ -59,7 +60,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Generator", "Army
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.DocGenerator", "Armyknife.DocGenerator\Armyknife.DocGenerator.csproj", "{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.Tests", "Armyknife.Tests\Armyknife.Tests.csproj", "{BD0B8E1B-2331-4EFE-8B67-B530475344C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Tests", "Armyknife.Tests\Armyknife.Tests.csproj", "{BD0B8E1B-2331-4EFE-8B67-B530475344C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
