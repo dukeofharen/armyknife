@@ -1,4 +1,3 @@
-language: csharp
 dist: trusty
 sudo: enabled
 script:
