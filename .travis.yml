@@ -1,0 +1,6 @@
+language: csharp
+dist: trusty
+sudo: enabled
+script:
+  - ./scripts/install-dotnet.sh
+  - ./scripts/build.sh
