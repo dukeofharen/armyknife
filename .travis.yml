@@ -2,5 +2,5 @@ language: csharp
 dist: trusty
 sudo: enabled
 script:
-  - ./scripts/install-dotnet.sh
-  - ./scripts/build.sh
+  - sudo bash ./scripts/install-dotnet.sh
+  - sudo bash ./scripts/build.sh
