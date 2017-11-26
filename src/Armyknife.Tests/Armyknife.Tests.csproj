@@ -21,6 +21,8 @@
     <PackageReference Include="Moq" Version="4.7.145" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
     <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+    <PackageReference Include="OpenCover" Version="4.6.519" />
+    <PackageReference Include="ReportGenerator" Version="3.0.2" />
   </ItemGroup>
 
   <ItemGroup>
