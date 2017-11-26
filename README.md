@@ -1,5 +1,7 @@
 # Armyknife
 
+| | |
+| --- | --- |
 | **Build** | [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/1yi3hbdugvqeya31?svg=true)](https://ci.appveyor.com/project/dukeofharen/armyknife) [![TravisCI build status](https://api.travis-ci.org/dukeofharen/armyknife.svg?branch=master)](https://travis-ci.org/dukeofharen/armyknife) |
 | **Coverage** | [![Coverage Status](https://coveralls.io/repos/github/dukeofharen/armyknife/badge.svg?branch=refactoring%2Fcode-coverage)](https://coveralls.io/github/dukeofharen/armyknife?branch=refactoring%2Fcode-coverage) |
 | **License** | [![MIT License](https://img.shields.io/:license-mit-green.svg)](https://opensource.org/licenses/MIT) |
