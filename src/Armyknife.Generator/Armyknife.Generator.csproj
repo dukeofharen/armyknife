@@ -2,9 +2,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <Version>1.2.0.81</Version>
-    <AssemblyVersion>1.2.0.81</AssemblyVersion>
-    <FileVersion>1.2.0.81</FileVersion>
+    <Version>1.2.0.83</Version>
+    <AssemblyVersion>1.2.0.83</AssemblyVersion>
+    <FileVersion>1.2.0.83</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="GeneratorResources.Designer.cs">
