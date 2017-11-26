@@ -24,3 +24,14 @@ For more information, see [dukeofharen.github.io/armyknife](https://dukeofharen.
 - Make tool cross platform, because it's written in .NET Core (only build for Windows for now).
 - Add more tools.
 - Add plugin system.
+
+# Made possible by
+This application was made using some wonderful frameworks, libraries, software and other resources, including (but not limited to):
+- [.NET Core](https://www.microsoft.com/net/learn/get-started/windows)
+- [Moq](https://github.com/moq/moq4)
+- [HtmlAgilityPack](http://html-agility-pack.net/)
+- [Newtonsoft.Json](https://www.newtonsoft.com/json)
+- [OpenCover](https://github.com/OpenCover/opencover)
+- [ReportGenerator](https://github.com/danielpalme/ReportGenerator)
+- [ZXing.Net](https://github.com/micjahn/ZXing.Net)
+- [Wikipedia list of filename extensions](https://en.wikipedia.org/wiki/List_of_filename_extensions)
