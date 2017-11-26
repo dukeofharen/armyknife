@@ -29,7 +29,7 @@ foreach($unitTestProject in $unitTestProjects) {
     & dotnet restore $unitTestProject.FullName
     Assert-Cmd-Ok
 
-    & dotnet test $unitTestProject.FullName
+    & dotnet test $unitTestProject.FullName /p:DebugType=Full
     Assert-Cmd-Ok
 }
 
