@@ -6,7 +6,7 @@ $mainProjectFile = Join-Path $srcFolder "Armyknife\Armyknife.csproj"
 $nsiPath = Join-Path $PSScriptRoot "armyknife.nsi"
 $winBinDir = Join-Path $srcFolder "Armyknife\bin\release\netcoreapp2.0\win10-x64\publish"
 $installScriptsPath = Join-Path -Path $PSScriptRoot "installscripts"
-$docsFolder = Join-Path -Path $rootFolder "docs"
+$unitTestPath = Join-Path -Path $srcFolder "Armyknife.Tests\Armyknife.Tests.csproj"
 
 $nsisPath = "C:\Program Files (x86)\NSIS\Bin"
 
@@ -21,17 +21,11 @@ Write-Host "Cleaning the solution"
 Get-ChildItem $srcFolder -include bin,obj -Recurse | foreach ($_) { remove-item $_.fullname -Force -Recurse }
 
 # Run unit tests
-Write-Host "Running unit tests"
-$unitTestProjects = Get-ChildItem -Path $srcFolder -Filter *.Tests.csproj -Recurse
-foreach($unitTestProject in $unitTestProjects) {
-    Write-Host "Running unit test project $unitTestProject"
-
-    & dotnet restore $unitTestProject.FullName
-    Assert-Cmd-Ok
-
-    & dotnet test $unitTestProject.FullName /p:DebugType=Full
-    Assert-Cmd-Ok
-}
+Write-Host "Running unit test project $unitTestPath"
+& dotnet restore $unitTestPath
+Assert-Cmd-Ok
+& dotnet test $unitTestPath
+Assert-Cmd-Ok
 
 # Release package build
 Write-Host "Building a release package"
