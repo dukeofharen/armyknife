@@ -17,7 +17,7 @@ branches:
 build_script:
   - ps: scripts\build.ps1
   - ps: scripts\build_choco.ps1
-  - ps: $($env:USERPROFILE)\.nuget\packages\coveralls.io\1.4.2\tools\coveralls.net.exe --opencover OpenCover.xml -r $($env:COVERALLS_REPO_TOKEN)
+  - cmd: scripts\upload_coveralls.bat
 
 test: off
 
