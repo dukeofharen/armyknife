@@ -6,6 +6,8 @@ before_build:
 environment:
   access_token:
     secure: Zcoti9GsS4Y1t12qVcWhfDXMJLW8QLt4SdeQi8VKUFBtd/gVyWsZlLXDOHLP8i5U
+  COVERALLS_REPO_TOKEN:
+    secure: XzMSOD/Z5rLyNTGAuUFDTolKl8oOjUboNrLliNQQb1V2chOvNtpVQVBDiBgC6VgZ
 
 branches:
   only:
@@ -15,6 +17,7 @@ branches:
 build_script:
   - ps: scripts\build.ps1
   - ps: scripts\build_choco.ps1
+  - cmd: %USERPROFILE%\.nuget\packages\coveralls.io\1.4.2\tools\coveralls.net.exe --opencover OpenCover.xml -r %COVERALLS_REPO_TOKEN%
 
 test: off
 
