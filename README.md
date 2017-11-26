@@ -5,6 +5,14 @@
 
 [Download the latest version](https://github.com/dukeofharen/armyknife/releases/latest)
 
+**Install on Windows**
+
+Armyknife can be installed using <a href="https://chocolatey.org/">Chocolatey</a>, a package manager for Windows.
+
+```
+choco install armyknife -y
+```
+
 Armyknife is a nice little tool which contains many handy little command line tools. It contains tools like base64 encoder / decoder, URL shortener, SHA512 hasher and more.
 
 ![Example](media/ex_base64encode.gif)
