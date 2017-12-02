@@ -55,10 +55,6 @@ Write-Host "Building a release package"
 & dotnet restore $mainProjectFile
 Assert-Cmd-Ok
 
-Write-Host "Packaging up for Windows"
-& dotnet publish $mainProjectFile --configuration=release --runtime=win10-x64
-Assert-Cmd-Ok
-
 # Reading version number
 Write-Host "Reading version from $mainProjectFile"
 [xml]$csproj = Get-Content $mainProjectFile
@@ -66,18 +62,7 @@ $propertyGroupNode = $csproj.SelectSingleNode("/Project/PropertyGroup[1]")
 $version = [version]$propertyGroupNode.Version
 Write-Host "Found version $version"
 
-# Moving install scripts for Windows
-Copy-Item (Join-Path $installScriptsPath "**") $winBinDir -Recurse
-
-# Making installer
-$env:VersionMajor = $version.Major
-$env:VersionMinor = $version.Minor
-$env:VersionBuild = $version.Build
-$env:BuildOutputBinDirectory = $winBinDir
-$env:BuildOutputDirectory = $winBinDir
-Write-Host "Building installer $nsiPath"
-& makensis $nsiPath
-Assert-Cmd-Ok
+. "$PSScriptRoot\build_windows.ps1"
 
 # Patch documentation
 $docGenDllFile = Join-Path -Path $srcFolder "Armyknife.DocGenerator\bin\Debug\netcoreapp2.0\Armyknife.DocGenerator.dll"
