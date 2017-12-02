@@ -9,7 +9,7 @@ $ErrorActionPreference = 'Stop'
 
 $nsiPath = Join-Path $PSScriptRoot "armyknife.nsi"
 $binDir = Join-Path $srcFolder "Armyknife\bin\release\netcoreapp2.0\win10-x64\publish"
-$installScriptsPath = Join-Path -Path $PSScriptRoot "installscripts"
+$installScriptsPath = Join-Path -Path $PSScriptRoot "installscripts\windows"
 
 # Create Windows package
 Write-Host "Packing up for Windows" -ForegroundColor Green
@@ -17,7 +17,7 @@ Write-Host "Packing up for Windows" -ForegroundColor Green
 Assert-Cmd-Ok
 
 # Moving install scripts for Windows
-Copy-Item (Join-Path $installScriptsPath "windows\**") $binDir -Recurse
+Copy-Item (Join-Path $installScriptsPath "**") $binDir -Recurse
 
 # Making installer
 $env:VersionMajor = $version.Major
