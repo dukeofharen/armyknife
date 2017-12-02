@@ -17,7 +17,7 @@ Write-Host "Packing up for Windows" -ForegroundColor Green
 Assert-Cmd-Ok
 
 # Moving install scripts for Windows
-Copy-Item (Join-Path $installScriptsPath "**") $binDir -Recurse
+Copy-Item (Join-Path $installScriptsPath "windows\**") $binDir -Recurse
 
 # Making installer
 $env:VersionMajor = $version.Major
