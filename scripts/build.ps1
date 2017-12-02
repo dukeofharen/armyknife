@@ -4,9 +4,6 @@ $rootFolder = Join-Path -Path $PSScriptRoot ".."
 $srcFolder = Join-Path -Path $rootFolder "src"
 $mainProjectFile = Join-Path $srcFolder "Armyknife\Armyknife.csproj"
 $solutionFile = Join-Path -Path $srcFolder "Armyknife.sln"
-$nsiPath = Join-Path $PSScriptRoot "armyknife.nsi"
-$winBinDir = Join-Path $srcFolder "Armyknife\bin\release\netcoreapp2.0\win10-x64\publish"
-$installScriptsPath = Join-Path -Path $PSScriptRoot "installscripts"
 $unitTestPath = Join-Path -Path $srcFolder "Armyknife.Tests\Armyknife.Tests.csproj"
 $openCoverPath = Join-Path -Path $env:USERPROFILE ".nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe"
 $reportGeneratorPath = Join-Path -Path $env:USERPROFILE  ".nuget\packages\reportgenerator\3.0.2\tools\ReportGenerator.exe"
@@ -62,7 +59,8 @@ $propertyGroupNode = $csproj.SelectSingleNode("/Project/PropertyGroup[1]")
 $version = [version]$propertyGroupNode.Version
 Write-Host "Found version $version"
 
-. "$PSScriptRoot\build_windows.ps1"
+. "$PSScriptRoot\build_windows.ps1" -srcFolder $srcFolder
+. "$PSScriptRoot\build_ubuntu.ps1" -srcFolder $srcFolder
 
 # Patch documentation
 $docGenDllFile = Join-Path -Path $srcFolder "Armyknife.DocGenerator\bin\Debug\netcoreapp2.0\Armyknife.DocGenerator.dll"
