@@ -2,9 +2,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <Version>1.2.0.87</Version>
-    <AssemblyVersion>1.2.0.87</AssemblyVersion>
-    <FileVersion>1.2.0.87</FileVersion>
+    <Version>1.2.0.89</Version>
+    <AssemblyVersion>1.2.0.89</AssemblyVersion>
+    <FileVersion>1.2.0.89</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
