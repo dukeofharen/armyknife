@@ -18,6 +18,7 @@
     <tags>armyknife tool tools command-line</tags>
     <summary>A cross-platform console app with lots of handy tools.</summary>
     <description>A cross-platform console app with lots of handy tools.</description>
+    <releaseNotes>See https://github.com/dukeofharen/armyknife/releases</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
