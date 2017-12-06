@@ -32,6 +32,11 @@
       <p>
 <pre class="powershell"><code>PS C:\Users\Duco\Desktop> choco install armyknife -y</code></pre>
       </p>
+      <h2>Install on Ubuntu</h2>
+      <p>
+        There is an install script for Ubuntu. You can call it directly from a Bash terminal like this (make sure you are super user):
+      </p>
+<pre class="bash"><code>wget -qO- https://raw.githubusercontent.com/dukeofharen/armyknife/master/scripts/install.sh | bash</code></pre>
       <p>
         Armyknife is a nice little tool which contains many handy little command line tools. It contains tools like base64 encoder
         / decoder, URL shortener, SHA512 hasher and more.
@@ -132,7 +137,7 @@ VGhpcyBpcyBhIHRlc3QgZmlsZSENCg==</code></pre>
         <strong>Pass clipboard data to Armyknife through piping</strong>
       </p>
       <p>
-<pre>PS C:\Users\Duco\Desktop> Get-Clipboard | armyknife sha1
+<pre class="powershell">PS C:\Users\Duco\Desktop> Get-Clipboard | armyknife sha1
 69776a1e2e0bfa8505342952cc6978d56342cc14</pre>
       </p>
     </div>
@@ -384,7 +389,7 @@ Optional properties:
     <hr>
 
     <footer>
-      <p>&copy; Ducode 2017 - Built on 2017-12-06 20:36:37 for version 1.2.0.92</p>
+      <p>&copy; Ducode 2017 - Built on 2017-12-06 21:29:39 for version 1.2.0.93</p>
     </footer>
   </div>
   <script src="js/vendor/jquery-1.11.2.min.js"></script>
