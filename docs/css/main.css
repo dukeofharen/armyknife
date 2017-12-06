@@ -22,3 +22,10 @@ pre.powershell{
     border-radius: 0;
     font-family: "Lucida Console", Consolas;
 }
+pre.bash{
+    background-color: #000000;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 0;
+    font-family: "Lucida Console", Consolas;
+}
