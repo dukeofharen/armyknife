@@ -23,24 +23,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.TestUtilities", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{E7D60BC7-53AC-4CB8-B1C6-C0908B7C1C10}"
 	ProjectSection(SolutionItems) = preProject
-		..\appveyor.yml = ..\appveyor.yml
 		..\scripts\armyknife.nsi = ..\scripts\armyknife.nsi
 		..\scripts\build.ps1 = ..\scripts\build.ps1
 		..\scripts\build.sh = ..\scripts\build.sh
 		..\scripts\build_choco.ps1 = ..\scripts\build_choco.ps1
+		..\scripts\build_ubuntu.ps1 = ..\scripts\build_ubuntu.ps1
+		..\scripts\build_windows.ps1 = ..\scripts\build_windows.ps1
 		..\scripts\functions.ps1 = ..\scripts\functions.ps1
+		..\scripts\install-dotnet.sh = ..\scripts\install-dotnet.sh
+		..\scripts\install.sh = ..\scripts\install.sh
 		..\scripts\local_build.bat = ..\scripts\local_build.bat
 		..\scripts\patch_versions.ps1 = ..\scripts\patch_versions.ps1
 		..\scripts\upload_coveralls.bat = ..\scripts\upload_coveralls.bat
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.HelperTool", "Armyknife.HelperTool\Armyknife.HelperTool.csproj", "{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "installscripts", "installscripts", "{FD3A39B7-601F-41DD-9AE3-57A78AE74D03}"
-	ProjectSection(SolutionItems) = preProject
-		..\scripts\installscripts\add_path_var.ps1 = ..\scripts\installscripts\add_path_var.ps1
-		..\scripts\installscripts\remove_path_var.ps1 = ..\scripts\installscripts\remove_path_var.ps1
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Business.Interfaces", "Armyknife.Business.Interfaces\Armyknife.Business.Interfaces.csproj", "{45A2FC2C-36FB-4468-BEDD-D0DEDA409557}"
 EndProject
@@ -62,6 +59,19 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.DocGenerator", "Armyknife.DocGenerator\Armyknife.DocGenerator.csproj", "{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Armyknife.Tests", "Armyknife.Tests\Armyknife.Tests.csproj", "{BD0B8E1B-2331-4EFE-8B67-B530475344C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "installscripts", "installscripts", "{F5EF6B34-E626-425E-B638-CB5AB2577760}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{46558888-7ABB-401E-BAE7-1608FB6A31F8}"
+	ProjectSection(SolutionItems) = preProject
+		..\scripts\installscripts\windows\add_path_var.ps1 = ..\scripts\installscripts\windows\add_path_var.ps1
+		..\scripts\installscripts\windows\remove_path_var.ps1 = ..\scripts\installscripts\windows\remove_path_var.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ubuntu", "ubuntu", "{F8560AE7-0995-4B59-8A95-0CA80F64FC48}"
+	ProjectSection(SolutionItems) = preProject
+		..\scripts\installscripts\ubuntu\install.sh = ..\scripts\installscripts\ubuntu\install.sh
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,10 +146,12 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4AAB0F27-968D-4203-B35E-1840D909EA63} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
 		{DEB70A7F-4799-4520-B9E7-1AD0B7C6E052} = {8D9587DF-1928-4A4D-9FBE-695564D9984B}
-		{FD3A39B7-601F-41DD-9AE3-57A78AE74D03} = {E7D60BC7-53AC-4CB8-B1C6-C0908B7C1C10}
 		{ED6507C9-D7EB-456C-88A5-F9607620E697} = {8D9587DF-1928-4A4D-9FBE-695564D9984B}
 		{79A49F19-3EB6-481E-AB8A-1FA640BDBCCE} = {8D9587DF-1928-4A4D-9FBE-695564D9984B}
 		{BD0B8E1B-2331-4EFE-8B67-B530475344C5} = {B9E7EE41-ACF3-47E8-A781-25049C8D61C4}
+		{F5EF6B34-E626-425E-B638-CB5AB2577760} = {E7D60BC7-53AC-4CB8-B1C6-C0908B7C1C10}
+		{46558888-7ABB-401E-BAE7-1608FB6A31F8} = {F5EF6B34-E626-425E-B638-CB5AB2577760}
+		{F8560AE7-0995-4B59-8A95-0CA80F64FC48} = {F5EF6B34-E626-425E-B638-CB5AB2577760}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D65628E-0306-4433-BE5E-3BAD3E60D22C}
