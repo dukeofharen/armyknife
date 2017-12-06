@@ -25,6 +25,9 @@ artifacts:
   - path: src\Armyknife\bin\release\netcoreapp2.0\win10-x64\publish\armyknife_*.exe
     name: armyknife-windows
     type: zip
+  - path: armyknife.tar.gz
+    name: armyknife-ubuntu
+    type: zip
   - path: docs
     name: docs
     type: zip`
