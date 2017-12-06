@@ -21,7 +21,7 @@ Assert-Cmd-Ok
 Copy-Item (Join-Path $installScriptsPath "**") $binDir -Recurse
 
 # Creating .tar.gz file of binaries.
-& 7z a -ttar "$binDir\armyknife.tar" "$binDir\*.*"
+& 7z a -ttar "$binDir\armyknife.tar" "$binDir\**"
 Assert-Cmd-Ok
 & 7z a -tgzip "$binDir\armyknife.tar.gz" "$binDir\armyknife.tar"
 Assert-Cmd-Ok

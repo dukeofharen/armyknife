@@ -22,4 +22,4 @@ echo Moving contents from $DIR to $DESTINATION
 mv $DIR/* $DESTINATION
 
 echo Creating symlink of $BINARYPATH to $SYMLINKPATH
-ln -s $BINARYPATH $SYMLINKPATH
+ln -s -f $BINARYPATH $SYMLINKPATH
