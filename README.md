@@ -3,7 +3,7 @@
 | | |
 | --- | --- |
 | **Build** | [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/1yi3hbdugvqeya31?svg=true)](https://ci.appveyor.com/project/dukeofharen/armyknife) [![TravisCI build status](https://api.travis-ci.org/dukeofharen/armyknife.svg)](https://travis-ci.org/dukeofharen/armyknife) |
-| **Coverage** | [![Coverage Status](https://coveralls.io/repos/github/dukeofharen/armyknife/badge.svg?branch=refactoring%2Fcode-coverage)](https://coveralls.io/github/dukeofharen/armyknife?branch=refactoring%2Fcode-coverage) |
+| **Coverage** | [![Coverage Status](https://coveralls.io/repos/github/dukeofharen/armyknife/badge.svg)](https://coveralls.io/github/dukeofharen/armyknife) |
 | **License** | [![MIT License](https://img.shields.io/:license-mit-green.svg)](https://opensource.org/licenses/MIT) |
 
 
@@ -17,6 +17,14 @@ Armyknife can be installed using <a href="https://chocolatey.org/">Chocolatey</a
 choco install armyknife -y
 ```
 
+**Install on Ubuntu**
+
+There is an install script for Ubuntu. You can call it directly from a Bash terminal like this (make sure you are super user):
+
+```
+wget -qO- https://raw.githubusercontent.com/dukeofharen/armyknife/master/scripts/install.sh | bash
+```
+
 Armyknife is a nice little tool which contains many handy little command line tools. It contains tools like base64 encoder / decoder, URL shortener, SHA512 hasher and more.
 
 ![Example](media/ex_base64encode.gif)
@@ -24,7 +32,7 @@ Armyknife is a nice little tool which contains many handy little command line to
 For more information, see [dukeofharen.github.io/armyknife](https://dukeofharen.github.io/armyknife).
 
 # Backlog
-- Make tool cross platform, because it's written in .NET Core (only build for Windows for now).
+- Make tool cross platform, because it's written in .NET Core (only build for Windows and Ubuntu for now).
 - Add more tools.
 - Add plugin system.
 
