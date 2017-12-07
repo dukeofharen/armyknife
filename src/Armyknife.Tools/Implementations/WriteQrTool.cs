@@ -52,14 +52,22 @@ namespace Armyknife.Tools.Implementations
          int width = args.GetValue(WidthKey, 250);
          int height = args.GetValue(HeightKey, 250);
 
-         //string svg = _barcodeService.GenerateQrCodeSvg(input, height, width);
-         //_fileService.WriteAllText(writeLocation, svg);
+         string extension = writeLocation.GetFileExtension();
+         switch (extension)
+         {
+            case "png":
+               var png = _barcodeService.GenerateQrCodePng(input, height, width);
+               _fileService.WriteAllBytes(writeLocation, png);
+               break;
 
-         var png = _barcodeService.GenerateQrCodePng(input, height, width);
-         _fileService.WriteAllBytes(writeLocation, png);
+            case "svg":
+               string svg = _barcodeService.GenerateQrCodeSvg(input, height, width);
+               _fileService.WriteAllText(writeLocation, svg);
+               break;
 
-         //var qrBytes = _barcodeService.GenerateQrCode(input, height, width);
-         //_fileService.WriteAllBytes(writeLocation, qrBytes);
+            default:
+               throw new ArmyknifeException($"Saving QR code to a file with extension '{extension}' is not supported.");
+         }
 
          bool openImage = args.GetValue(OpenFileKey, false);
          if (openImage)

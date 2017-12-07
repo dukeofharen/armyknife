@@ -1,4 +1,5 @@
 ﻿using Armyknife.Services.Interfaces;
+using Armyknife.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -30,9 +31,7 @@ namespace Armyknife.Services.Implementations
             return FallbackMimeType;
          }
 
-         var parts = input.Split('.');
-         string result;
-         if (_typeMap.TryGetValue(parts.Last(), out result))
+         if (_typeMap.TryGetValue(input.GetFileExtension(), out string result))
          {
             return result;
          }

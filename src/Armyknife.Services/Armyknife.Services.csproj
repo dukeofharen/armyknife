@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Armyknife.Exceptions\Armyknife.Exceptions.csproj" />
     <ProjectReference Include="..\Armyknife.Services.Interfaces\Armyknife.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Armyknife.Utilities\Armyknife.Utilities.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Resources\filetypes.json">
