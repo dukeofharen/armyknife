@@ -36,6 +36,9 @@ For more information, see [dukeofharen.github.io/armyknife](https://dukeofharen.
 - Add more tools.
 - Add plugin system.
 
+# Known issues
+- By providing the application with piped data (at least with PowerShell), a new line is added to the input. This newline character is stripped by the application, so you might encounter some unexpected behaviour when you pipe data to the application.
+
 # Made possible by
 This application was made using some wonderful frameworks, libraries, software and other resources, including (but not limited to):
 - [.NET Core](https://www.microsoft.com/net/learn/get-started/windows)
