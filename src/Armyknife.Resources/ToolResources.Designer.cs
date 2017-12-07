@@ -559,6 +559,8 @@ namespace Armyknife.Resources {
         ///   Looks up a localized string similar to Usage:
         ///- writeqr --input this is the QR content --outputFile C:\temp\qr.png --width 250 --height 250
         ///
+        ///The output type is determined by the file extension of &quot;outputType&quot;. Supported file types: png, svg.
+        ///
         ///Optional properties:
         ///- width: the PNG file width in pixels (default 250)
         ///- height: the PNG height in pixels (default 250)
