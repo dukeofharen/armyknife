@@ -52,8 +52,11 @@ namespace Armyknife.Tools.Implementations
          int width = args.GetValue(WidthKey, 250);
          int height = args.GetValue(HeightKey, 250);
 
-         string svg = _barcodeService.GenerateQrCodeSvg(input, height, width);
-         _fileService.WriteAllText(writeLocation, svg);
+         //string svg = _barcodeService.GenerateQrCodeSvg(input, height, width);
+         //_fileService.WriteAllText(writeLocation, svg);
+
+         var png = _barcodeService.GenerateQrCodePng(input, height, width);
+         _fileService.WriteAllBytes(writeLocation, png);
 
          //var qrBytes = _barcodeService.GenerateQrCode(input, height, width);
          //_fileService.WriteAllBytes(writeLocation, qrBytes);
