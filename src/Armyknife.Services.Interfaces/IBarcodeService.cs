@@ -1,7 +1,9 @@
 ﻿namespace Armyknife.Services.Interfaces
 {
-    public interface IBarcodeService
-    {
-        byte[] GenerateQrCode(string input, int height, int width);
-    }
+   public interface IBarcodeService
+   {
+      byte[] GenerateQrCodePng(string input, int height, int width);
+
+      string GenerateQrCodeSvg(string input, int height, int width);
+   }
 }
