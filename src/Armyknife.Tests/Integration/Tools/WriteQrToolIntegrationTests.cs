@@ -17,7 +17,7 @@ namespace Armyknife.Integration.Tests.Tools
             .Setup(m => m.WriteAllBytes(It.IsAny<string>(), It.IsAny<byte[]>()));
 
          _barcodeServiceMock
-            .Setup(m => m.GenerateQrCode(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>()))
+            .Setup(m => m.GenerateQrCodePng(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>()))
             .Returns(new byte[0]);
 
          _processServiceMock
