@@ -1,16 +1,16 @@
-﻿using Armyknife.Exceptions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Armyknife.Exceptions;
 using Armyknife.Models;
 using Armyknife.Services.Interfaces;
 using Armyknife.Tools.Implementations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
 
-namespace Armyknife.Tools.Tests.Implementations
+namespace Armyknife.Tests.Tools.Implementations
 {
    [TestClass]
    public class LongurlToolFacts

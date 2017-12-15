@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class LipsumToolIntegrationTests : IntegrationTestBase
@@ -14,10 +14,10 @@ namespace Armyknife.Integration.Tests.Tools
          string[] args = GetArgs("lipsum --paragraphs 10");
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         var parts = _output.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
+         var parts = Output.Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries);
          Assert.AreEqual(10, parts.Length);
       }
    }

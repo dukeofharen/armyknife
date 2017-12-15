@@ -1,14 +1,13 @@
-﻿using Armyknife.Business.Interfaces;
+﻿using System.Collections.Generic;
+using Armyknife.Business.Interfaces;
 using Armyknife.Business.Tools;
 using Armyknife.Exceptions;
 using Armyknife.Models;
 using Armyknife.Services.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace Armyknife.Business.Tests.Tools
+namespace Armyknife.Tests.Business.Tools
 {
     [TestClass]
     public class HelpToolFacts

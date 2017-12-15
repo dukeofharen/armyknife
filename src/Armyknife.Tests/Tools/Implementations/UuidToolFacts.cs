@@ -1,10 +1,10 @@
-﻿using Armyknife.Tools.Implementations;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Armyknife.Tools.Implementations;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Tools.Tests.Implementations
+namespace Armyknife.Tests.Tools.Implementations
 {
     [TestClass]
     public class UuidToolFacts
@@ -30,7 +30,7 @@ namespace Armyknife.Tools.Tests.Implementations
             Assert.AreEqual(1, result.Split(Environment.NewLine).Length);
             Assert.IsTrue(result.Contains("-"));
             Assert.IsFalse(result.Contains("{") || result.Contains("}"));
-            Assert.IsFalse(result.Any(c => char.IsUpper(c)));
+            Assert.IsFalse(result.Any(char.IsUpper));
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace Armyknife.Tools.Tests.Implementations
             Assert.AreEqual(1, result.Split(Environment.NewLine).Length);
             Assert.IsTrue(result.Contains("-"));
             Assert.IsTrue(result.Contains("{") || result.Contains("}"));
-            Assert.IsFalse(result.Any(c => char.IsUpper(c)));
+            Assert.IsFalse(result.Any(char.IsUpper));
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@ namespace Armyknife.Tools.Tests.Implementations
             Assert.AreEqual(1, result.Split(Environment.NewLine).Length);
             Assert.IsTrue(result.Contains("-"));
             Assert.IsFalse(result.Contains("{") || result.Contains("}"));
-            Assert.IsTrue(result.Any(c => char.IsUpper(c)));
+            Assert.IsTrue(result.Any(char.IsUpper));
         }
 
         [TestMethod]
@@ -104,7 +104,7 @@ namespace Armyknife.Tools.Tests.Implementations
             Assert.AreEqual(1, result.Split(Environment.NewLine).Length);
             Assert.IsFalse(result.Contains("-"));
             Assert.IsFalse(result.Contains("{") || result.Contains("}"));
-            Assert.IsFalse(result.Any(c => char.IsUpper(c)));
+            Assert.IsFalse(result.Any(char.IsUpper));
         }
 
         [TestMethod]
@@ -127,7 +127,7 @@ namespace Armyknife.Tools.Tests.Implementations
             Assert.AreEqual(howMany, result.Split(Environment.NewLine).Length);
             Assert.IsTrue(result.Contains("-"));
             Assert.IsTrue(result.Contains("{") || result.Contains("}"));
-            Assert.IsTrue(result.Any(c => char.IsUpper(c)));
+            Assert.IsTrue(result.Any(char.IsUpper));
         }
     }
 }

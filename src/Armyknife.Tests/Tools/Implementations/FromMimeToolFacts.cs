@@ -1,12 +1,12 @@
-﻿using Armyknife.Exceptions;
+﻿using System.Collections.Generic;
+using Armyknife.Exceptions;
 using Armyknife.Resources;
 using Armyknife.Services.Interfaces;
 using Armyknife.Tools.Implementations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System.Collections.Generic;
 
-namespace Armyknife.Tools.Tests.Implementations
+namespace Armyknife.Tests.Tools.Implementations
 {
     [TestClass]
     public class FromMimeToolFacts

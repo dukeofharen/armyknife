@@ -1,33 +1,27 @@
-﻿using System.Collections.Generic;
-using Armyknife.Business.Implementations;
+﻿using Armyknife.Business.Implementations;
+using Armyknife.Services.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Armyknife.Services.Interfaces;
 
-namespace Armyknife.Business.Tests.Implementations
+namespace Armyknife.Tests.Business.Implementations
 {
     [TestClass]
     public class OutputWriterFacts
     {
         private Mock<IConsoleService> _consoleServiceMock;
-        private Mock<IFileService> _fileServiceMock;
         private OutputWriter _writer;
 
         [TestInitialize]
         public void Initialize()
         {
             _consoleServiceMock = new Mock<IConsoleService>();
-            _fileServiceMock = new Mock<IFileService>();
-            _writer = new OutputWriter(
-                _consoleServiceMock.Object,
-                _fileServiceMock.Object);
+            _writer = new OutputWriter(_consoleServiceMock.Object);
         }
 
         [TestCleanup]
         public void Cleanup()
         {
             _consoleServiceMock.VerifyAll();
-            _fileServiceMock.VerifyAll();
         }
 
         [TestMethod]

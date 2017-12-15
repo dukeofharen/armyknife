@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Armyknife.Business.Interfaces
+﻿namespace Armyknife.Business.Interfaces
 {
     public interface IOutputWriter
     {

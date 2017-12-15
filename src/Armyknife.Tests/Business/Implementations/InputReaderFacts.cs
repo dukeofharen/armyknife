@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Armyknife.Business.Implementations;
+using Armyknife.Services.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Armyknife.Services.Interfaces;
 
-namespace Armyknife.Business.Tests.Implementations
+namespace Armyknife.Tests.Business.Implementations
 {
     [TestClass]
     public class InputReaderFacts

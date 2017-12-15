@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class FilextToolIntegrationTests : IntegrationTestBase
@@ -14,10 +14,10 @@ namespace Armyknife.Integration.Tests.Tools
          string resultContains = "ASCII text file";
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.IsTrue(_output.Contains(resultContains));
+         Assert.IsTrue(Output.Contains(resultContains));
       }
    }
 }

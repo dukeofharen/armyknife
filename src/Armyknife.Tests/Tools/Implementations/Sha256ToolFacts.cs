@@ -1,12 +1,10 @@
-﻿using Armyknife.Exceptions;
+﻿using System.Collections.Generic;
+using Armyknife.Exceptions;
 using Armyknife.Resources;
 using Armyknife.Tools.Implementations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Armyknife.Tools.Tests.Implementations
+namespace Armyknife.Tests.Tools.Implementations
 {
     [TestClass]
     public class Sha256ToolFacts

@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class UrldecodeToolIntegrationTests : IntegrationTestBase
@@ -10,14 +10,14 @@ namespace Armyknife.Integration.Tests.Tools
       public async Task UrldecodeTool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs($"urldecode https%3a%2f%2fgoogle.com");
+         var args = GetArgs("urldecode https%3a%2f%2fgoogle.com");
          string expectedOutput = "https://google.com";
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(expectedOutput, _output);
+         Assert.AreEqual(expectedOutput, Output);
       }
    }
 }

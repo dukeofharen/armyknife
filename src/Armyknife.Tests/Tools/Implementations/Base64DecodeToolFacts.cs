@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Armyknife.Exceptions;
 using Armyknife.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Armyknife.Tools.Implementations;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Tools.Tests.Implementations
+namespace Armyknife.Tests.Tools.Implementations
 {
     [TestClass]
     public class Base64DecodeToolFacts

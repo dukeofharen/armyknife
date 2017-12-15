@@ -13,23 +13,17 @@ namespace Armyknife.Business.Implementations
 {
    internal class Executor : IExecutor
    {
-      private readonly IAssemblyService _assemblyService;
-      private readonly IConsoleService _consoleService;
       private readonly IInputReader _inputReader;
       private readonly ILogger _logger;
       private readonly IOutputWriter _outputWriter;
       private readonly IToolResolver _toolResolver;
 
       public Executor(
-          IAssemblyService assemblyService,
-          IConsoleService consoleService,
           IInputReader inputReader,
           ILogger logger,
           IOutputWriter outputWriter,
           IToolResolver toolResolver)
       {
-         _assemblyService = assemblyService;
-         _consoleService = consoleService;
          _inputReader = inputReader;
          _logger = logger;
          _outputWriter = outputWriter;

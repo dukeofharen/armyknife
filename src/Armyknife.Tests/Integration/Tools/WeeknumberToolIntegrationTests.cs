@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class WeeknumberToolIntegrationTests : IntegrationTestBase
@@ -11,19 +11,19 @@ namespace Armyknife.Integration.Tests.Tools
       public async Task WeeknumberTool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs($"weeknumber");
+         var args = GetArgs("weeknumber");
          var now = new DateTime(2017, 11, 12);
          string expectedOutput = "45";
 
-         _dateTimeServiceMock
+         DateTimeServiceMock
             .Setup(m => m.Now)
             .Returns(now);
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(expectedOutput, _output);
+         Assert.AreEqual(expectedOutput, Output);
       }
    }
 }

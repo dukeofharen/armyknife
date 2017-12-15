@@ -1,9 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class TinyUrlToolIntegrationTests : IntegrationTestBase
@@ -18,17 +18,17 @@ namespace Armyknife.Integration.Tests.Tools
             Content = new StringContent(tinyUrl)
          };
 
-         _webServiceMock
+         WebServiceMock
             .Setup(m => m.DoRequestAsync(It.IsAny<HttpRequestMessage>()))
             .ReturnsAsync(response);
 
          string[] args = GetArgs("tinyurl https://google.com");
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(tinyUrl, _output);
+         Assert.AreEqual(tinyUrl, Output);
       }
    }
 }

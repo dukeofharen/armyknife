@@ -26,7 +26,7 @@ namespace Armyknife.Services.Implementations
             }
             else
             {
-                throw new ArmyknifeException($"Direct opening files on OS not yet supported.");
+                throw new ArmyknifeException("Direct opening files on OS not yet supported.");
             }
         }
     }

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Armyknife.Business.Implementations;
+using Armyknife.Business.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Armyknife.Business.Interfaces;
 
-namespace Armyknife.Business.Tests.Implementations
+namespace Armyknife.Tests.Business.Implementations
 {
     [TestClass]
     public class ToolResolverFacts

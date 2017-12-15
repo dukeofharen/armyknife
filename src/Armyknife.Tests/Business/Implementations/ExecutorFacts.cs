@@ -1,24 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Armyknife.Business.Implementations;
+using Armyknife.Business.Interfaces;
 using Armyknife.Exceptions;
 using Armyknife.Models;
 using Armyknife.Resources;
+using Armyknife.Services.Implementations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System.Threading.Tasks;
-using Armyknife.Business.Interfaces;
-using Armyknife.Services.Interfaces;
-using Armyknife.Services.Implementations;
-using System.Linq;
 
-namespace Armyknife.Business.Tests.Implementations
+namespace Armyknife.Tests.Business.Implementations
 {
    [TestClass]
    public class ExecutorFacts
    {
-      private Mock<IAssemblyService> _assemblyServiceMock;
-      private Mock<IConsoleService> _consoleServiceMock;
       private Mock<IInputReader> _inputReaderMock;
       private Logger _logger;
       private Mock<IOutputWriter> _outputWriterMock;
@@ -28,15 +25,11 @@ namespace Armyknife.Business.Tests.Implementations
       [TestInitialize]
       public void Initialize()
       {
-         _assemblyServiceMock = new Mock<IAssemblyService>();
-         _consoleServiceMock = new Mock<IConsoleService>();
          _inputReaderMock = new Mock<IInputReader>();
          _logger = new Logger();
          _outputWriterMock = new Mock<IOutputWriter>();
          _toolResolverMock = new Mock<IToolResolver>();
          _executor = new Executor(
-             _assemblyServiceMock.Object,
-             _consoleServiceMock.Object,
              _inputReaderMock.Object,
              _logger,
              _outputWriterMock.Object,
@@ -46,8 +39,6 @@ namespace Armyknife.Business.Tests.Implementations
       [TestCleanup]
       public void Cleanup()
       {
-         _assemblyServiceMock.VerifyAll();
-         _consoleServiceMock.VerifyAll();
          _inputReaderMock.VerifyAll();
          _outputWriterMock.VerifyAll();
          _toolResolverMock.VerifyAll();
@@ -57,7 +48,6 @@ namespace Armyknife.Business.Tests.Implementations
       public async Task Executor_ExecuteAsync_ArgsNull_ShouldShowHelp()
       {
          // arrange
-         string[] args = null;
          string helpText = "This is the help text.";
 
          var toolMock = new Mock<ISynchronousTool>();
@@ -70,7 +60,7 @@ namespace Armyknife.Business.Tests.Implementations
              .Returns(toolMock.Object);
 
          // act
-         int result = await _executor.ExecuteAsync(args);
+         int result = await _executor.ExecuteAsync(null);
 
          // assert
          _outputWriterMock
@@ -360,7 +350,6 @@ namespace Armyknife.Business.Tests.Implementations
          // arrange
          string toolName = "testtool";
          string[] args = { toolName };
-         string input = string.Empty;
          string expectedOutput = "ERROR!";
 
          _toolResolverMock
@@ -385,7 +374,6 @@ namespace Armyknife.Business.Tests.Implementations
          // arrange
          string toolName = "testtool";
          string[] args = { toolName };
-         string input = string.Empty;
          string exceptionText = "ERROR!";
          string expectedOutput = string.Format(GenericResources.SomethingWentWrong, toolName, exceptionText, GenericResources.GithubUrl);
 

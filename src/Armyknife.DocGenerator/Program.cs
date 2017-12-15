@@ -16,6 +16,7 @@ namespace Armyknife.DocGenerator
 {
    class Program
    {
+      // ReSharper disable once UnusedParameter.Local
       static void Main(string[] args)
       {
          var serviceCollection = new ServiceCollection();
@@ -23,7 +24,7 @@ namespace Armyknife.DocGenerator
          var provider = serviceCollection.BuildServiceProvider();
 
          var toolResolver = provider.GetService<IToolResolver>();
-         var tools = toolResolver.GetToolMetData();
+         var tools = toolResolver.GetToolMetData().ToArray();
 
          var assemblyService = provider.GetService<IAssemblyService>();
          string version = assemblyService.GetVersionNumber();

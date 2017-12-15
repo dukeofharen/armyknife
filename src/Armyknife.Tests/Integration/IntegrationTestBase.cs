@@ -1,26 +1,25 @@
-﻿using Armyknife.Business;
+﻿using System.IO;
+using Armyknife.Business;
 using Armyknife.Business.Interfaces;
 using Armyknife.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using System.Collections.Generic;
-using System.IO;
 
-namespace Armyknife.Integration.Tests
+namespace Armyknife.Tests.Integration
 {
    public abstract class IntegrationTestBase
    {
       private const string ConsolePath = @"C:\tmp";
-      protected Mock<IBarcodeService> _barcodeServiceMock;
-      protected Mock<IConsoleService> _consoleService;
-      protected Mock<IDateTimeService> _dateTimeServiceMock;
-      protected Mock<IFileService> _fileServiceMock;
-      protected Mock<IOutputWriter> _outputWriterMock;
-      protected Mock<IProcessService> _processServiceMock;
-      protected Mock<IWebService> _webServiceMock;
-      protected string _output;
-      protected IExecutor _executor;
+      protected Mock<IBarcodeService> BarcodeServiceMock;
+      protected Mock<IConsoleService> ConsoleService;
+      protected Mock<IDateTimeService> DateTimeServiceMock;
+      protected Mock<IFileService> FileServiceMock;
+      protected Mock<IOutputWriter> OutputWriterMock;
+      protected Mock<IProcessService> ProcessServiceMock;
+      protected Mock<IWebService> WebServiceMock;
+      protected string Output;
+      protected IExecutor Executor;
 
       [TestInitialize]
       public void Initialize()
@@ -28,52 +27,52 @@ namespace Armyknife.Integration.Tests
          var serviceCollection = new ServiceCollection();
          DependencyRegistration.RegisterDependencies(serviceCollection);
 
-         _barcodeServiceMock = new Mock<IBarcodeService>();
+         BarcodeServiceMock = new Mock<IBarcodeService>();
 
-         _consoleService = new Mock<IConsoleService>();
-         _consoleService
+         ConsoleService = new Mock<IConsoleService>();
+         ConsoleService
             .Setup(m => m.GetConsolePath())
             .Returns(ConsolePath);
 
-         _dateTimeServiceMock = new Mock<IDateTimeService>();
+         DateTimeServiceMock = new Mock<IDateTimeService>();
 
-         _fileServiceMock = new Mock<IFileService>();
-         _fileServiceMock
+         FileServiceMock = new Mock<IFileService>();
+         FileServiceMock
             .Setup(m => m.ReadAllText(Path.Combine(ConsolePath, "Resources/filetypes.json")))
             .Returns(@"[{""Extension"":""TXT"",""Description"":""Common name for ASCII text file"",""UsedBy"":""Microsoft Notepad""}]");
-         _fileServiceMock
+         FileServiceMock
             .Setup(m => m.ReadAllText(Path.Combine(ConsolePath, "Resources/mime.json")))
             .Returns(@"{""pdf"":""application/pdf""}");
 
-         _outputWriterMock = new Mock<IOutputWriter>();
-         _outputWriterMock
+         OutputWriterMock = new Mock<IOutputWriter>();
+         OutputWriterMock
             .Setup(m => m.WriteOutput(It.IsAny<string>()))
-            .Callback<string>(result => _output = result);
+            .Callback<string>(result => Output = result);
 
-         _processServiceMock = new Mock<IProcessService>();
-         _webServiceMock = new Mock<IWebService>();
+         ProcessServiceMock = new Mock<IProcessService>();
+         WebServiceMock = new Mock<IWebService>();
 
-         serviceCollection.AddSingleton(_barcodeServiceMock.Object);
-         serviceCollection.AddSingleton(_consoleService.Object);
-         serviceCollection.AddSingleton(_dateTimeServiceMock.Object);
-         serviceCollection.AddSingleton(_fileServiceMock.Object);
-         serviceCollection.AddSingleton(_outputWriterMock.Object);
-         serviceCollection.AddSingleton(_processServiceMock.Object);
-         serviceCollection.AddSingleton(_webServiceMock.Object);
+         serviceCollection.AddSingleton(BarcodeServiceMock.Object);
+         serviceCollection.AddSingleton(ConsoleService.Object);
+         serviceCollection.AddSingleton(DateTimeServiceMock.Object);
+         serviceCollection.AddSingleton(FileServiceMock.Object);
+         serviceCollection.AddSingleton(OutputWriterMock.Object);
+         serviceCollection.AddSingleton(ProcessServiceMock.Object);
+         serviceCollection.AddSingleton(WebServiceMock.Object);
 
          var provider = serviceCollection.BuildServiceProvider();
 
-         _executor = provider.GetService<IExecutor>();
+         Executor = provider.GetService<IExecutor>();
       }
 
       [TestCleanup]
       public void Cleanup()
       {
-         _barcodeServiceMock.VerifyAll();
-         _dateTimeServiceMock.VerifyAll();
-         _fileServiceMock.VerifyAll();
-         _outputWriterMock.VerifyAll();
-         _webServiceMock.VerifyAll();
+         BarcodeServiceMock.VerifyAll();
+         DateTimeServiceMock.VerifyAll();
+         FileServiceMock.VerifyAll();
+         OutputWriterMock.VerifyAll();
+         WebServiceMock.VerifyAll();
       }
 
       protected string[] GetArgs(string input)

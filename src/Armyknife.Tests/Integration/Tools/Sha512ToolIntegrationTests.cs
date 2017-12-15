@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class Sha512ToolIntegrationTests : IntegrationTestBase
@@ -14,10 +14,10 @@ namespace Armyknife.Integration.Tests.Tools
          string expectedOutput = "MwhMAI6YWka2/0EUbjXK7T2emho5fCVdesld45C6wEj4i07m55XaWfE+wHe+pjyQT5s8nLq7/03HUWXkt4YILw==";
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(expectedOutput, _output);
+         Assert.AreEqual(expectedOutput, Output);
       }
    }
 }

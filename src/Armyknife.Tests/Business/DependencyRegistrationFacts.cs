@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Linq;
+using Armyknife.Business;
+using Armyknife.Business.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Armyknife.Business.Interfaces;
-using System.Linq;
 
-namespace Armyknife.Business.Tests
+namespace Armyknife.Tests.Business
 {
     [TestClass]
     public class DependencyRegistrationFacts
@@ -35,7 +36,7 @@ namespace Armyknife.Business.Tests
         {
             // act / assert
             var services = _serviceCollection.Where(s => s.ServiceType != typeof(ITool));
-            foreach(var service in _serviceCollection)
+            foreach(var service in services)
             {
                 var instance = _serviceProvider.GetService(service.ServiceType);
                 Assert.IsNotNull(instance);

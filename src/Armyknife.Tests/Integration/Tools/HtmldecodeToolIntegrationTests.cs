@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class HtmldecodeToolIntegrationTests : IntegrationTestBase
@@ -10,14 +10,14 @@ namespace Armyknife.Integration.Tests.Tools
       public async Task HtmldecodeTool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs($"htmldecode &lt;html&gt;&lt;/html&gt;");
+         var args = GetArgs("htmldecode &lt;html&gt;&lt;/html&gt;");
          string expectedOutput = "<html></html>";
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(expectedOutput, _output);
+         Assert.AreEqual(expectedOutput, Output);
       }
    }
 }

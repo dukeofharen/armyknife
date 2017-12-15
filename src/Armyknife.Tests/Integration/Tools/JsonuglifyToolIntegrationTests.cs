@@ -1,7 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class JsonuglifyToolIntegrationTests : IntegrationTestBase
@@ -10,14 +10,14 @@ namespace Armyknife.Integration.Tests.Tools
       public async Task JsonuglifyTool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs($"jsonuglify {{\r\n  \"key\": \"value\"\r\n}}");
+         var args = GetArgs("jsonuglify {{\r\n  \"key\": \"value\"\r\n}}");
          string expectedOutput = @"{""key"":""value""}";
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(expectedOutput, _output);
+         Assert.AreEqual(expectedOutput, Output);
       }
    }
 }

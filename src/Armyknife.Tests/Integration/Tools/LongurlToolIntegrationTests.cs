@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using System;
+﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class LongurlToolIntegrationTests : IntegrationTestBase
@@ -13,7 +13,7 @@ namespace Armyknife.Integration.Tests.Tools
       public async Task LongurlTool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs($"longurl http://tinyurl.com/123");
+         var args = GetArgs("longurl http://tinyurl.com/123");
          string expectedOutput = "https://ducode.blog/";
 
          var response = new HttpResponseMessage
@@ -24,15 +24,15 @@ namespace Armyknife.Integration.Tests.Tools
             }
          };
 
-         _webServiceMock
+         WebServiceMock
             .Setup(m => m.DoRequestAsync(It.IsAny<HttpRequestMessage>()))
             .ReturnsAsync(response);
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(expectedOutput, _output);
+         Assert.AreEqual(expectedOutput, Output);
       }
    }
 }

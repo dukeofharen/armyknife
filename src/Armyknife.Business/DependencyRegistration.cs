@@ -15,6 +15,7 @@ namespace Armyknife.Business
             serviceCollection.AddTransient<IToolResolver, ToolResolver>();
 
             // This is done so the types in the Armyknife.Tools project are preloaded and available through reflection.
+           // ReSharper disable once UnusedVariable
             string toolName = typeof(Armyknife.Tools.Implementations.Base64DecodeTool).ToString();
 
             var toolTypes = AssemblyHelper.GetImplementations<ITool>();

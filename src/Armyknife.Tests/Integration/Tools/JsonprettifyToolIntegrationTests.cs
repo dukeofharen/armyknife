@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class JsonprettifyToolIntegrationTests : IntegrationTestBase
@@ -11,13 +11,13 @@ namespace Armyknife.Integration.Tests.Tools
       public async Task JsonprettifyTool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs($@"jsonprettify --input {{""key"": ""value""}} --character space --tabsize 1");
+         var args = GetArgs(@"jsonprettify --input {{""key"": ""value""}} --character space --tabsize 1");
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(3, _output.Split(Environment.NewLine).Length);
+         Assert.AreEqual(3, Output.Split(Environment.NewLine).Length);
       }
    }
 }

@@ -7,6 +7,7 @@ namespace Armyknife.Generator
 {
    class Program
    {
+      // ReSharper disable once UnusedParameter.Local
       static void Main(string[] args)
       {
          string toolName = null;

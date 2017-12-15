@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Armyknife.Integration.Tests.Business.Tools
+namespace Armyknife.Tests.Integration.Business.Tools
 {
    [TestClass]
    public class HelpToolIntegrationTest : IntegrationTestBase
@@ -11,26 +11,26 @@ namespace Armyknife.Integration.Tests.Business.Tools
       public async Task HelpTool_IntegrationTest_GenericHelp()
       {
          // arrange
-         var args = GetArgs($"help");
+         var args = GetArgs("help");
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.IsTrue(_output.Split(Environment.NewLine).Length > 1);
+         Assert.IsTrue(Output.Split(Environment.NewLine).Length > 1);
       }
 
       [TestMethod]
       public async Task HelpTool_IntegrationTest_SpecificHelp()
       {
          // arrange
-         var args = GetArgs($"help base64encode");
+         var args = GetArgs("help base64encode");
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.IsTrue(_output.Split(Environment.NewLine).Length > 1);
+         Assert.IsTrue(Output.Split(Environment.NewLine).Length > 1);
       }
    }
 }
