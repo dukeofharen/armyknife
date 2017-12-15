@@ -46,7 +46,7 @@ namespace Armyknife.Services.Implementations
             return new string[0];
          }
 
-         if (!_typeMap.Any(e => e.Value == mimeType))
+         if (_typeMap.All(e => e.Value != mimeType))
          {
             return new string[0];
          }

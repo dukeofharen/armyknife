@@ -7,17 +7,17 @@ namespace Armyknife.Services.Implementations
 {
    internal class Logger : ILogger
    {
-      private readonly static List<string> _messages = new List<string>();
+      private static readonly List<string> Messages = new List<string>();
 
       public List<string> GetLogMessages()
       {
-         return _messages;
+         return Messages;
       }
 
       public void Log(object source, string message)
       {
          string logMessage = $"{source.GetType()}: {message}";
-         _messages.Add(logMessage);
+         Messages.Add(logMessage);
       }
 
       public void Log(object source, Exception exception)

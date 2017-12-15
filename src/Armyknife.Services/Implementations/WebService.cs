@@ -6,11 +6,11 @@ namespace Armyknife.Services.Implementations
 {
     internal class WebService : IWebService
     {
-        private static HttpClient _httpClient = new HttpClient();
+        private static readonly HttpClient HttpClient = new HttpClient();
 
         public async Task<HttpResponseMessage> DoRequestAsync(HttpRequestMessage request)
         {
-            return await _httpClient.SendAsync(request);
+            return await HttpClient.SendAsync(request);
         }
     }
 }

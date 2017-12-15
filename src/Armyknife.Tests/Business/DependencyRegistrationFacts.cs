@@ -49,7 +49,7 @@ namespace Armyknife.Business.Tests
             var services = _serviceProvider.GetServices<ITool>();
 
             // assert
-            Assert.IsTrue(services.Count() > 0);
+            Assert.IsTrue(services.Any());
         }
     }
 }
