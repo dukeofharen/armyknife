@@ -2,9 +2,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Armyknife.Business</AssemblyName>
-    <Version>1.2.0.96</Version>
-    <AssemblyVersion>1.2.0.96</AssemblyVersion>
-    <FileVersion>1.2.0.96</FileVersion>
+    <Version>1.2.0.97</Version>
+    <AssemblyVersion>1.2.0.97</AssemblyVersion>
+    <FileVersion>1.2.0.97</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
