@@ -224,12 +224,13 @@ namespace Armyknife.Tools.Tests.Implementations
          {
             { Constants.InputKey, Guid.NewGuid().ToString() }
          };
+         string expectedOutput = string.Empty;
 
          // act
          string output = await _tool.ExecuteAsync(argsDictionary);
 
          // assert
-         Assert.AreEqual(string.Empty, output);
+         Assert.AreEqual(expectedOutput, output);
       }
    }
 }</value>
@@ -337,12 +338,13 @@ namespace Armyknife.Tools.Tests.Implementations
          {
             { Constants.InputKey, Guid.NewGuid().ToString() }
          };
+         string expectedOutput = string.Empty;
 
          // act
          string output = _tool.Execute(argsDictionary);
 
          // assert
-         Assert.AreEqual(string.Empty, output);
+         Assert.AreEqual(expectedOutput, output);
       }
    }
 }</value>
