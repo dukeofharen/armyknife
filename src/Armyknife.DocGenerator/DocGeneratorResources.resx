@@ -142,6 +142,7 @@
   &lt;div class="container"&gt;
     &lt;div class="col-md-12"&gt;
       &lt;h1&gt;Armyknife&lt;/h1&gt;
+      &lt;img src="img/logo.png" alt="Armyknife" width="100"&gt;
       &lt;p&gt;
         &lt;a href="https://github.com/dukeofharen/armyknife/releases/latest"&gt;Download the latest version&lt;/a&gt;
       &lt;/p&gt;
