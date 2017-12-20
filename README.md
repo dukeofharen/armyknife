@@ -1,5 +1,7 @@
 # Armyknife
 
+<img src="media/logo.png" alt="Armyknife" width="100">
+
 | | |
 | --- | --- |
 | **Build** | [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/1yi3hbdugvqeya31?svg=true)](https://ci.appveyor.com/project/dukeofharen/armyknife) [![TravisCI build status](https://api.travis-ci.org/dukeofharen/armyknife.svg)](https://travis-ci.org/dukeofharen/armyknife) |
