@@ -10,7 +10,7 @@ namespace Armyknife.Tests.Integration.Tools
       public async Task JsonuglifyTool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs("jsonuglify {{\r\n  \"key\": \"value\"\r\n}}");
+         var args = GetArgs("jsonuglify {\r\n  \"key\": \"value\"\r\n}");
          string expectedOutput = @"{""key"":""value""}";
 
          // act

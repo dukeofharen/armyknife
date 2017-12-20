@@ -11,7 +11,7 @@ namespace Armyknife.Tests.Integration.Tools
       public async Task JsonprettifyTool_IntegrationTest()
       {
          // arrange
-         var args = GetArgs(@"jsonprettify --input {{""key"": ""value""}} --character space --tabsize 1");
+         var args = GetArgs(@"jsonprettify --input {""key"": ""value""} --character space --tabsize 1");
 
          // act
          await Executor.ExecuteAsync(args);
