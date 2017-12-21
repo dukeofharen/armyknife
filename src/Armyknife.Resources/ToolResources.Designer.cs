@@ -150,6 +150,26 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A handy tool to convert UNIX timestamps to readable date-time strings. Supportx UNIX timestamps in seconds and milliseconds..
+        /// </summary>
+        public static string FromunixtimestampDescription {
+            get {
+                return ResourceManager.GetString("FromunixtimestampDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- fromunixtimestamp 1513889220332
+        ///- fromunixtimestamp 1513889220.
+        /// </summary>
+        public static string FromunixtimestampHelp {
+            get {
+                return ResourceManager.GetString("FromunixtimestampHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A simple to to HTML decode a given string..
         /// </summary>
         public static string HtmldecodeDescription {

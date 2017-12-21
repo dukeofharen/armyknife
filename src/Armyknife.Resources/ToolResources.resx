@@ -152,6 +152,14 @@ Used by: {2}</value>
     <value>Usage:
 - frommime text/plain</value>
   </data>
+  <data name="FromunixtimestampDescription" xml:space="preserve">
+    <value>A handy tool to convert UNIX timestamps to readable date-time strings. Supportx UNIX timestamps in seconds and milliseconds.</value>
+  </data>
+  <data name="FromunixtimestampHelp" xml:space="preserve">
+    <value>Usage:
+- fromunixtimestamp 1513889220332
+- fromunixtimestamp 1513889220</value>
+  </data>
   <data name="HtmldecodeDescription" xml:space="preserve">
     <value>A simple to to HTML decode a given string.</value>
   </data>
