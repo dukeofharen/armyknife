@@ -6,7 +6,7 @@ $mainProjectFile = Join-Path $srcFolder "Armyknife\Armyknife.csproj"
 $solutionFile = Join-Path -Path $srcFolder "Armyknife.sln"
 $unitTestPath = Join-Path -Path $srcFolder "Armyknife.Tests\Armyknife.Tests.csproj"
 $openCoverPath = Join-Path -Path $env:USERPROFILE ".nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe"
-$reportGeneratorPath = Join-Path -Path $env:USERPROFILE  ".nuget\packages\reportgenerator\3.0.2\tools\ReportGenerator.exe"
+$reportGeneratorPath = Join-Path -Path $env:USERPROFILE  ".nuget\packages\reportgenerator\3.1.1\tools\ReportGenerator.exe"
 $openCoverReportPath = Join-Path -Path $rootFolder "opencover"
 $openCoverReportFilePath = Join-Path -Path $openCoverReportPath "OpenCover.xml"
 
