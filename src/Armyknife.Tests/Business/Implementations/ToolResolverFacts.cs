@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Armyknife.Business.Implementations;
 using Armyknife.Business.Interfaces;
+using Armyknife.Services.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -11,14 +11,14 @@ namespace Armyknife.Tests.Business.Implementations
     [TestClass]
     public class ToolResolverFacts
     {
-        private Mock<IServiceProvider> _serviceProviderMock;
+        private Mock<IServiceContainerWrapper> _wrapperMock;
         private ToolResolver _resolver;
         private ITool[] _tools;
 
         [TestInitialize]
         public void Initialize()
         {
-            _serviceProviderMock = new Mock<IServiceProvider>();
+            _wrapperMock = new Mock<IServiceContainerWrapper>();
 
             var tool1 = SetupTool("tool1", "category1", "description1", "help1", false);
             var tool2 = SetupTool("tool2", "category2", "description2", "help2", true);
@@ -29,17 +29,17 @@ namespace Armyknife.Tests.Business.Implementations
                 tool2.Object
             };
 
-            _serviceProviderMock
-                .Setup(m => m.GetService(typeof(IEnumerable<ITool>)))
+            _wrapperMock
+                .Setup(m => m.ResolveMultiple<ITool>())
                 .Returns(_tools);
 
-            _resolver = new ToolResolver(_serviceProviderMock.Object);
+            _resolver = new ToolResolver(_wrapperMock.Object);
         }
 
         [TestCleanup]
         public void Cleanup()
         {
-            _serviceProviderMock.VerifyAll();
+            _wrapperMock.VerifyAll();
         }
 
         [TestMethod]

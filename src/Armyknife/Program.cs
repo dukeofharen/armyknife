@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Armyknife.Business.Interfaces;
 using System;
 using System.Threading.Tasks;
+using Armyknife.Services.Implementations;
 
 namespace Armyknife
 {
@@ -11,8 +12,10 @@ namespace Armyknife
       static async Task Main(string[] args)
       {
          var serviceCollection = new ServiceCollection();
-         DependencyRegistration.RegisterDependencies(serviceCollection);
+         var wrapper = new DnCoreServiceContainerWrapper(serviceCollection);
+         DependencyRegistration.RegisterDependencies(wrapper);
          var provider = serviceCollection.BuildServiceProvider();
+         wrapper.Provider = provider;
 
          var executor = provider.GetService<IExecutor>();
          int exitCode = await executor.ExecuteAsync(args);

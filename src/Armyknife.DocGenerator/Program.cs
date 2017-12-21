@@ -3,7 +3,6 @@ using Armyknife.Business.Interfaces;
 using Armyknife.Models;
 using Armyknife.Resources;
 using Armyknife.Services.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +10,8 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using Armyknife.Services.Implementations;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Armyknife.DocGenerator
 {
@@ -20,13 +21,14 @@ namespace Armyknife.DocGenerator
       static void Main(string[] args)
       {
          var serviceCollection = new ServiceCollection();
-         DependencyRegistration.RegisterDependencies(serviceCollection);
-         var provider = serviceCollection.BuildServiceProvider();
+         var wrapper = new DnCoreServiceContainerWrapper(serviceCollection);
+         DependencyRegistration.RegisterDependencies(wrapper);
+         wrapper.Provider = serviceCollection.BuildServiceProvider();
 
-         var toolResolver = provider.GetService<IToolResolver>();
+         var toolResolver = wrapper.Resolve<IToolResolver>();
          var tools = toolResolver.GetToolMetData().ToArray();
 
-         var assemblyService = provider.GetService<IAssemblyService>();
+         var assemblyService = wrapper.Resolve<IAssemblyService>();
          string version = assemblyService.GetVersionNumber();
 
          string toolList = GetToolList(tools);

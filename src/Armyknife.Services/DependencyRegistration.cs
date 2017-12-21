@@ -1,23 +1,22 @@
 ﻿using Armyknife.Services.Implementations;
 using Armyknife.Services.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Armyknife.Services
 {
    public static class DependencyRegistration
    {
-      public static void RegisterDependencies(IServiceCollection serviceCollection)
+      public static void RegisterDependencies(IServiceContainerWrapper wrapper)
       {
-         serviceCollection.AddTransient<IAssemblyService, AssemblyService>();
-         serviceCollection.AddTransient<IBarcodeService, BarcodeService>();
-         serviceCollection.AddTransient<IConsoleService, ConsoleService>();
-         serviceCollection.AddTransient<IDateTimeService, DateTimeService>();
-         serviceCollection.AddTransient<IFileExtensionService, FileExtensionService>();
-         serviceCollection.AddTransient<IFileService, FileService>();
-         serviceCollection.AddTransient<ILogger, Logger>();
-         serviceCollection.AddTransient<IMimeService, MimeService>();
-         serviceCollection.AddTransient<IProcessService, ProcessService>();
-         serviceCollection.AddTransient<IWebService, WebService>();
+         wrapper.RegisterType<IAssemblyService, AssemblyService>();
+         wrapper.RegisterType<IBarcodeService, BarcodeService>();
+         wrapper.RegisterType<IConsoleService, ConsoleService>();
+         wrapper.RegisterType<IDateTimeService, DateTimeService>();
+         wrapper.RegisterType<IFileExtensionService, FileExtensionService>();
+         wrapper.RegisterType<IFileService, FileService>();
+         wrapper.RegisterType<ILogger, Logger>();
+         wrapper.RegisterType<IMimeService, MimeService>();
+         wrapper.RegisterType<IProcessService, ProcessService>();
+         wrapper.RegisterType<IWebService, WebService>();
       }
    }
 }

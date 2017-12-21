@@ -16,6 +16,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="coveralls.io" Version="1.4.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="Moq" Version="4.7.145" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
@@ -34,5 +35,6 @@
     <ProjectReference Include="..\Armyknife.TestUtilities\Armyknife.TestUtilities.csproj" />
     <ProjectReference Include="..\Armyknife.Tools\Armyknife.Tools.csproj" />
     <ProjectReference Include="..\Armyknife.Utilities\Armyknife.Utilities.csproj" />
+    <ProjectReference Include="..\Armyknife\Armyknife.csproj" />
   </ItemGroup>
 </Project>

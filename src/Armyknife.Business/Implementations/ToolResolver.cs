@@ -1,40 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Armyknife.Models;
-using Microsoft.Extensions.DependencyInjection;
 using Armyknife.Business.Interfaces;
+using Armyknife.Services.Interfaces;
 
 namespace Armyknife.Business.Implementations
 {
-    internal class ToolResolver : IToolResolver
-    {
-        private readonly IServiceProvider _serviceProvider;
+   internal class ToolResolver : IToolResolver
+   {
+      private readonly IServiceContainerWrapper _wrapper;
 
-        public ToolResolver(IServiceProvider serviceProvider)
-        {
-            _serviceProvider = serviceProvider;
-        }
+      public ToolResolver(IServiceContainerWrapper wrapper)
+      {
+         _wrapper = wrapper;
+      }
 
-        public ITool ResolveTool(string name)
-        {
-            return _serviceProvider
-                .GetServices<ITool>()
-                .Single(t => t.Name == name);
-        }
+      public ITool ResolveTool(string name)
+      {
+         return _wrapper
+             .ResolveMultiple<ITool>()
+             .Single(t => t.Name == name);
+      }
 
-        public IEnumerable<ToolMetaDataModel> GetToolMetData()
-        {
-            return _serviceProvider
-                .GetServices<ITool>()
-                .Select(t => new ToolMetaDataModel
-                {
-                    Key = t.Name,
-                    Category = t.Category,
-                    HelpText = t.HelpText,
-                    ShortDescription = t.Description,
-                    ShowToolInHelp = t.ShowToolInHelp
-                });
-        }
-    }
+      public IEnumerable<ToolMetaDataModel> GetToolMetData()
+      {
+         return _wrapper
+             .ResolveMultiple<ITool>()
+             .Select(t => new ToolMetaDataModel
+             {
+                Key = t.Name,
+                Category = t.Category,
+                HelpText = t.HelpText,
+                ShortDescription = t.Description,
+                ShowToolInHelp = t.ShowToolInHelp
+             });
+      }
+   }
 }

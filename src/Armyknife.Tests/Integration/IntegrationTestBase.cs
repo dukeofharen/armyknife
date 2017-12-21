@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using Armyknife.Business;
 using Armyknife.Business.Interfaces;
+using Armyknife.Services.Implementations;
 using Armyknife.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -25,7 +26,8 @@ namespace Armyknife.Tests.Integration
       public void Initialize()
       {
          var serviceCollection = new ServiceCollection();
-         DependencyRegistration.RegisterDependencies(serviceCollection);
+         var wrapper = new DnCoreServiceContainerWrapper(serviceCollection);
+         DependencyRegistration.RegisterDependencies(wrapper);
 
          BarcodeServiceMock = new Mock<IBarcodeService>();
 
@@ -60,9 +62,9 @@ namespace Armyknife.Tests.Integration
          serviceCollection.AddSingleton(ProcessServiceMock.Object);
          serviceCollection.AddSingleton(WebServiceMock.Object);
 
-         var provider = serviceCollection.BuildServiceProvider();
+         wrapper.Provider = serviceCollection.BuildServiceProvider();
 
-         Executor = provider.GetService<IExecutor>();
+         Executor = wrapper.Resolve<IExecutor>();
       }
 
       [TestCleanup]
