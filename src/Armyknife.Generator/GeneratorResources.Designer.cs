@@ -64,7 +64,7 @@ namespace Armyknife.Generator {
         ///   Looks up a localized string similar to using Microsoft.VisualStudio.TestTools.UnitTesting;
         ///using System.Threading.Tasks;
         ///
-        ///namespace Armyknife.Integration.Tests.Tools
+        ///namespace Armyknife.Tests.Integration.Tools
         ///{
         ///   [TestClass]
         ///   public class [INTEGRATIONTESTCLASSNAME] : IntegrationTestBase
@@ -77,9 +77,9 @@ namespace Armyknife.Generator {
         ///         string expectedOutput = string.Empty;
         ///
         ///         // act
-        ///         await _executor.ExecuteAsync(args);
+        ///         await Executor.ExecuteAsync(args);
         ///
-        ///         // [rest of string was truncated]&quot;;.
+        ///         //  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AsynchronousIntegrationTestTemplate {
             get {
@@ -122,7 +122,7 @@ namespace Armyknife.Generator {
         ///using System.Collections.Generic;
         ///using System.Threading.Tasks;
         ///
-        ///namespace Armyknife.Tools.Tests.Implementations
+        ///namespace Armyknife.Tests.Tools.Implementations
         ///{
         ///   [TestClass]
         ///   public class [UNITTESTCLASSNAME]
@@ -147,7 +147,7 @@ namespace Armyknife.Generator {
         ///   Looks up a localized string similar to using Microsoft.VisualStudio.TestTools.UnitTesting;
         ///using System.Threading.Tasks;
         ///
-        ///namespace Armyknife.Integration.Tests.Tools
+        ///namespace Armyknife.Tests.Integration.Tools
         ///{
         ///   [TestClass]
         ///   public class [INTEGRATIONTESTCLASSNAME] : IntegrationTestBase
@@ -160,9 +160,9 @@ namespace Armyknife.Generator {
         ///         string expectedOutput = string.Empty;
         ///
         ///         // act
-        ///         await _executor.ExecuteAsync(args);
+        ///         await Executor.ExecuteAsync(args);
         ///
-        ///         // [rest of string was truncated]&quot;;.
+        ///         //  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SynchronousIntegrationTestTemplate {
             get {
@@ -203,7 +203,7 @@ namespace Armyknife.Generator {
         ///using System;
         ///using System.Collections.Generic;
         ///
-        ///namespace Armyknife.Tools.Tests.Implementations
+        ///namespace Armyknife.Tests.Tools.Implementations
         ///{
         ///   [TestClass]
         ///   public class [UNITTESTCLASSNAME]

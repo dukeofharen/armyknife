@@ -121,7 +121,7 @@
     <value>using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class [INTEGRATIONTESTCLASSNAME] : IntegrationTestBase
@@ -134,10 +134,10 @@ namespace Armyknife.Integration.Tests.Tools
          string expectedOutput = string.Empty;
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(expectedOutput, _output);
+         Assert.AreEqual(expectedOutput, Output);
       }
    }
 }</value>
@@ -187,7 +187,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Armyknife.Tools.Tests.Implementations
+namespace Armyknife.Tests.Tools.Implementations
 {
    [TestClass]
    public class [UNITTESTCLASSNAME]
@@ -239,7 +239,7 @@ namespace Armyknife.Tools.Tests.Implementations
     <value>using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 
-namespace Armyknife.Integration.Tests.Tools
+namespace Armyknife.Tests.Integration.Tools
 {
    [TestClass]
    public class [INTEGRATIONTESTCLASSNAME] : IntegrationTestBase
@@ -252,10 +252,10 @@ namespace Armyknife.Integration.Tests.Tools
          string expectedOutput = string.Empty;
 
          // act
-         await _executor.ExecuteAsync(args);
+         await Executor.ExecuteAsync(args);
 
          // assert
-         Assert.AreEqual(expectedOutput, _output);
+         Assert.AreEqual(expectedOutput, Output);
       }
    }
 }</value>
@@ -301,7 +301,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
-namespace Armyknife.Tools.Tests.Implementations
+namespace Armyknife.Tests.Tools.Implementations
 {
    [TestClass]
    public class [UNITTESTCLASSNAME]
