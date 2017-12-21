@@ -306,6 +306,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A tool to remove newlines from pieces of text..
+        /// </summary>
+        public static string RemovenewlineDescription {
+            get {
+                return ResourceManager.GetString("RemovenewlineDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- removenewline this\r\ntext\ncontains newlines.
+        /// </summary>
+        public static string RemovenewlineHelp {
+            get {
+                return ResourceManager.GetString("RemovenewlineHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encodes a piece of text to a SHA1 hash..
         /// </summary>
         public static string Sha1Description {

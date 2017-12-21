@@ -224,6 +224,13 @@ Optional properties:
 - hmac: the signature key for the MD5 hash
 - outputType: how the string should be generated (should be 'hex' or 'base64')</value>
   </data>
+  <data name="RemovenewlineDescription" xml:space="preserve">
+    <value>A tool to remove newlines from pieces of text.</value>
+  </data>
+  <data name="RemovenewlineHelp" xml:space="preserve">
+    <value>Usage:
+- removenewline this\r\ntext\ncontains newlines</value>
+  </data>
   <data name="Sha1Description" xml:space="preserve">
     <value>Encodes a piece of text to a SHA1 hash.</value>
   </data>
