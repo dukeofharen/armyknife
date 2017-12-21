@@ -62,10 +62,10 @@ namespace Armyknife.Generator
          }
 
          string unitTestClassName = $"{toolClassName}Facts";
-         string unitTestClassPath = Path.Combine(sourcePath, "Armyknife.Tools.Tests", "Implementations", $"{unitTestClassName}.cs");
+         string unitTestClassPath = Path.Combine(sourcePath, "Armyknife.Tests", "Tools", "Implementations", $"{unitTestClassName}.cs");
 
          string integrationTestClassName = $"{toolClassName}IntegrationTests";
-         string integrationTestClassPath = Path.Combine(sourcePath, "Armyknife.Integration.Tests", "Tools", $"{integrationTestClassName}.cs");
+         string integrationTestClassPath = Path.Combine(sourcePath, "Armyknife.Tests", "Integration", "Tools", $"{integrationTestClassName}.cs");
 
          string toolClass = GenerateToolClass(actualToolName, toolKey, toolClassName, categoryName, toolType);
          File.WriteAllText(toolClassPath, toolClass);
