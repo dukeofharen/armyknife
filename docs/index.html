@@ -77,6 +77,11 @@
 <li><a href="#frommime">frommime</a></li>
 <li><a href="#tomime">tomime</a></li>
 </ul></li>
+<li><strong><a href="#Date-/-time-tools">Date / time tools</a></strong><ul>
+<li><a href="#fromunixtimestamp">fromunixtimestamp</a></li>
+<li><a href="#tounixtimestamp">tounixtimestamp</a></li>
+<li><a href="#weeknumber">weeknumber</a></li>
+</ul></li>
 <li><strong><a href="#Web-tools">Web tools</a></strong><ul>
 <li><a href="#jsonprettify">jsonprettify</a></li>
 <li><a href="#jsonuglify">jsonuglify</a></li>
@@ -85,10 +90,12 @@
 </ul></li>
 <li><strong><a href="#Text-tools">Text tools</a></strong><ul>
 <li><a href="#lipsum">lipsum</a></li>
+<li><a href="#removenewline">removenewline</a></li>
 <li><a href="#stringreverse">stringreverse</a></li>
 </ul></li>
 <li><strong><a href="#Hashing-tools">Hashing tools</a></strong><ul>
 <li><a href="#md5">md5</a></li>
+<li><a href="#securepwd">securepwd</a></li>
 <li><a href="#sha1">sha1</a></li>
 <li><a href="#sha256">sha256</a></li>
 <li><a href="#sha384">sha384</a></li>
@@ -96,9 +103,6 @@
 </ul></li>
 <li><strong><a href="#Number-tools">Number tools</a></strong><ul>
 <li><a href="#uuid">uuid</a></li>
-</ul></li>
-<li><strong><a href="#Date-/-time-tools">Date / time tools</a></strong><ul>
-<li><a href="#weeknumber">weeknumber</a></li>
 </ul></li>
 <li><strong><a href="#Imaging-tools">Imaging tools</a></strong><ul>
 <li><a href="#writeqr">writeqr</a></li>
@@ -215,6 +219,31 @@ You can&#39;t use characters like &#39;&lt;&#39; or &#39;&gt;&#39; as input, so 
 - tomime txt
 - tomime filename.txt</pre>
 </div>
+<a name="Date-/-time-tools"></a>
+<h2>Date / time tools</h2>
+<div class="col-md-12">
+<a name="fromunixtimestamp"></a>
+<h3>fromunixtimestamp</h3>
+<p>A handy tool to convert UNIX timestamps to readable date-time strings. Supportx UNIX timestamps in seconds and milliseconds.</p>
+<pre>Usage:
+- fromunixtimestamp 1513889220332
+- fromunixtimestamp 1513889220</pre>
+</div>
+<div class="col-md-12">
+<a name="tounixtimestamp"></a>
+<h3>tounixtimestamp</h3>
+<p>A handy tool to convert an ISO 8601 date time string to a UNIX timestamp. The result is a UNIX timestamp including milliseconds. If you want to use it as a regular timestamp, remove the last 3 numbers.</p>
+<pre>Usage:
+- tounixtimestamp
+- tounixtimestamp 2017-08-20T15:00:00+02:00</pre>
+</div>
+<div class="col-md-12">
+<a name="weeknumber"></a>
+<h3>weeknumber</h3>
+<p>A tool which shows the current week number.</p>
+<pre>Usage:
+- weeknumber</pre>
+</div>
 <a name="Web-tools"></a>
 <h2>Web tools</h2>
 <div class="col-md-12">
@@ -272,6 +301,13 @@ Optional properties:
 - paragraphs: the number of Lorem Ipsum paragrahps (5 default).</pre>
 </div>
 <div class="col-md-12">
+<a name="removenewline"></a>
+<h3>removenewline</h3>
+<p>A tool to remove newlines from pieces of text.</p>
+<pre>Usage:
+- removenewline this\r\ntext\ncontains newlines</pre>
+</div>
+<div class="col-md-12">
 <a name="stringreverse"></a>
 <h3>stringreverse</h3>
 <p>This tool lets you reverse a string.</p>
@@ -292,6 +328,21 @@ Optional properties:
 Optional properties:
 - hmac: the signature key for the MD5 hash
 - outputType: how the string should be generated (should be &#39;hex&#39; or &#39;base64&#39;)</pre>
+</div>
+<div class="col-md-12">
+<a name="securepwd"></a>
+<h3>securepwd</h3>
+<p>A handy tool to generate secure passwords.</p>
+<pre>Usage:
+- securepwd
+- securepwd --length 20 --capitals false
+
+Optional properties:
+- length: the length of the password (default 20)
+- capitals: if capital letters should be included (default true)
+- lowercase: if lowercase letters should be included (default true)
+- numbers: if numbers should be included (default true)
+- specialchars: if special characters should be included (default true)</pre>
 </div>
 <div class="col-md-12">
 <a name="sha1"></a>
@@ -361,15 +412,6 @@ Optional properties:
 - hyphens: whether the GUID parts should be separated by hyphens (true or false, default true)
 - howmany: how many GUIDs should be generated (default 1)</pre>
 </div>
-<a name="Date-/-time-tools"></a>
-<h2>Date / time tools</h2>
-<div class="col-md-12">
-<a name="weeknumber"></a>
-<h3>weeknumber</h3>
-<p>A tool which shows the current week number.</p>
-<pre>Usage:
-- weeknumber</pre>
-</div>
 <a name="Imaging-tools"></a>
 <h2>Imaging tools</h2>
 <div class="col-md-12">
@@ -392,7 +434,7 @@ Optional properties:
     <hr>
 
     <footer>
-      <p>&copy; Ducode 2017 - Built on 2017-12-21 19:13:26 for version 1.2.0.100</p>
+      <p>&copy; Ducode 2017 - Built on 2017-12-21 21:44:21 for version 1.2.0.101</p>
     </footer>
   </div>
   <script src="js/vendor/jquery-1.11.2.min.js"></script>
