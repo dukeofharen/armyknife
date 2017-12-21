@@ -328,6 +328,14 @@ Optional properties:
 - tomime txt
 - tomime filename.txt</value>
   </data>
+  <data name="TounixtimestampDescription" xml:space="preserve">
+    <value>A handy tool to convert an ISO 8601 date time string to a UNIX timestamp. The result is a UNIX timestamp including milliseconds. If you want to use it as a regular timestamp, remove the last 3 numbers.</value>
+  </data>
+  <data name="TounixtimestampHelp" xml:space="preserve">
+    <value>Usage:
+- tounixtimestamp
+- tounixtimestamp 2017-08-20T15:00:00+02:00</value>
+  </data>
   <data name="UrldecodeDescription" xml:space="preserve">
     <value>A simple tool to URL decode a given string.</value>
   </data>

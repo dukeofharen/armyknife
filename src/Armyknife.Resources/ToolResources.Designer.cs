@@ -530,6 +530,26 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A handy tool to convert an ISO 8601 date time string to a UNIX timestamp. The result is a UNIX timestamp including milliseconds. If you want to use it as a regular timestamp, remove the last 3 numbers..
+        /// </summary>
+        public static string TounixtimestampDescription {
+            get {
+                return ResourceManager.GetString("TounixtimestampDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- tounixtimestamp
+        ///- tounixtimestamp 2017-08-20T15:00:00+02:00.
+        /// </summary>
+        public static string TounixtimestampHelp {
+            get {
+                return ResourceManager.GetString("TounixtimestampHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A simple tool to URL decode a given string..
         /// </summary>
         public static string UrldecodeDescription {
