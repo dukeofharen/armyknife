@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using Armyknife.DI.DnCore;
 using Armyknife.Services;
-using Armyknife.Services.Implementations;
 using Armyknife.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

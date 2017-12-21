@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Armyknife.Business.Interfaces;
 using System;
 using System.Threading.Tasks;
-using Armyknife.Services.Implementations;
+using Armyknife.DI.DnCore;
 
 namespace Armyknife
 {

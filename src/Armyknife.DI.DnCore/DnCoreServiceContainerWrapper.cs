@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Armyknife.Services.Interfaces;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using Armyknife.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Armyknife.Services.Implementations
+namespace Armyknife.DI.DnCore
 {
    public class DnCoreServiceContainerWrapper : IServiceContainerWrapper
    {

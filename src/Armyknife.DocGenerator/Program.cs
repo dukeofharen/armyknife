@@ -10,7 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
-using Armyknife.Services.Implementations;
+using Armyknife.DI.DnCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Armyknife.DocGenerator

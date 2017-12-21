@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Armyknife.Business;
 using Armyknife.Business.Interfaces;
-using Armyknife.Services.Implementations;
+using Armyknife.DI.DnCore;
 using Armyknife.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
