@@ -231,6 +231,21 @@ Optional properties:
     <value>Usage:
 - removenewline this\r\ntext\ncontains newlines</value>
   </data>
+  <data name="SecurepwdDescription" xml:space="preserve">
+    <value>A handy tool to generate secure passwords.</value>
+  </data>
+  <data name="SecurepwdHelp" xml:space="preserve">
+    <value>Usage:
+- securepwd
+- securepwd --length 20 --capitals false
+
+Optional properties:
+- length: the length of the password (default 20)
+- capitals: if capital letters should be included (default true)
+- lowercase: if lowercase letters should be included (default true)
+- numbers: if numbers should be included (default true)
+- specialchars: if special characters should be included (default true)</value>
+  </data>
   <data name="Sha1Description" xml:space="preserve">
     <value>Encodes a piece of text to a SHA1 hash.</value>
   </data>

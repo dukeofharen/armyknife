@@ -325,6 +325,33 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A handy tool to generate secure passwords..
+        /// </summary>
+        public static string SecurepwdDescription {
+            get {
+                return ResourceManager.GetString("SecurepwdDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- securepwd
+        ///- securepwd --length 20 --capitals false
+        ///
+        ///Optional properties:
+        ///- length: the length of the password (default 20)
+        ///- capitals: if capital letters should be included (default true)
+        ///- lowercase: if lowercase letters should be included (default true)
+        ///- numbers: if numbers should be included (default true)
+        ///- specialchars: if special characters should be included (default true).
+        /// </summary>
+        public static string SecurepwdHelp {
+            get {
+                return ResourceManager.GetString("SecurepwdHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Encodes a piece of text to a SHA1 hash..
         /// </summary>
         public static string Sha1Description {
