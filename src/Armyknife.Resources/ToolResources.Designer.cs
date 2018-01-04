@@ -510,6 +510,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Handy tool to convert a string to title case..
+        /// </summary>
+        public static string StringtotitlecaseDescription {
+            get {
+                return ResourceManager.GetString("StringtotitlecaseDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- stringtotitlecase convert this to title case.
+        /// </summary>
+        public static string StringtotitlecaseHelp {
+            get {
+                return ResourceManager.GetString("StringtotitlecaseHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Handy tool to convert a string to upper case..
         /// </summary>
         public static string StringtoupperDescription {

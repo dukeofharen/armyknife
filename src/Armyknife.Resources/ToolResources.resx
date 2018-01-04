@@ -320,6 +320,13 @@ Optional properties:
     <value>Usage:
 - stringtolower TO LOWERCASE</value>
   </data>
+  <data name="StringtotitlecaseDescription" xml:space="preserve">
+    <value>Handy tool to convert a string to title case.</value>
+  </data>
+  <data name="StringtotitlecaseHelp" xml:space="preserve">
+    <value>Usage:
+- stringtotitlecase convert this to title case</value>
+  </data>
   <data name="StringtoupperDescription" xml:space="preserve">
     <value>Handy tool to convert a string to upper case.</value>
   </data>
