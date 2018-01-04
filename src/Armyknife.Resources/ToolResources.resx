@@ -306,6 +306,13 @@ Optional properties:
 - hmac: the signature key for the SHA512 hash
 - outputType: how the string should be generated (should be 'hex' or 'base64')</value>
   </data>
+  <data name="StringlengthDescription" xml:space="preserve">
+    <value>A handy tool to calculate the number of characters of a string.</value>
+  </data>
+  <data name="StringlengthHelp" xml:space="preserve">
+    <value>Usage:
+- stringlength calculate length of this string</value>
+  </data>
   <data name="StringreverseDescription" xml:space="preserve">
     <value>This tool lets you reverse a string.</value>
   </data>

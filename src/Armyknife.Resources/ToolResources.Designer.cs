@@ -472,6 +472,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A handy tool to calculate the number of characters of a string..
+        /// </summary>
+        public static string StringlengthDescription {
+            get {
+                return ResourceManager.GetString("StringlengthDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- stringlength calculate length of this string.
+        /// </summary>
+        public static string StringlengthHelp {
+            get {
+                return ResourceManager.GetString("StringlengthHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This tool lets you reverse a string..
         /// </summary>
         public static string StringreverseDescription {
