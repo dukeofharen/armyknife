@@ -491,6 +491,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Handy tool to convert a string to lower case..
+        /// </summary>
+        public static string StringtolowerDescription {
+            get {
+                return ResourceManager.GetString("StringtolowerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- stringtolower TO LOWERCASE.
+        /// </summary>
+        public static string StringtolowerHelp {
+            get {
+                return ResourceManager.GetString("StringtolowerHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Handy tool to convert a string to upper case..
         /// </summary>
         public static string StringtoupperDescription {

@@ -313,6 +313,13 @@ Optional properties:
     <value>Usage:
 - stringreverse Reverse this string my man.</value>
   </data>
+  <data name="StringtolowerDescription" xml:space="preserve">
+    <value>Handy tool to convert a string to lower case.</value>
+  </data>
+  <data name="StringtolowerHelp" xml:space="preserve">
+    <value>Usage:
+- stringtolower TO LOWERCASE</value>
+  </data>
   <data name="StringtoupperDescription" xml:space="preserve">
     <value>Handy tool to convert a string to upper case.</value>
   </data>
