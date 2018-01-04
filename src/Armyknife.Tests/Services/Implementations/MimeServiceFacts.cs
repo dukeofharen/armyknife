@@ -1,8 +1,7 @@
 ﻿using System.Linq;
-using Armyknife.DI.DnCore;
+using Armyknife.DI.Unity;
 using Armyknife.Services;
 using Armyknife.Services.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Armyknife.Tests.Services.Implementations
@@ -15,10 +14,8 @@ namespace Armyknife.Tests.Services.Implementations
       [TestInitialize]
       public void Initialize()
       {
-         var serviceCollection = new ServiceCollection();
-         var wrapper = new DnCoreServiceContainerWrapper(serviceCollection);
+         var wrapper = new UnityServiceContainerWrapper();
          DependencyRegistration.RegisterDependencies(wrapper);
-         wrapper.Provider = serviceCollection.BuildServiceProvider();
          _service = wrapper.Resolve<IMimeService>();
       }
 

@@ -1,9 +1,8 @@
 ﻿using System.IO;
 using Armyknife.Business;
 using Armyknife.Business.Interfaces;
-using Armyknife.DI.DnCore;
+using Armyknife.DI.Unity;
 using Armyknife.Services.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -25,8 +24,7 @@ namespace Armyknife.Tests.Integration
       [TestInitialize]
       public void Initialize()
       {
-         var serviceCollection = new ServiceCollection();
-         var wrapper = new DnCoreServiceContainerWrapper(serviceCollection);
+         var wrapper = new UnityServiceContainerWrapper();
          DependencyRegistration.RegisterDependencies(wrapper);
 
          BarcodeServiceMock = new Mock<IBarcodeService>();
@@ -54,15 +52,13 @@ namespace Armyknife.Tests.Integration
          ProcessServiceMock = new Mock<IProcessService>();
          WebServiceMock = new Mock<IWebService>();
 
-         serviceCollection.AddSingleton(BarcodeServiceMock.Object);
-         serviceCollection.AddSingleton(ConsoleService.Object);
-         serviceCollection.AddSingleton(DateTimeServiceMock.Object);
-         serviceCollection.AddSingleton(FileServiceMock.Object);
-         serviceCollection.AddSingleton(OutputWriterMock.Object);
-         serviceCollection.AddSingleton(ProcessServiceMock.Object);
-         serviceCollection.AddSingleton(WebServiceMock.Object);
-
-         wrapper.Provider = serviceCollection.BuildServiceProvider();
+         wrapper.RegisterSingleton(BarcodeServiceMock.Object);
+         wrapper.RegisterSingleton(ConsoleService.Object);
+         wrapper.RegisterSingleton(DateTimeServiceMock.Object);
+         wrapper.RegisterSingleton(FileServiceMock.Object);
+         wrapper.RegisterSingleton(OutputWriterMock.Object);
+         wrapper.RegisterSingleton(ProcessServiceMock.Object);
+         wrapper.RegisterSingleton(WebServiceMock.Object);
 
          Executor = wrapper.Resolve<IExecutor>();
       }

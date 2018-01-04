@@ -16,6 +16,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Armyknife.Business\Armyknife.Business.csproj" />
+    <ProjectReference Include="..\Armyknife.DI.Unity\Armyknife.DI.Unity.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="DocGeneratorResources.Designer.cs">

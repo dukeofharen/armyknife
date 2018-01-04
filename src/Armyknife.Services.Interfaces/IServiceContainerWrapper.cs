@@ -9,6 +9,8 @@ namespace Armyknife.Services.Interfaces
 
       void RegisterType(Type interfaceType, Type implementationType);
 
+      void RegisterType(Type interfaceType, Type implementationType, string name);
+
       void RegisterSingleton<TInterface>(TInterface implementationInstance) where TInterface : class;
 
       TInterface Resolve<TInterface>();
@@ -16,5 +18,7 @@ namespace Armyknife.Services.Interfaces
       object Resolve(Type type);
 
       IEnumerable<TInterface> ResolveMultiple<TInterface>();
+
+      IEnumerable<Type> GetInterfaceTypes();
    }
 }

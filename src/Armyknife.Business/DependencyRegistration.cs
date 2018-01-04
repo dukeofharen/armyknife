@@ -22,7 +22,7 @@ namespace Armyknife.Business
          var toolTypes = AssemblyHelper.GetImplementations<ITool>();
          foreach (var type in toolTypes)
          {
-            wrapper.RegisterType(typeof(ITool), type);
+            wrapper.RegisterType(typeof(ITool), type, type.ToString());
          }
 
          Services.DependencyRegistration.RegisterDependencies(wrapper);

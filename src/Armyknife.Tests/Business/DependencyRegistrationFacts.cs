@@ -1,8 +1,7 @@
 ﻿using System.Linq;
 using Armyknife.Business;
 using Armyknife.Business.Interfaces;
-using Armyknife.DI.DnCore;
-using Microsoft.Extensions.DependencyInjection;
+using Armyknife.DI.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Armyknife.Tests.Business
@@ -10,16 +9,13 @@ namespace Armyknife.Tests.Business
    [TestClass]
    public class DependencyRegistrationFacts
    {
-      private IServiceCollection _serviceCollection;
-      private DnCoreServiceContainerWrapper _wrapper;
+      private UnityServiceContainerWrapper _wrapper;
 
       [TestInitialize]
       public void Initialize()
       {
-         _serviceCollection = new ServiceCollection();
-         _wrapper = new DnCoreServiceContainerWrapper(_serviceCollection);
+         _wrapper = new UnityServiceContainerWrapper();
          DependencyRegistration.RegisterDependencies(_wrapper);
-         _wrapper.Provider = _serviceCollection.BuildServiceProvider();
       }
 
       [TestMethod]
@@ -36,10 +32,10 @@ namespace Armyknife.Tests.Business
       public void DependencyRegistration_ResolveAllDependencies_HappyFlow()
       {
          // act / assert
-         var services = _serviceCollection.Where(s => s.ServiceType != typeof(ITool));
-         foreach (var service in services)
+         var serviceTypes = _wrapper.GetInterfaceTypes().Where(t => t != typeof(ITool));
+         foreach (var serviceType in serviceTypes)
          {
-            var instance = _wrapper.Resolve(service.ServiceType);
+            var instance = _wrapper.Resolve(serviceType);
             Assert.IsNotNull(instance);
          }
       }

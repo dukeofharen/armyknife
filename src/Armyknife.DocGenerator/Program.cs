@@ -10,8 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
-using Armyknife.DI.DnCore;
-using Microsoft.Extensions.DependencyInjection;
+using Armyknife.DI.Unity;
 
 namespace Armyknife.DocGenerator
 {
@@ -20,10 +19,8 @@ namespace Armyknife.DocGenerator
       // ReSharper disable once UnusedParameter.Local
       static void Main(string[] args)
       {
-         var serviceCollection = new ServiceCollection();
-         var wrapper = new DnCoreServiceContainerWrapper(serviceCollection);
+         var wrapper = UnityServiceContainerWrapper.GetInstance();
          DependencyRegistration.RegisterDependencies(wrapper);
-         wrapper.Provider = serviceCollection.BuildServiceProvider();
 
          var toolResolver = wrapper.Resolve<IToolResolver>();
          var tools = toolResolver.GetToolMetData().ToArray();
