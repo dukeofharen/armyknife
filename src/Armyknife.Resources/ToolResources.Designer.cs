@@ -491,6 +491,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Handy tool to convert a string to upper case..
+        /// </summary>
+        public static string StringtoupperDescription {
+            get {
+                return ResourceManager.GetString("StringtoupperDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- stringtoupper convert this to upper case.
+        /// </summary>
+        public static string StringtoupperHelp {
+            get {
+                return ResourceManager.GetString("StringtoupperHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A handy tool to generate shortened URLs at tinyurl.com..
         /// </summary>
         public static string TinyUrlDescription {
