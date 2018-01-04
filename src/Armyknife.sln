@@ -73,8 +73,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ubuntu", "ubuntu", "{F8560A
 		..\scripts\installscripts\ubuntu\install.sh = ..\scripts\installscripts\ubuntu\install.sh
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Armyknife.DI.DnCore", "Armyknife.DI.DnCore\Armyknife.DI.DnCore.csproj", "{60706754-E4D3-4E11-9A31-EF27C2D0EF25}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,10 +139,6 @@ Global
 		{BD0B8E1B-2331-4EFE-8B67-B530475344C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD0B8E1B-2331-4EFE-8B67-B530475344C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD0B8E1B-2331-4EFE-8B67-B530475344C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60706754-E4D3-4E11-9A31-EF27C2D0EF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60706754-E4D3-4E11-9A31-EF27C2D0EF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60706754-E4D3-4E11-9A31-EF27C2D0EF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60706754-E4D3-4E11-9A31-EF27C2D0EF25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

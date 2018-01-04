@@ -15,11 +15,7 @@
     <WarningsAsErrors />
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Armyknife.Business\Armyknife.Business.csproj" />
-    <ProjectReference Include="..\Armyknife.DI.DnCore\Armyknife.DI.DnCore.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="DocGeneratorResources.Designer.cs">
