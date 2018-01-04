@@ -709,6 +709,25 @@ namespace Armyknife.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A handy tool to count the number of words in a string..
+        /// </summary>
+        public static string WordcountDescription {
+            get {
+                return ResourceManager.GetString("WordcountDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usage:
+        ///- wordcount count the number of words.
+        /// </summary>
+        public static string WordcountHelp {
+            get {
+                return ResourceManager.GetString("WordcountHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A handy tool to generate QR codes..
         /// </summary>
         public static string WriteQrDescription {

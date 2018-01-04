@@ -399,6 +399,13 @@ Optional properties:
     <value>Usage:
 - weeknumber</value>
   </data>
+  <data name="WordcountDescription" xml:space="preserve">
+    <value>A handy tool to count the number of words in a string.</value>
+  </data>
+  <data name="WordcountHelp" xml:space="preserve">
+    <value>Usage:
+- wordcount count the number of words</value>
+  </data>
   <data name="WriteQrDescription" xml:space="preserve">
     <value>A handy tool to generate QR codes.</value>
   </data>
