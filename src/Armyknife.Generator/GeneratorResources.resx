@@ -220,9 +220,10 @@ namespace Armyknife.Tests.Tools.Implementations
       public async Task [TOOLCLASSNAME]_ExecuteAsync_HappyFlow()
       {
          // arrange
+         string input = Guid.NewGuid().ToString();
          var argsDictionary = new Dictionary&lt;string, string&gt;
          {
-            { Constants.InputKey, Guid.NewGuid().ToString() }
+            { Constants.InputKey, input }
          };
          string expectedOutput = string.Empty;
 
@@ -334,9 +335,10 @@ namespace Armyknife.Tests.Tools.Implementations
       public void [TOOLCLASSNAME]_Execute_HappyFlow()
       {
          // arrange
+         string input = Guid.NewGuid().ToString();
          var argsDictionary = new Dictionary&lt;string, string&gt;
          {
-            { Constants.InputKey, Guid.NewGuid().ToString() }
+            { Constants.InputKey, input }
          };
          string expectedOutput = string.Empty;
 
