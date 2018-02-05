@@ -1,15 +1,18 @@
-﻿using Armyknife.Business.Interfaces;
+﻿using System;
+using Armyknife.Business.Interfaces;
 using Armyknife.Exceptions;
 using Armyknife.Models;
 using Armyknife.Resources;
 using Armyknife.Services.Interfaces;
 using Armyknife.Utilities;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Armyknife.Tools.Implementations
 {
    internal class WriteQrTool : ISynchronousTool
    {
+      private const string ExtensionKey = "extension";
       private const string WidthKey = "width";
       private const string HeightKey = "height";
       private const string OpenFileKey = "openFile";
@@ -39,30 +42,55 @@ namespace Armyknife.Tools.Implementations
 
       public string Execute(IDictionary<string, string> args)
       {
-         if (!args.TryGetValue(Constants.FileOutputKey, out string writeLocation))
-         {
-            throw new ArmyknifeException("You should provide the 'outputFile'.");
-         }
-
          if (!args.TryGetValue(Constants.InputKey, out string input))
          {
             throw new ArmyknifeException(ExceptionResources.NoInput);
          }
 
+         // If the extension is set, the contents will be written to the command line as base64 string.
+         // If the writeLocation is set, the contents will be written to that path.
+         args.TryGetValue(Constants.FileOutputKey, out string writeLocation);
+         args.TryGetValue(ExtensionKey, out var extension);
+
+         if (string.IsNullOrWhiteSpace(extension) && string.IsNullOrWhiteSpace(writeLocation) ||
+             !string.IsNullOrWhiteSpace(extension) && !string.IsNullOrWhiteSpace(writeLocation))
+         {
+            throw new ArmyknifeException($"You should fill either '{Constants.FileOutputKey}' or '{ExtensionKey}'.");
+         }
+
+         bool writeToFile = !string.IsNullOrWhiteSpace(writeLocation);
+         string result = string.Empty;
+
          int width = args.GetValue(WidthKey, 250);
          int height = args.GetValue(HeightKey, 250);
 
-         string extension = writeLocation.GetFileExtension();
+         extension = extension ?? writeLocation.GetFileExtension();
          switch (extension)
          {
             case "png":
                var png = _barcodeService.GenerateQrCodePng(input, height, width);
-               _fileService.WriteAllBytes(writeLocation, png);
+               if (writeToFile)
+               {
+                  _fileService.WriteAllBytes(writeLocation, png);
+               }
+               else
+               {
+                  result = Convert.ToBase64String(png);
+               }
+
                break;
 
             case "svg":
                string svg = _barcodeService.GenerateQrCodeSvg(input, height, width);
-               _fileService.WriteAllText(writeLocation, svg);
+               if (writeToFile)
+               {
+                  _fileService.WriteAllText(writeLocation, svg);
+               }
+               else
+               {
+                  result = Convert.ToBase64String(Encoding.UTF8.GetBytes(svg));
+               }
+
                break;
 
             default:
@@ -70,12 +98,12 @@ namespace Armyknife.Tools.Implementations
          }
 
          bool openImage = args.GetValue(OpenFileKey, false);
-         if (openImage)
+         if (openImage && writeToFile)
          {
             _processService.StartProcess(writeLocation);
          }
 
-         return string.Empty;
+         return result;
       }
    }
 }

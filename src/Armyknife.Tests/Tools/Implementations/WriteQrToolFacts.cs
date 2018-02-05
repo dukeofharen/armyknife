@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Armyknife.Exceptions;
+using Armyknife.Models;
 using Armyknife.Resources;
 using Armyknife.Services.Interfaces;
 using Armyknife.Tools.Implementations;
@@ -37,27 +40,10 @@ namespace Armyknife.Tests.Tools.Implementations
       }
 
       [TestMethod]
-      public void WriteQrTool_Execute_OutputFileNotSet_ShouldThrowArmyknifeException()
+      public void WriteQrTool_Execute_InputNotSet_ShouldThrowArmyknifeException()
       {
          // arrange
          var args = new Dictionary<string, string>();
-
-         // act
-         var exception = Assert.ThrowsException<ArmyknifeException>(() => _tool.Execute(args));
-
-         // assert
-         Assert.AreEqual("You should provide the 'outputFile'.", exception.Message);
-      }
-
-      [TestMethod]
-      public void WriteQrTool_Execute_InputSet_ShouldThrowArmyknifeException()
-      {
-         // arrange
-         string outputFile = @"C:\temp\qr.png";
-         var args = new Dictionary<string, string>
-            {
-                { "outputFile", outputFile }
-            };
 
          // act
          var exception = Assert.ThrowsException<ArmyknifeException>(() => _tool.Execute(args));
@@ -67,193 +53,217 @@ namespace Armyknife.Tests.Tools.Implementations
       }
 
       [TestMethod]
-      public void WriteQrTool_Execute_NoOtherArgumensSet_ShouldUseDefaultValues()
+      public void WriteQrTool_Execute_ExtensionAndWriteLocationBothNotSet_ShouldThrowArmyknifeException()
       {
          // arrange
-         string outputFile = @"C:\temp\qr.png";
-         string input = "QR this!";
-         var qrBytes = new byte[] { 1, 2, 3 };
+         string input = Guid.NewGuid().ToString();
          var args = new Dictionary<string, string>
-            {
-                { "outputFile", outputFile },
-                { "input", input }
-            };
-
-         _barcodeServiceMock
-             .Setup(m => m.GenerateQrCodePng(input, 250, 250))
-             .Returns(qrBytes);
-
-         // act
-         string result = _tool.Execute(args);
-
-         // assert
-         Assert.IsTrue(string.IsNullOrEmpty(result));
-         _fileServiceMock.Verify(m => m.WriteAllBytes(outputFile, qrBytes), Times.Once);
-         _processServiceMock.Verify(m => m.StartProcess(outputFile), Times.Never);
-      }
-
-      [TestMethod]
-      public void WriteQrTool_Execute_WidthFilledIn()
-      {
-         // arrange
-         string outputFile = @"C:\temp\qr.png";
-         string input = "QR this!";
-         var qrBytes = new byte[] { 1, 2, 3 };
-         int width = 500;
-         var args = new Dictionary<string, string>
-            {
-                { "outputFile", outputFile },
-                { "input", input },
-                { "width", width.ToString() }
-            };
-
-         _barcodeServiceMock
-             .Setup(m => m.GenerateQrCodePng(input, 250, width))
-             .Returns(qrBytes);
-
-         // act
-         string result = _tool.Execute(args);
-
-         // assert
-         Assert.IsTrue(string.IsNullOrEmpty(result));
-         _fileServiceMock.Verify(m => m.WriteAllBytes(outputFile, qrBytes), Times.Once);
-         _processServiceMock.Verify(m => m.StartProcess(outputFile), Times.Never);
-      }
-
-      [TestMethod]
-      public void WriteQrTool_Execute_HeightFilledIn()
-      {
-         // arrange
-         string outputFile = @"C:\temp\qr.png";
-         string input = "QR this!";
-         var qrBytes = new byte[] { 1, 2, 3 };
-         int height = 500;
-         var args = new Dictionary<string, string>
-            {
-                { "outputFile", outputFile },
-                { "input", input },
-                { "height", height.ToString() }
-            };
-
-         _barcodeServiceMock
-             .Setup(m => m.GenerateQrCodePng(input, height, 250))
-             .Returns(qrBytes);
-
-         // act
-         string result = _tool.Execute(args);
-
-         // assert
-         Assert.IsTrue(string.IsNullOrEmpty(result));
-         _fileServiceMock.Verify(m => m.WriteAllBytes(outputFile, qrBytes), Times.Once);
-         _processServiceMock.Verify(m => m.StartProcess(outputFile), Times.Never);
-      }
-
-      [TestMethod]
-      public void WriteQrTool_Execute_OpenFileFilledIn()
-      {
-         // arrange
-         string outputFile = @"C:\temp\qr.png";
-         string input = "QR this!";
-         var qrBytes = new byte[] { 1, 2, 3 };
-         var args = new Dictionary<string, string>
-            {
-                { "outputFile", outputFile },
-                { "input", input },
-                { "openFile", "true" }
-            };
-
-         _barcodeServiceMock
-             .Setup(m => m.GenerateQrCodePng(input, 250, 250))
-             .Returns(qrBytes);
-
-         // act
-         string result = _tool.Execute(args);
-
-         // assert
-         Assert.IsTrue(string.IsNullOrEmpty(result));
-         _fileServiceMock.Verify(m => m.WriteAllBytes(outputFile, qrBytes), Times.Once);
-         _processServiceMock.Verify(m => m.StartProcess(outputFile), Times.Once);
-      }
-
-      [TestMethod]
-      public void WriteQrTool_Execute_EverythingFilledIn()
-      {
-         // arrange
-         string outputFile = @"C:\temp\qr.png";
-         string input = "QR this!";
-         var qrBytes = new byte[] { 1, 2, 3 };
-         int width = 500;
-         int height = 600;
-         var args = new Dictionary<string, string>
-            {
-                { "outputFile", outputFile },
-                { "input", input },
-                { "width", width.ToString() },
-                { "height", height.ToString() },
-                { "openFile", "true" }
-            };
-
-         _barcodeServiceMock
-             .Setup(m => m.GenerateQrCodePng(input, height, width))
-             .Returns(qrBytes);
-
-         // act
-         string result = _tool.Execute(args);
-
-         // assert
-         Assert.IsTrue(string.IsNullOrEmpty(result));
-         _fileServiceMock.Verify(m => m.WriteAllBytes(outputFile, qrBytes), Times.Once);
-         _processServiceMock.Verify(m => m.StartProcess(outputFile), Times.Once);
-      }
-
-      [TestMethod]
-      public void WriteQrTool_Execute_Svg_EverythingFilledIn()
-      {
-         // arrange
-         string outputFile = @"C:\temp\qr.svg";
-         string input = "QR this!";
-         var qrSvg = "svg contents";
-         int width = 500;
-         int height = 600;
-         var args = new Dictionary<string, string>
-            {
-                { "outputFile", outputFile },
-                { "input", input },
-                { "width", width.ToString() },
-                { "height", height.ToString() },
-                { "openFile", "true" }
-            };
-
-         _barcodeServiceMock
-             .Setup(m => m.GenerateQrCodeSvg(input, height, width))
-             .Returns(qrSvg);
-
-         // act
-         string result = _tool.Execute(args);
-
-         // assert
-         Assert.IsTrue(string.IsNullOrEmpty(result));
-         _fileServiceMock.Verify(m => m.WriteAllText(outputFile, qrSvg), Times.Once);
-         _processServiceMock.Verify(m => m.StartProcess(outputFile), Times.Once);
-      }
-
-      [TestMethod]
-      public void WriteQrTool_Execute_UnknownExtension_ShouldThrowArmyknifeException()
-      {
-         // arrange
-         string outputFile = @"C:\temp\qr.txt";
-         string input = "QR this!";
-         var args = new Dictionary<string, string>
-            {
-                { "outputFile", outputFile },
-                { "input", input }
-            };
+         {
+            { Constants.InputKey, input }
+         };
 
          // act
          var exception = Assert.ThrowsException<ArmyknifeException>(() => _tool.Execute(args));
 
          // assert
-         Assert.IsTrue(exception.Message.Contains("Saving QR"));
+         Assert.AreEqual($"You should fill either '{Constants.FileOutputKey}' or 'extension'.", exception.Message);
+      }
+
+      [TestMethod]
+      public void WriteQrTool_Execute_ExtensionAndWriteLocationBothSet_ShouldThrowArmyknifeException()
+      {
+         // arrange
+         string input = Guid.NewGuid().ToString();
+         var args = new Dictionary<string, string>
+         {
+            { Constants.InputKey, input },
+            { Constants.FileOutputKey, Guid.NewGuid().ToString() },
+            { "extension", Guid.NewGuid().ToString() }
+         };
+
+         // act
+         var exception = Assert.ThrowsException<ArmyknifeException>(() => _tool.Execute(args));
+
+         // assert
+         Assert.AreEqual($"You should fill either '{Constants.FileOutputKey}' or 'extension'.", exception.Message);
+      }
+
+      [TestMethod]
+      public void WriteQrTool_Execute_WriteLocationSet_Png_HappyFlow()
+      {
+         // arrange
+         string input = Guid.NewGuid().ToString();
+         string writeLocation = "file.png";
+         var args = new Dictionary<string, string>
+         {
+            { Constants.InputKey, input },
+            { Constants.FileOutputKey, writeLocation }
+         };
+
+         var pngBytes = new byte[] { 1, 2, 3 };
+
+         _barcodeServiceMock
+            .Setup(m => m.GenerateQrCodePng(input, 250, 250))
+            .Returns(pngBytes);
+
+         _fileServiceMock
+            .Setup(m => m.WriteAllBytes(writeLocation, pngBytes));
+
+         // act
+         string result = _tool.Execute(args);
+
+         // assert
+         Assert.AreEqual(string.Empty, result);
+      }
+
+      [TestMethod]
+      public void WriteQrTool_Execute_WriteLocationSet_Svg_HappyFlow()
+      {
+         // arrange
+         string input = Guid.NewGuid().ToString();
+         string writeLocation = "file.svg";
+         var args = new Dictionary<string, string>
+         {
+            { Constants.InputKey, input },
+            { Constants.FileOutputKey, writeLocation }
+         };
+
+         var svgContents = "12345";
+
+         _barcodeServiceMock
+            .Setup(m => m.GenerateQrCodeSvg(input, 250, 250))
+            .Returns(svgContents);
+
+         _fileServiceMock
+            .Setup(m => m.WriteAllText(writeLocation, svgContents));
+
+         // act
+         string result = _tool.Execute(args);
+
+         // assert
+         Assert.AreEqual(string.Empty, result);
+      }
+
+      [TestMethod]
+      public void WriteQrTool_Execute_WriteLocationSet_Svg_HappyFlow_OpenFile()
+      {
+         // arrange
+         string input = Guid.NewGuid().ToString();
+         string writeLocation = "file.svg";
+         var args = new Dictionary<string, string>
+         {
+            { Constants.InputKey, input },
+            { Constants.FileOutputKey, writeLocation },
+            { "openFile", "true" }
+         };
+
+         var svgContents = "12345";
+
+         _barcodeServiceMock
+            .Setup(m => m.GenerateQrCodeSvg(input, 250, 250))
+            .Returns(svgContents);
+
+         _fileServiceMock
+            .Setup(m => m.WriteAllText(writeLocation, svgContents));
+
+         _processServiceMock
+            .Setup(m => m.StartProcess(writeLocation));
+
+         // act
+         string result = _tool.Execute(args);
+
+         // assert
+         Assert.AreEqual(string.Empty, result);
+      }
+
+      [TestMethod]
+      public void WriteQrTool_Execute_WriteLocationSet_UnknownExtension_ShouldThrowArmyknifeException()
+      {
+         // arrange
+         string input = Guid.NewGuid().ToString();
+         string writeLocation = "file.sjaak";
+         var args = new Dictionary<string, string>
+         {
+            { Constants.InputKey, input },
+            { Constants.FileOutputKey, writeLocation }
+         };
+
+         // act
+         var exception = Assert.ThrowsException<ArmyknifeException>(() => _tool.Execute(args));
+
+         // assert
+         Assert.IsTrue(exception.Message.Contains("Saving QR code to a file"));
+      }
+
+      [TestMethod]
+      public void WriteQrTool_Execute_ExtensionSet_Png_HappyFlow()
+      {
+         // arrange
+         string input = Guid.NewGuid().ToString();
+         string extension = "png";
+         var args = new Dictionary<string, string>
+         {
+            { Constants.InputKey, input },
+            { "extension", extension }
+         };
+
+         var pngBytes = new byte[] { 1, 2, 3 };
+         string expectedResult = Convert.ToBase64String(pngBytes);
+
+         _barcodeServiceMock
+            .Setup(m => m.GenerateQrCodePng(input, 250, 250))
+            .Returns(pngBytes);
+
+         // act
+         string result = _tool.Execute(args);
+
+         // assert
+         Assert.AreEqual(expectedResult, result);
+      }
+
+      [TestMethod]
+      public void WriteQrTool_Execute_ExtensionSet_Svg_HappyFlow()
+      {
+         // arrange
+         string input = Guid.NewGuid().ToString();
+         string extension = "svg";
+         var args = new Dictionary<string, string>
+         {
+            { Constants.InputKey, input },
+            { "extension", extension }
+         };
+
+         var svgContents = "12345";
+         string expectedResult = Convert.ToBase64String(Encoding.UTF8.GetBytes(svgContents));
+
+         _barcodeServiceMock
+            .Setup(m => m.GenerateQrCodeSvg(input, 250, 250))
+            .Returns(svgContents);
+
+         // act
+         string result = _tool.Execute(args);
+
+         // assert
+         Assert.AreEqual(expectedResult, result);
+      }
+
+      [TestMethod]
+      public void WriteQrTool_Execute_ExtensionSet_UnknownExtension_ShouldThrowArmyknifeException()
+      {
+         // arrange
+         string input = Guid.NewGuid().ToString();
+         string extension = "sjaak";
+         var args = new Dictionary<string, string>
+         {
+            { Constants.InputKey, input },
+            { "extension", extension }
+         };
+
+         // act
+         var exception = Assert.ThrowsException<ArmyknifeException>(() => _tool.Execute(args));
+
+         // assert
+         Assert.IsTrue(exception.Message.Contains("Saving QR code to a file"));
       }
    }
 }

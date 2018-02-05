@@ -739,13 +739,14 @@ namespace Armyknife.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Usage:
         ///- writeqr --input this is the QR content --outputFile C:\temp\qr.png --width 250 --height 250
+        ///- writeqr --input this is the QR content --extension png
         ///
-        ///The output type is determined by the file extension of &quot;outputType&quot;. Supported file types: png, svg.
+        ///The output type is determined by the file extension of &quot;outputType&quot; (or &quot;extension&quot;). Supported file types: png, svg.
+        ///
+        ///&quot;extension&quot; or &quot;outputType&quot; should be set. They can&apos;t be set both. If &quot;extension&quot; is set, the file contents are Base64 encoded when written to the console window.
         ///
         ///Optional properties:
-        ///- width: the PNG file width in pixels (default 250)
-        ///- height: the PNG height in pixels (default 250)
-        ///- openFile: whether the file should be opened after saving (true or false, default false).
+        ///- width: the PNG file width in pixels (d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WriteQrHelp {
             get {

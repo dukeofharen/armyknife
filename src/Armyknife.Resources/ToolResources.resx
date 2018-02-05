@@ -412,8 +412,11 @@ Optional properties:
   <data name="WriteQrHelp" xml:space="preserve">
     <value>Usage:
 - writeqr --input this is the QR content --outputFile C:\temp\qr.png --width 250 --height 250
+- writeqr --input this is the QR content --extension png
 
-The output type is determined by the file extension of "outputType". Supported file types: png, svg.
+The output type is determined by the file extension of "outputType" (or "extension"). Supported file types: png, svg.
+
+"extension" or "outputType" should be set. They can't be set both. If "extension" is set, the file contents are Base64 encoded when written to the console window.
 
 Optional properties:
 - width: the PNG file width in pixels (default 250)
