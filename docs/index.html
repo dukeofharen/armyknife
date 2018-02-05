@@ -460,8 +460,11 @@ Optional properties:
 <p>A handy tool to generate QR codes.</p>
 <pre>Usage:
 - writeqr --input this is the QR content --outputFile C:\temp\qr.png --width 250 --height 250
+- writeqr --input this is the QR content --extension png
 
-The output type is determined by the file extension of &quot;outputType&quot;. Supported file types: png, svg.
+The output type is determined by the file extension of &quot;outputType&quot; (or &quot;extension&quot;). Supported file types: png, svg.
+
+&quot;extension&quot; or &quot;outputType&quot; should be set. They can&#39;t be set both. If &quot;extension&quot; is set, the file contents are Base64 encoded when written to the console window.
 
 Optional properties:
 - width: the PNG file width in pixels (default 250)
@@ -474,7 +477,7 @@ Optional properties:
     <hr>
 
     <footer>
-      <p>&copy; Ducode 2018 - Built on 2018-01-30 20:22:16 for version 1.2.0.103</p>
+      <p>&copy; Ducode 2018 - Built on 2018-02-05 20:44:07 for version 1.2.0.104</p>
     </footer>
   </div>
   <script src="js/vendor/jquery-1.11.2.min.js"></script>
